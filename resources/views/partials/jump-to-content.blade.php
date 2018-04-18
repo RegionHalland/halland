@@ -1,1 +1,1 @@
-<a class="contentLink" href="#content">Direkt till innehållet</a>
+<a class="toContentLink" href="#contentStart">Direkt till innehållet</a>

@@ -40,7 +40,7 @@ p.light {
 .sidebar-nav__list {
   display: block;
   width: 100%;
-  border: 1px solid #e4e4e4;
+  border: 1px solid grey;
 }
 
 .sidebar-nav__item {
@@ -408,6 +408,21 @@ p.light {
   .dropdown__see-all-btn {
     padding: 0;
   }
+}
+
+.toContentLink {
+  padding: 2ex;
+  position: absolute;
+  right: 101%;
+  overflow: hidden;
+}
+
+.toContentLink:focus {
+  position: initial;
+  text-align: center;
+  background: #0e5aa4;
+  color: white;
+  display: block;
 }
 
 
