@@ -19,9 +19,14 @@ trait Comments
 		global $post;
 
 		$c = get_comments('post_id='.$post->ID);
-		$c = json_decode(json_encode($c), true);
-		$c = self::prepareComments($c);
-
+		
+		if(count($c) > 0) {
+			$c = json_decode(json_encode($c), true);
+			$c = self::prepareComments($c);
+		} else {
+			$this->comments = NULL;
+		}
+		
 		return $this->comments;
 	}
 

@@ -1,6 +1,6 @@
 <div class="clearfix">
 
-	@include('partials.updated-time', ['post_id' => $post->ID])
+	@include('partials.updated-time', ['post' => $post])
 
 	<span class="right light small">
 		{{ __('Innehållsansvarig', 'sage') }}: 

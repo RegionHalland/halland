@@ -2,7 +2,7 @@ import 'jquery';
 
 class ContentNav {
 
-	constructor(container, tags, menu = '#content-nav') {
+	constructor(tags = 'h1, h2, h3', container = '#content-nav-container', menu = '#content-nav') {
 
 		this.posY 					= $(document).scrollTop();
 
