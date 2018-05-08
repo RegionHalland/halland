@@ -1,5 +1,12 @@
-@import '../../../../../../../../../styleguide/src/scss/settings/settings';
-@import '../../../../../../../../../styleguide/src/scss/mixins/palette';
+/**
+ *  The following imports are manually copied from the component library.
+ *  It's probably a good idea to only add things that do not compile, like variables and mixins.
+ *. https://github.com/RegionHalland/styleguide/
+ *
+**/
+
+@import 'settings/settings';
+@import 'mixins/palette';
 
 // Sidebar nav
 .sidebar-nav {
@@ -345,4 +352,3 @@
 		pointer-events: auto;
 	}
 }
-
