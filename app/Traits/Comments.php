@@ -18,54 +18,37 @@ trait Comments
 	{
 		global $post;
 
-		$c = get_comments('post_id='.$post->ID);
-		
-		if(count($c) > 0) {
-			$c = json_decode(json_encode($c), true);
-			$c = self::prepareComments($c);
-		} else {
-			$this->comments = NULL;
+		$comments = get_comments( array(
+			'post_id' => $post->ID,
+			'hierarchical' => 'threaded',
+			'status' => 'approve',
+			'orderby' => 'comment_date',
+			'order' => 'ASC',
+		));
+
+		foreach($comments as $comment) {
+			self::addReplies($comment);
 		}
-		
-		return $this->comments;
+
+		return $comments;
+
 	}
 
-	private function prepareComments($arr) {
-	    $temp = array();
+	private function addReplies($comment) {
 
-	    foreach($arr as $key => $value) {
-	    	$arr[$key]['comment_author_email_md5'] = md5($value['comment_author_email']);
-	        $groupValue = $value['comment_ID'];
-	        $temp[$groupValue] = $arr[$key];
-	    }
+			$replies = $comment->get_children(array(
+				'hierarchical' => 'threaded',
+				'status' => 'approve',
+				'orderby' => 'comment_date',
+			));
 
-	    $comments = self::nestComments($temp);
-
-
-	    return $comments;
-	}
-
-	private function nestComments($comments) {
-
-		$replies_on_top_level = 0;
-
-		foreach ($comments as $comment) {
-
-			if($comment['comment_parent'] != 0) {
-				$parent = $comment['comment_parent'];
-				$comments[$parent]['replies'][] = $comment;
-				unset($comments[$comment['comment_ID']]);	
-				
-				$replies_on_top_level++;
-				break;
+			foreach($replies as $reply) {
+				self::addReplies($reply);
 			}
-		}
 
-		if($replies_on_top_level == 0) {
-			$this->comments = $comments;
-			return $comments;
-		} else {
-			self::nestComments($comments);
-		}
+			$comment->replies = $replies;
+			$comment->comment_author_email_md5 = md5($comment->comment_author_email);
+
+
 	}
 }
