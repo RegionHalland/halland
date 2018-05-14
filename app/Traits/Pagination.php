@@ -16,41 +16,29 @@ trait Pagination
 		$total_pages = $wp_query->max_num_pages;
 		$current_page = max(1, get_query_var('paged'));
 
-		$previous_link = $current_page - 1;
-		$next_link = $current_page + 1;
+		$previous = $current_page - 1;
+		$next = $current_page + 1;
 
-		if($previous_link < 0) {
-				$previous_link = NULL;
+		if($previous <= 0) {
+			$previous = NULL;
 		} else {
-			$previous_link = get_pagenum_link($previous_link);
+			$previous = get_pagenum_link($previous);
 		}
 
-
-
-		if($next_link > $total_pages) {
-			$next_link = NULL;
+		if($next > $total_pages) {
+			$next = NULL;
 		} else {
-			$next_link = get_pagenum_link($next_link);
+			$next = get_pagenum_link($next);
 		}
-
-		$pages = paginate_links(array(
-	      'base' => get_pagenum_link(1) . '%_%',
-	      'format' => 'sida/%#%',
-	      'current' => $current_page,
-	      'total' => $total_pages,
-	      'prev_next' => false,
-				'type'=> 'array',
-	    ));
-
 
 		$pagination = (object) array(
-			'previous_label' => 'Föregående sida',
-			'previous_link' => $previous_link,
-			'pages' => $pages,
-			'next_label' => 'Nästa sida',
-			'next_link' => $next_link,
+			'base' => get_pagenum_link().'page/',
+			'previous' => $previous,
+			'current' => $current_page,
+			'total' => $total_pages,
+			'next' => $next,
 		);
-
+		
 		return $pagination;
 	}
 }
