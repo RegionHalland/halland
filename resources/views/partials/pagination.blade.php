@@ -3,7 +3,7 @@
 	<div class="container mx-auto">
 		<div class="clearfix mxn2">
 			<nav itemscope itemtype="http://schema.org/SiteNavigationElement">
-			<div class="col col-6 md-col-4 px2">
+			<div class="col col-6 md-col-4 px2 d-md-block">
 				@if(isset($pagination->previous))
 				<a class="mr1" href="{{ $pagination->previous }}" >
 					<svg class="icon-badge icon-badge--md">
@@ -11,7 +11,10 @@
 					</svg>
 						{{ __('Föregående sida', 'halland') }}
 				</a>
+				@else
+					&nbsp; 
 				@endif
+
 			</div>
 			<div class="col col-4 px2 d-print-none d-none d-md-block center">
 				{{ __('Sida', 'halland') }}
