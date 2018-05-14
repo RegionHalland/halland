@@ -10,8 +10,10 @@
           </p>
         </header>
 
-        <p>{{ get_the_excerpt() }}</p>
+        <p>{{ the_excerpt() }}</p>
       </article>
     </li>
   @endwhile
 </ul>
+
+@include('partials.pagination')
