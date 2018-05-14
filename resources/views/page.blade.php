@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <div class="py3 background-gradient-blue">
 	<div class="container px2 mx-auto">
 		<div class="clearfix">
