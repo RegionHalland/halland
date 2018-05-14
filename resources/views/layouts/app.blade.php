@@ -7,8 +7,18 @@
 
 		@include('partials.header')
 
+		@hasSection ('subheader')
+			<div class="py3 background-gradient-blue">
+				<div class="container px2 mx-auto">
+					<div class="clearfix">
+						@yield('subheader')
+					</div>
+				</div>
+			</div>
+		@endif
+
 		@yield('content')
-	
+
 		@include('partials.footer')
 	</body>
 </html>
