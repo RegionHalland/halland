@@ -22,6 +22,10 @@ trait NavContent
             return;
         }
 
+        if (strlen($post->post_content) <= 0) {
+            return;
+        }
+
         $content = HtmlDomParser::str_get_html($post->post_content);
         
         foreach ($content->find('h2, h3, h4') as $element) {
@@ -40,6 +44,10 @@ trait NavContent
         global $post;
 
         if (!is_a($post, 'WP_Post')) {
+            return;
+        }
+
+        if (strlen($post->post_content) <= 0) {
             return;
         }
 

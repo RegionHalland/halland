@@ -2,7 +2,7 @@
 <nav class="content-nav" style="top: 20px">
 	<ul style="position: sticky; top: 20px">
 		@foreach ($content_nav as $item)
-		<li itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+		<li class="content-nav__item" itemprop="itemListElement" itemtype="http://schema.org/ListItem">
 			<a href="#{{ $item['slug'] }}">{!! $item['content'] !!}</a>
 			<meta itemprop="position" content="{{ $loop->iteration }}" />
 		</li>

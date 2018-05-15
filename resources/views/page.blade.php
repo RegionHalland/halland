@@ -31,7 +31,7 @@
 				@endif
 			</div>
 
-			<main class="col col-12 md-col-6 px2">
+			<main id="main" class="col col-12 md-col-6 px2">
 				@include('partials.content-page')
 
 				@if (is_active_sidebar('sidebar-bottom'))
