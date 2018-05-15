@@ -1,0 +1,7 @@
+// Manually copied from the component library
+// https://github.com/RegionHalland/styleguide/
+
+// Color Palette Modifier
+@function palette($palette, $shade: 'base') {
+	@return map-get(map-get($palettes, $palette), $shade);
+}

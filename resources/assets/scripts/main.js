@@ -9,6 +9,7 @@ import Router from './util/Router';
 import common from './routes/common';
 import home from './routes/home';
 import single from './routes/single';
+import page from './routes/page';
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
@@ -18,6 +19,8 @@ const routes = new Router({
 	home,
 	// Single blogposts etc.
 	single,
+	// standard text pages
+	page,
 });
 
 // Load Events

@@ -5,16 +5,15 @@
 		<div class="container mx-auto">
 			<div class="clearfix mxn2">
 				@if (is_active_sidebar('sidebar-left'))		
-				<div class="col col-12 md-col-3 px2">
-					@include('partials.sidebar-left')
-				</div>
+					<div class="col col-12 md-col-3 px2">
+						@include('partials.sidebar-left')
+					</div>
 				@endif
 
-				<main class="col col-12 md-col-9 px2">
-					@include('partials.content-single')
-					<hr>
-					@include('partials.entry-meta')
-
+				<main class="col col-12 md-col-9 px2" id="content-nav-container">
+				
+					@include('partials.content-page')
+						
 					@if (is_active_sidebar('sidebar-article-bottom'))
 					<div class="col col-12">
 						@include('partials.sidebar-article-bottom')
@@ -23,32 +22,10 @@
 				</main>
 
 				<div class="col col-12 md-col-3 px2">
-						
-						@if($categories)
-
-							@include('partials.sidebar-categories', [
-								'title' => 'Kategorier',
-								'data' => $categories
-							])
-
-						@endif
-
-						@if($tags)
-
-							@include('partials.sidebar-tags', [
-								'title' => 'Taggar',
-								'data' => $tags
-							])
-
-						@endif
-
-						
-						@if (is_active_sidebar('sidebar-right'))		
-							@include('partials.sidebar-right')
-						@endif
-						<aside class="article">
-			 				<nav id="content-nav" class="d-print-none d-none d-md-block"></nav>
-						</aside>
+						@include('partials.sidebar-categories')
+						@include('partials.sidebar-tags')
+						@include('partials.sidebar-right')
+						@include('partials.content-nav')
 				</div>
 			</div>
 		</div>

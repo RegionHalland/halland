@@ -26,7 +26,7 @@
 								@foreach($topLevelPage->children as $childPage)
 								<li class="dropdown__item">
 									<a href="{{ get_page_link($childPage->ID) }}" class="dropdown__link">{{ $childPage->post_title }}</a>
-									<span class="dropdown__link-description">Information om ambulanssjukvården</span>
+									<span class="dropdown__link-description"></span>
 								</li>
 								@endforeach
 							</ul>
