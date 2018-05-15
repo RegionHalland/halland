@@ -39,7 +39,7 @@ const Nav = (() => {
 
 			this.$toggleNavButton.on('click', () => this.toggleNav());
 			this.$navOverlay.on('click', () => this.closeNav());
-			this.$nav.on('keyup', () => this.keypad());
+			// this.$nav.on('keyup', () => this.keypad());
 		}
 
 		toggleItem(target) {
