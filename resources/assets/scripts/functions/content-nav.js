@@ -1,170 +1,79 @@
-import 'jquery';
+import stickybits from 'stickybits';
+import debounce from 'debounce';
+
+const Selectors = {
+	CONTENT: '#main',
+	CONTENT_NAV: '.content-nav',
+	CONTENT_NAV_LIST: '.content-nav__list',
+	CONTENT_NAV_ITEM: '.content-nav__item',
+}
+
+const Modifiers = {
+	ACTIVE: 'active',
+}
 
 class ContentNav {
-
-	constructor(container, tags, menu = '#content-nav') {
-
-		this.posY 					= $(document).scrollTop();
-
-		this.container 				= $(container);
-		this.containerHeight 		= this.container.height();
-		this.containerOffset 		= this.container.position().top;
-		
-		this.menu 					= $(menu);
-		this.menuHeight;
-		this.menuOffset;
-		this.pairs					= [];
-		this.slider;
-
-		this.tags 					= $(tags, this.container);
-		this.currentPair			= null;
-
-		//Do stuff
-		if(this.tags.length > 0) {
-			this.createMenu();
-			this.init();
+	constructor() {
+		if ($(Selectors.CONTENT_NAV).length <= 0 || $(Selectors.CONTENT).length <= 0) {
+			return;
 		}
+
+		this.cache();
+		this.polyfillSticky();
+		this.setCheckpoints();
+		this.bind();
 	}
 
-	/*
-	 *    GETTERS AND SETTERS
-	 */
-
-	changeSliderHeight(int) {
-		$(this.slider).height(int);
+	cache() {
+		this.$content = $(Selectors.CONTENT);
+		this.$contentHeadings = $(Selectors.CONTENT).find('h2, h3, h4');
+		this.$contentNav = $(Selectors.CONTENT_NAV);
+		this.$contentNavList = $(Selectors.CONTENT_NAV_LIST);
+		this.$contentNavItems = $(Selectors.CONTENT_NAV_ITEM);
 	}
 
-	getSliderHeight() {
-		return $(this.slider).height();
+	polyfillSticky() {
+		stickybits(this.$contentNavList);
 	}
 
-	/*
-	 *    CREATE FUNCTIONS
-	 */
+	bind() {
+		$(document).scroll(() => {
+			this.toggleActive()
+		})
 
-	createMenu() {
-		let ul;
-		let idHash = 'content_nav_'+Date.now();
-
-		this.menu.addClass('content-nav');
-		this.menu.append('<h3 class="content-nav__heading" id="'+idHash+'">På denna sidan</h3>');
-		this.menu.append('<div class="clearfix content-nav__container"><div class="content-nav__slider relative"></div><ul class="content-nav__menu" aria-labelledby="'+idHash+'"></ul></div>');
-		
-		ul = $('.content-nav__menu', this.menu);
-
-		$.each(this.tags, (index, e) => {
-
-			let id = this.urlify(index+' '+$(e).text());
-			$(e).attr('id', id);
-
-			ul.append('<li class="content-nav__item"><a href="#'+ $(e).attr('id') +'">'+ $(e).text() +'</a></li>');
-
-			this.pairs.push({
-				'tag': $(e),
-				'link': $('li', ul).last(),
-			});
-
-		});	
-
-		this.slider = $('.content-nav__slider', this.menu);
-		this.menuOffset = this.menu.position().top;
-		this.menuHeight = this.menu.height();
-
+		$(window).resize(debounce(() => {
+			this.setCheckpoints()
+			this.toggleActive()
+		}, 100))
 	}
 
-	urlify(str) {		
-		return str.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "-").replace(/^-+|-+$/g, '');
+	setCheckpoints() {
+		this.$contentHeadings.each((i, el) => {
+			el.$offsetTop = $(el).offset().top;
+		})
 	}
 
-	/*
-	 *    FIRE THINGS UP!
-	 */
-
-	setSlider(normal = true) {
-		let h,t;
-
-		let offset = this.pairs[0].link.position().top;
-
-		if(!normal) {
-			h = 0;
-			t = 0;
-		} else {
-			let menuitem = this.currentPair.link;
-			h = menuitem.height();
-			t = menuitem.position().top - offset;
-		}
-		
-		this.slider.css({
-			'height': h,
-			'top': t,
-		});	
-	}
-
-	onScrollCommon() {
-		this.posY = $(document).scrollTop();
-	}
-
-	onSetActiveId() {
-
-		var c = this.currentPair;
-
-		if (this.posY > $(this.pairs[0].tag).position().top) {
-			for (var i = 0; i < this.pairs.length; i++) {
-				var currentTop = this.pairs[i].tag.position().top;
-				
-				if( (this.posY - currentTop) > 0 ) {
-					this.currentPair = this.pairs[i];
-				}
+	getCheckpoint() {
+		for (let i = 0; i < this.$contentHeadings.length; i++) {
+			if (window.scrollY < this.$contentHeadings[0].$offsetTop) {
+				return false;
 			}
-		} else {
-			this.currentPair = null;
-			this.setSlider(false);
-		}
 
-		if(c != this.currentPair && this.currentPair != null) {
-			this.setSlider();
-		}
-		
-	}
-
-	onScrollMenu() {
-		if(this.posY >= (this.containerOffset + this.containerHeight - this.menuHeight)) {
-			this.menu.removeClass('fixed')
-				.addClass('relative')
-				.css('top', (this.containerHeight - this.menuHeight - (this.menuOffset - this.containerOffset)));
-		} else if (this.posY <= this.menuOffset) {
-			this.menu.removeClass(['fixed', 'relative']);
-		} else {
-			this.menu.addClass('fixed')
-				.css('top', 0);
-		}
-	}
-
-	onReSize() {
-		this.menu.css('width', this.menu.parent().width());
-	}
-
-	init() {
-
-		$(document).on('scroll', () => { 
-			this.onScrollCommon();
-
-			var menuRange = (this.posY - this.containerOffset) / this.containerHeight;
-			
-			if (menuRange > 0 && menuRange < 1) {
-				this.onScrollMenu();
-				this.onSetActiveId();
-			} else {
-				this.menu.removeClass(['fixed', 'relative']);
-				this.currentPair = null;
+			if (window.scrollY < this.$contentHeadings[i].$offsetTop - 1) {
+				return i - 1;
 			}
-		});
+		}
+	}
 
-		$(document).on('resize', () => {  
-			this.onReSize();
-		});
+	toggleActive() {
+		let i = this.getCheckpoint();
 
-		this.onReSize();
+		if (isNaN(i)) {
+			return;
+		}
+
+		this.$contentNavItems.removeClass(Modifiers.ACTIVE);
+		$(this.$contentNavItems[i]).addClass(Modifiers.ACTIVE);
 	}
 }
 

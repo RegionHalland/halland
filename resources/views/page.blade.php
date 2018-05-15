@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <div class="py3 background-gradient-blue">
 	<div class="container px2 mx-auto">
 		<div class="clearfix">
@@ -24,7 +23,7 @@
 
 <div class="px2">
 	<div class="container mx-auto mt3">
-		<div class="clearfix mxn2">
+		<div class="clearfix mxn2 flex flex-wrap content-stretch">
 			<div class="col col-12 md-col-3 px2">
 				@include('partials.nav-sidebar')
 				@if (is_active_sidebar('sidebar-left'))
@@ -32,7 +31,7 @@
 				@endif
 			</div>
 
-			<main class="col col-12 md-col-6 px2">
+			<main id="main" class="col col-12 md-col-6 px2">
 				@include('partials.content-page')
 
 				@if (is_active_sidebar('sidebar-bottom'))
@@ -42,11 +41,15 @@
 				@endif
 			</main>
 
-			@if (is_active_sidebar('sidebar-right'))
-			<div class="col col-12 md-col-3 px2">
-				@include('partials.sidebar-right')
+
+			<div class="col col-12 md-col-3 px2 flex">
+				@if (is_active_sidebar('sidebar-right'))
+					@include('partials.sidebar-right')
+				@endif
+				
+				@include('partials.content-nav')
 			</div>
-			@endif
+			
 		</div>
 	</div>
 </div>
