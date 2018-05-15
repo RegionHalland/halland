@@ -6,7 +6,6 @@
 		@include('partials.site-notices')
 
 		@include('partials.header')
-
 		@yield('content')
 	
 		@include('partials.footer')
