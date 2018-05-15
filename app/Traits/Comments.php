@@ -34,6 +34,10 @@ trait Comments
 
 	}
 
+	/**
+	 * Nest replies
+	 * @return array
+	 */
 	private function addReplies($comment) {
 
 			$replies = $comment->get_children(array(
@@ -48,7 +52,5 @@ trait Comments
 
 			$comment->replies = $replies;
 			$comment->comment_author_email_md5 = md5($comment->comment_author_email);
-
-
 	}
 }
