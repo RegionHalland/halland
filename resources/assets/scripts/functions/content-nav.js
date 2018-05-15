@@ -54,15 +54,13 @@ class ContentNav {
 	}
 
 	getCheckpoint() {
-		for (let i = 0; i < this.$contentHeadings.length; i++) {
-			if (window.scrollY < this.$contentHeadings[0].$offsetTop) {
-				return false;
-			}
-
-			if (window.scrollY < this.$contentHeadings[i].$offsetTop - 1) {
+		for (let i = 0; i <= this.$contentHeadings.length; i++) {
+			if (i === this.$contentHeadings.length || window.scrollY < this.$contentHeadings[i].$offsetTop - 20) {
 				return i - 1;
 			}
 		}
+
+		return false;
 	}
 
 	toggleActive() {
