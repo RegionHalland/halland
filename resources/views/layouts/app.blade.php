@@ -8,9 +8,9 @@
 		@include('partials.header')
 
 		@hasSection ('subheader')
-			<div class="py3 background-gradient-blue">
-				<div class="container px2 mx-auto">
-					<div class="clearfix">
+			<div class="background-gradient-blue py3 px2">
+				<div class="container mx-auto">
+					<div class="clearfix mxn2">
 						@yield('subheader')
 					</div>
 				</div>
