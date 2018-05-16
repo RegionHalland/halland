@@ -29,22 +29,19 @@
 			<main id="main" class="col col-12 md-col-6 px2">
 				@include('partials.content-page')
 
-				@if (is_active_sidebar('sidebar-bottom'))
+				@if (is_active_sidebar('sidebar-article-bottom'))
 				<div class="col col-12">
-					@include('partials.sidebar-bottom')
+					@include('partials.sidebar-article-bottom')
 				</div>
 				@endif
 			</main>
-
 
 			<div class="col col-12 md-col-3 px2 flex">
 				@if (is_active_sidebar('sidebar-right'))
 					@include('partials.sidebar-right')
 				@endif
-
 				@include('partials.content-nav')
 			</div>
-
 		</div>
 	</div>
 </div>
