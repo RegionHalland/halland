@@ -24,7 +24,7 @@
 
 <div class="px2">
 	<div class="container mx-auto mt3">
-		<div class="clearfix mxn2">
+		<div class="clearfix mxn2 flex flex-wrap content-stretch">
 			<div class="col col-12 md-col-3 px2">
 				@include('partials.nav-sidebar')
 				@if (is_active_sidebar('sidebar-left'))
@@ -32,7 +32,7 @@
 				@endif
 			</div>
 
-			<main class="col col-12 md-col-9 px2"  id="content-nav-container">
+			<main id="main" class="col col-12 md-col-6 px2">
 				@include('partials.content-page')
 
 				@if (is_active_sidebar('sidebar-bottom'))
@@ -43,14 +43,12 @@
 			</main>
 
 
-			<div class="col col-12 md-col-3 px2">
+			<div class="col col-12 md-col-3 px2 flex">
 				@if (is_active_sidebar('sidebar-right'))
 					@include('partials.sidebar-right')
 				@endif
 
 				@include('partials.content-nav')
-
-
 			</div>
 
 		</div>
