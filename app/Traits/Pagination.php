@@ -15,8 +15,7 @@ trait Pagination
 
 		$total_pages = $wp_query->max_num_pages;
 
-
-		if($total_pages < 2) {
+		if ($total_pages < 2) {
 			return;
 		}
 

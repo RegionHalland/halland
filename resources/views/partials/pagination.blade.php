@@ -23,8 +23,7 @@
 							<option value="{{$pagination->base}}{{$i}}" @if($i == $pagination->current) selected @endif>{!! $i !!}</option>
 					@endfor
 				</select>
-
-				 {{ __('av', 'halland') }}
+				{{ __('av', 'halland') }}
 				{!! $pagination->total !!}
 			</div>
 			<div class="col col-6 md-col-4 px2 right-align">
