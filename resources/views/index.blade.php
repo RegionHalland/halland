@@ -11,9 +11,13 @@
 			{!! get_search_form(false) !!}
 		@endif
 
-		@while (have_posts()) @php(the_post())
+		@if( is_archive() )
+			@include('partials.content-archive')
+		@else
+			@while (have_posts()) @php(the_post())
 			@include('partials.content-'.get_post_type())
-		@endwhile
+			@endwhile
+		@endif
 		</div>
 	</div>
 </div>
