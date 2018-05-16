@@ -12,7 +12,7 @@
 						{{ __('Föregående sida', 'halland') }}
 				</a>
 				@else
-					&nbsp; 
+					&nbsp;
 				@endif
 
 			</div>
@@ -20,14 +20,10 @@
 				{{ __('Sida', 'halland') }}
 				<select class="select select--inline select--small"  onchange="if (this.value) window.location.href=this.value">
 					@for ($i = 1; $i <= $pagination->total; $i++)
-
-
 							<option value="{{$pagination->base}}{{$i}}" @if($i == $pagination->current) selected @endif>{!! $i !!}</option>
-
 					@endfor
 				</select>
-
-				 {{ __('av', 'halland') }}
+				{{ __('av', 'halland') }}
 				{!! $pagination->total !!}
 			</div>
 			<div class="col col-6 md-col-4 px2 right-align">

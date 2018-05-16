@@ -14,7 +14,13 @@ trait Pagination
 		global $wp_query;
 
 		$total_pages = $wp_query->max_num_pages;
+
+		if ($total_pages < 2) {
+			return;
+		}
+
 		$current_page = max(1, get_query_var('paged'));
+
 
 		$previous = $current_page - 1;
 		$next = $current_page + 1;
@@ -38,7 +44,7 @@ trait Pagination
 			'total' => $total_pages,
 			'next' => $next,
 		);
-		
+
 		return $pagination;
 	}
 }
