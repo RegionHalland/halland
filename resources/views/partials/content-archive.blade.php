@@ -11,3 +11,5 @@
 	</li>
 	@endwhile
 </ul>
+
+@include('partials.pagination')
