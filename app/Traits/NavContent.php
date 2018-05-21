@@ -11,39 +11,21 @@ trait NavContent
     
     public function __construct()
     {
-        add_filter('Modularity/Display/mod-linkgroup/Markup', function( $markup ) {
-            $content = HtmlDomParser::str_get_html($markup);
-
-            foreach ($content->find('h2, h3, h4') as $key => $element) {
-                array_push($this->headings, array(
-                    'tag' => $element->tag,
-                    'slug' => sanitize_title($element->innertext),
-                    'content' => $element->innertext
-                ));
-            }
-            
-        
-            return $markup;
+        add_filter( 'the_content', function($content) {
+           return self::addIdToHeadings($content);
         });
-        add_filter( 'the_content', array($this, 'addIdToHeadings'));
     }
     /**
      * Parses post content and adds slugified inner text of headings as ID on each heading
      * @return object
      */
-    public function addIdToHeadings()
-    {
-        global $post;
-
-        if (!is_a($post, 'WP_Post')) {
+    private function addIdToHeadings( $content ) {
+        
+        if (strlen($content) <= 0) {
             return;
         }
 
-        if (strlen($post->post_content) <= 0) {
-            return;
-        }
-
-        $content = HtmlDomParser::str_get_html($post->post_content);
+        $content = HtmlDomParser::str_get_html($content);
         
         foreach ($content->find('h2, h3, h4') as $element) {
             $slug = sanitize_title($element->innertext);
