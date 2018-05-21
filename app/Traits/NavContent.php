@@ -1,4 +1,3 @@
-
 <?php
 
 namespace App\Traits;
@@ -15,6 +14,7 @@ trait NavContent
            return self::addIdToHeadings($content);
         });
     }
+
     /**
      * Parses post content and adds slugified inner text of headings as ID on each heading
      * @return object
@@ -58,8 +58,29 @@ trait NavContent
             $this->headings[$key]['slug'] = sanitize_title($element->innertext);
             $this->headings[$key]['content'] = $element->innertext;
         }
+        
+        $post_meta = get_post_meta($post->ID);
 
-        var_dump($this->headings);
+        if ( !isset($post_meta['modularity-modules']) ) {
+            return $this->headings;
+        };
+        
+        $sidebars = unserialize($post_meta['modularity-modules'][0]);
+        
+        foreach ($sidebars as $key => $moduleList) {
+            if ($key === 'sidebar-article-bottom') {
+                foreach ($moduleList as $module) {
+                    $module = get_post($module['postid']);
+                    array_push($this->headings, array(
+                       'tag' => 'h2',
+                       'slug' => sanitize_title($module->post_title),
+                       'content' => $module->post_title
+                    ));
+                }
+            }
+        }
+
         return $this->headings;
+        
     }
 }
