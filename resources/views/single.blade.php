@@ -13,12 +13,7 @@
 				<main class="col col-12 md-col-9 px2" id="content-nav-container">
 				
 					@include('partials.content-page')
-						
-					@if (is_active_sidebar('sidebar-article-bottom'))
-					<div class="col col-12">
-						@include('partials.sidebar-article-bottom')
-					</div>
-					@endif
+					
 				</main>
 
 				<div class="col col-12 md-col-3 px2">
