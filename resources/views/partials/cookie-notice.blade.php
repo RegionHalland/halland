@@ -1,5 +1,5 @@
 @if (isset($cookie_notice))
-<div id="cookie-notice" class="notice background-dark-blue py2">
+<div id="cookie-notice" class="notice background-dark-blue py2 relative z4">
 	<div class="container mx-auto">
 		<div class="clearfix mxn2">
 			<div class="col col-12 px2">
