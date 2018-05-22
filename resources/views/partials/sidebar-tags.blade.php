@@ -1,5 +1,5 @@
 @if($tags)
-	<aside class="article">
+	<aside class="mb2">
 		<h3>Taggar</h3>
 
 		<ul class="tags clearfix">
