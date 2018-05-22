@@ -20,17 +20,17 @@ class Sidebars
 
 		// Left sidebar
 		register_sidebar([
-			'name'          => __('Left', 'sage'),
+			'name'          => __('Left', 'halland'),
 			'id'            => 'sidebar-left'
 		] + $config);
 
 		// Right sidebar
 		register_sidebar([
-			'name'          => __('Right', 'sage'),
+			'name'          => __('Right', 'halland'),
 			'id'            => 'sidebar-right'
 		] + $config);
 
-		// Bottom sidebar
+		// Article Bottom sidebar
 		register_sidebar([
 			'name'          => __('Article Bottom', 'halland'),
 			'id'            => 'sidebar-article-bottom'
