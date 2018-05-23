@@ -9,7 +9,7 @@
 						<img src="https://www.gravatar.com/avatar/{{ $comment->comment_author_email_md5 }}?s=96" width="48px" height="48px" alt="" class="avatar">
 					</div>
 
-					<div class=" ml2">
+					<div class="ml2">
 						<p class="light small">
 							{{$comment->comment_date}}
 						</p>

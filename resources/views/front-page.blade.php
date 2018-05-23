@@ -1,26 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="background-gradient-blue py3 px2">
+<div class="background-gradient-blue py3 px3">
 	<div class="container mx-auto">
-		<div class="clearfix mxn2">
-			<div class="col col-12 px2 mt4 mb2">
+		<div class="clearfix mxn3">
+			<div class="col col-12 px3 mt4 mb2">
 				<h1 class="h2 text-white mb0 inline-block align-middle">{!! get_the_title() !!}</h1>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="py4 px2">
+<div class="py4 px3">
 	<div class="container mx-auto">
-		<div class="clearfix mxn2">
+		<div class="clearfix mxn3">
 			@if (is_active_sidebar('sidebar-left'))
-			<div class="col col-12 md-col-3 px2">
+			<div class="col col-12 md-col-3 px3">
 				@include('partials.sidebar-left')
 			</div>
 			@endif
 
-			<main class="col col-12 px2">
+			<main class="col col-12 px3">
 				<article class="article">
 					<div class="clearfix flex justify-between items-baseline">
 						<h2 class="flex-auto p0 m0">Nyheter</h2>
@@ -58,7 +58,7 @@
 			</main>
 
 			@if (is_active_sidebar('sidebar-right'))
-			<div class="col col-12 md-col-3 px2">
+			<div class="col col-12 md-col-3 px3">
 				@include('partials.sidebar-right')
 			</div>
 			@endif
