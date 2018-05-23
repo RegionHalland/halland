@@ -38,7 +38,7 @@ const Nav = (() => {
 			});
 
 			this.$toggleNavButton.on('click', () => this.toggleNav());
-			this.$navOverlay.on('click', () => this.closeNav());
+			this.$navOverlay.on('click', () => this.toggleItem(event.target));
 			// this.$nav.on('keyup', () => this.keypad());
 		}
 
@@ -53,6 +53,7 @@ const Nav = (() => {
 					if ($item.hasClass(Modifiers.OPEN)) {
 						$item.removeClass(Modifiers.OPEN);
 						$link.removeClass(Modifiers.OPEN);
+						$link.removeClass(Modifiers.OPEN_SIBLING)
 						$dropdown.removeClass(Modifiers.OPEN);
 						
 						continue;
@@ -60,6 +61,7 @@ const Nav = (() => {
 					
 					$item.addClass(Modifiers.OPEN);
 					$link.addClass(Modifiers.OPEN);
+					$link.removeClass(Modifiers.OPEN_SIBLING);
 					$dropdown.addClass(Modifiers.OPEN);
 					
 					continue;
@@ -67,7 +69,12 @@ const Nav = (() => {
 				
 				$item.removeClass(Modifiers.OPEN);
 				$link.removeClass(Modifiers.OPEN);
+				$link.addClass(Modifiers.OPEN_SIBLING);
 				$dropdown.removeClass(Modifiers.OPEN);
+			}
+
+			if (!this.isNavOpen()) {
+				this.$navLinks.removeClass(Modifiers.OPEN_SIBLING);
 			}
 
 			this.toggleOverlay();
