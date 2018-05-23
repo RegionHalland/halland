@@ -1,5 +1,4 @@
 @while(have_posts()) @php(the_post())
-	
 	@include('partials.article')
 
 	@if (is_active_sidebar('sidebar-article-bottom'))
