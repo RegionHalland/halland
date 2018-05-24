@@ -2,8 +2,8 @@
 <nav class="site-nav">
 	<div class="site-nav__top">
 		<div class="site-nav__container">
-			<a href="{{ esc_url( home_url( '/' ) ) }}" class="site-nav__logo">
-				<img src="@asset('images/navigation_logo.svg')">
+			<a href="{{ esc_url( home_url( '/' ) ) }}" class="site-nav__logo" aria-label="Till startsidan">
+				<img src="@asset('images/navigation_logo.svg')" alt="">
 			</a>
 			<button class="site-nav__menu-btn">
 				<svg class="icon-badge icon-badge--md">
