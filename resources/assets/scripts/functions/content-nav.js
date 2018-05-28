@@ -1,4 +1,4 @@
-import stickybits from 'stickybits';
+import Stickyfill from 'stickyfilljs';
 import debounce from 'debounce';
 
 const Selectors = {
@@ -35,11 +35,7 @@ class ContentNav {
 	}
 
 	polyfillSticky() {
-		stickybits(this.$contentNavList, {
-			useStickyClasses: true,
-			parentClass: Modifiers.JS_PARENT,
-			stuckClass: Modifiers.JS_IS_STUCK,
-		});
+		Stickyfill.add(this.$contentNavList);
 	}
 
 	bind() {
