@@ -37,8 +37,8 @@ class ContentNav {
 	polyfillSticky() {
 		stickybits(this.$contentNavList, {
 			useStickyClasses: true,
-			parentClass: Selectors.JS_PARENT,
-			stuckClass: Selectors.JS_IS_STUCK,
+			parentClass: Modifiers.JS_PARENT,
+			stuckClass: Modifiers.JS_IS_STUCK,
 		});
 	}
 
