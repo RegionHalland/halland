@@ -10,5 +10,6 @@
 		</li>
 		@endforeach
 	</ul>
+	</div>
 </nav>
 @endif
