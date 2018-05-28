@@ -6,6 +6,8 @@ const Selectors = {
 	CONTENT_NAV: '.content-nav',
 	CONTENT_NAV_LIST: '.content-nav__list',
 	CONTENT_NAV_ITEM: '.content-nav__item',
+	JS_PARENT: '.js--content-nav-parent',
+	JS_IS_STUCK: '.js--content-nav-is-stuck',
 }
 
 const Modifiers = {
@@ -33,7 +35,11 @@ class ContentNav {
 	}
 
 	polyfillSticky() {
-		stickybits(this.$contentNavList);
+		stickybits(this.$contentNavList, {
+			useStickyClasses: true,
+			parentClass: Selectors.JS_PARENT,
+			stuckClass: Selectors.JS_IS_STUCK,
+		});
 	}
 
 	bind() {
