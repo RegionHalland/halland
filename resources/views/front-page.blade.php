@@ -20,20 +20,19 @@
 			</div>
 			@endif
 
-			<main class="col col-12 px3">
-				<article class="article">
-					<div class="clearfix flex justify-between items-baseline">
-						<h2 class="flex-auto p0 m0">Nyheter</h2>
-						<div class="mr1 flex-auto right-align">
-							<a href="{{ get_bloginfo_rss() }}" >
-								<svg class="icon-badge icon-badge--md">
-							 		<use xlink:href="#rss"/>
-								</svg> Prenumerera på RSS
-							</a>
-						</div>
-					</div>
+			<main>
+				<div class="col col-12 px3 flex justify-between items-baseline">
+					<h2 class="flex-auto p0 m0">Nyheter</h2>
+					<a class="mr1 flex-auto right-align" href="{{ get_bloginfo_rss() }}" >
+						<svg class="icon-badge icon-badge--md mr1">
+							<use xlink:href="#rss"/>
+						</svg>Prenumerera på RSS
+					</a>
+				</div>
+				<div class="col col-12 px3 mb3">
 					<p>Nyheter och aktuellt för dig som är vårdgivare i Halland</p>
-					</article>
+				</div>
+				<div class="col col-12 px3">
 					<ul class="list list--none">
 						@foreach($news as $newsitem)
 							<li class="li--border-bottom">
@@ -51,12 +50,11 @@
 							</li>
 						@endforeach
 					</ul>
-
-					@if (is_active_sidebar('sidebar-article-bottom'))
-						@include('partials.sidebar-article-bottom')
-					@endif
+				</div>
+				@if (is_active_sidebar('sidebar-article-bottom'))
+				@include('partials.sidebar-article-bottom')
+				@endif
 			</main>
-
 			@if (is_active_sidebar('sidebar-right'))
 			<div class="col col-12 md-col-3 px3">
 				@include('partials.sidebar-right')
