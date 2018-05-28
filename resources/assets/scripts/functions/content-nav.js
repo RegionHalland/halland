@@ -6,12 +6,12 @@ const Selectors = {
 	CONTENT_NAV: '.content-nav',
 	CONTENT_NAV_LIST: '.content-nav__list',
 	CONTENT_NAV_ITEM: '.content-nav__item',
-	JS_PARENT: '.js--content-nav-parent',
-	JS_IS_STUCK: '.js--content-nav-is-stuck',
 }
 
 const Modifiers = {
 	ACTIVE: 'active',
+	JS_PARENT: 'js--content-nav-parent',
+	JS_IS_STUCK: 'js--content-nav-is-stuck',
 }
 
 class ContentNav {
