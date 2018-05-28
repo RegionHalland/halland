@@ -35,7 +35,7 @@ class ContentNav {
 	}
 
 	polyfillSticky() {
-		Stickyfill.add(this.$contentNavList);
+		Stickyfill.add(this.$contentNav);
 	}
 
 	bind() {
