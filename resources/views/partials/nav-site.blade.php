@@ -5,6 +5,9 @@
 			<a href="{{ esc_url( home_url( '/' ) ) }}" class="site-nav__logo" aria-label="Till startsidan">
 				<img src="@asset('images/navigation_logo.svg')" alt="">
 			</a>
+			@if(isset($site_description))
+			<span class="site-nav__description">{{ $site_description }}</span>
+			@endif
 			<button class="site-nav__menu-btn">
 				<svg class="icon-badge icon-badge--md">
 					<use xlink:href="#menu"/>
