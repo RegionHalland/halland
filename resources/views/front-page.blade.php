@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<?php $id = uniqid(); ?>
 
 @section('content')
 <div class="background-gradient-blue py3 px3">
@@ -22,7 +23,7 @@
 
 			<main>
 				<div class="col col-12 px3 flex justify-between items-baseline">
-					<h2 class="flex-auto p0 m0">Nyheter</h2>
+					<h2 class="flex-auto p0 m0" id="{{ $id }}">Nyheter</h2>
 					<a class="mr1 flex-auto right-align" href="{{ get_bloginfo_rss() }}" >
 						<svg class="icon-badge icon-badge--md mr1">
 							<use xlink:href="#rss"/>
@@ -33,7 +34,7 @@
 					<p>Nyheter och aktuellt för dig som är vårdgivare i Halland</p>
 				</div>
 				<div class="col col-12 px3">
-					<ul class="list list--none">
+					<ul class="list list--none" aria-labelledby="{{ $id }}">
 						@foreach($news as $newsitem)
 							<li class="li--border-bottom">
 								<article>
