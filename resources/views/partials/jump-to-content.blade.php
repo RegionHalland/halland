@@ -1,1 +1,1 @@
-<a class="toContentLink" href="#main">Direkt till innehållet</a>
+<a class="jump-to-content" href="#main">Direkt till innehållet</a>
