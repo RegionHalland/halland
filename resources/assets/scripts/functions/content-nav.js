@@ -73,7 +73,10 @@ class ContentNav {
 		}
 
 		this.$contentNavItems.removeClass(Modifiers.ACTIVE);
+		this.$contentNavItems.removeAttr('aria-current');
+
 		$(this.$contentNavItems[i]).addClass(Modifiers.ACTIVE);
+		$(this.$contentNavItems[i]).attr('aria-current', true);
 	}
 }
 

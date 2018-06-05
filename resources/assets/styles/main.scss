@@ -7,3 +7,19 @@
 
 @import 'settings/settings';
 @import 'mixins/palette';
+
+.jump-to-content {
+	display: block;
+	background: $white;
+	position: absolute;
+	overflow: hidden;
+	text-align: center;
+	height: 0;
+}
+
+.jump-to-content:focus {
+	position: initial;
+	border: 4px solid darken($grey, 24%);
+	padding: $space-2;
+	height: auto;
+}
