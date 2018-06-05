@@ -1,5 +1,5 @@
 @if(isset($content_nav) && count($content_nav) > 0)
-<?php $id = uniqid(); ?>
+@php($id = uniqid())
 <nav class="content-nav-container">
 	<div class="content-nav">
 		<h4 id="{{ $id }}">Hitta på sidan</h4>
