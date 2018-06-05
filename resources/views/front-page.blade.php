@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<?php $id = uniqid(); ?>
+@php($id = uniqid())
 
 @section('content')
 <div class="background-gradient-blue py3 px3">
