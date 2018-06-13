@@ -5,8 +5,8 @@
 		<h4 id="{{ $id }}">Hitta på sidan</h4>
 		<ul class="content-nav__list" itemscope itemtype="http://schema.org/ItemList" aria-labelledby="{{ $id }}">
 			@foreach ($content_nav as $item)
-			<li class="content-nav__item" itemprop="itemListElement">
-				<a class="content-nav__link" href="#{{ $item['slug'] }}">{!! $item['content'] !!}</a>
+			<li class="content-nav__item content-nav__level_{{ $item['tag'] }}" itemprop="itemListElement">
+				<a class="content-nav__link" href="#{{ $item['slug'] }}" data-pointstoid="{{ $item['slug'] }}">{!! $item['content'] !!}</a>
 				<meta itemprop="position" content="{{ $loop->iteration }}" />
 			</li>
 			@endforeach

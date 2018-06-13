@@ -23,3 +23,13 @@
 	padding: $space-2;
 	height: auto;
 }
+
+.headline__focused {
+	animation-name: flash-animation;
+	animation-duration: 2s;
+}
+
+@keyframes flash-animation {
+	0% { background: $blue; }
+	100% { background: default; }
+}
