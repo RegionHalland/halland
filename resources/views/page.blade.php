@@ -8,7 +8,7 @@
 				<div class="col col-12 px3">
 					<h1 class="mb0">{{ the_title() }}</h1>
 					<div class="col col-12 md-col-9">
-						@include('partials.content-utility-bar')
+						{{-- @include('partials.content-utility-bar') --}}
 					</div>
 				</div>
 				<main id="main" class="col col-12 md-col-9 px3">
