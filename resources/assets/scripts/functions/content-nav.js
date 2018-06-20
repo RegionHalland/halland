@@ -6,12 +6,14 @@ const Selectors = {
 	CONTENT_NAV: '.content-nav',
 	CONTENT_NAV_LIST: '.content-nav__list',
 	CONTENT_NAV_ITEM: '.content-nav__item',
+	CONTENT_NAV_LINK: '.content-nav__link',
 }
 
 const Modifiers = {
 	ACTIVE: 'active',
 	JS_PARENT: 'js--content-nav-parent',
 	JS_IS_STUCK: 'js--content-nav-is-stuck',
+	HIGHLIGHT: 'content-highlight',
 }
 
 class ContentNav {
@@ -32,6 +34,7 @@ class ContentNav {
 		this.$contentNav = $(Selectors.CONTENT_NAV);
 		this.$contentNavList = $(Selectors.CONTENT_NAV_LIST);
 		this.$contentNavItems = $(Selectors.CONTENT_NAV_ITEM);
+		this.$contentNavLinks = $(Selectors.CONTENT_NAV_LINK);
 	}
 
 	polyfillSticky() {
@@ -47,6 +50,18 @@ class ContentNav {
 			this.setCheckpoints()
 			this.toggleActive()
 		}, 100))
+
+		$(Selectors.CONTENT_NAV_LINK).on('click', event => {
+			let heading = this.$contentHeadings.filter((index, element) => {
+				return `#${element.getAttribute('id')}` === event.target.getAttribute('href')
+			})
+
+			heading.addClass(Modifiers.HIGHLIGHT)
+			
+			setTimeout(() => {
+				heading.removeClass(Modifiers.HIGHLIGHT)
+			}, 1500);
+		})
 	}
 
 	setCheckpoints() {

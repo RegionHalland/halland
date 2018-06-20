@@ -23,3 +23,15 @@
 	padding: $space-2;
 	height: auto;
 }
+
+.content-highlight {
+	animation-name: content-hightlight-animation;
+	animation-duration: 1.5s;
+	animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	animation-iteration-count: 1;
+}
+
+@keyframes content-hightlight-animation {
+	0% { background: $blue; }
+	100% { background: none; }
+}
