@@ -53,12 +53,18 @@ class ContentNav {
 
 		$(".content-nav__link").click(function(){
 			let id = $(this).attr(Selectors.CONTENT_NAV_LINK_DATA);
+			let currentChoiceText = $(this).text();
+			$(".content-nav__currently-active").text(currentChoiceText);
 			$(".content-nav__item").removeClass(Modifiers.ACTIVE).removeAttr(Modifiers.ARIA_CURRENT);
 			$(this).parent().addClass(Modifiers.ACTIVE).attr(Modifiers.ARIA_CURRENT, true); // TODO: Better way than parent?
 			$("#" + id).addClass(Modifiers.H_FLASH_CLASS);
 			setTimeout(function(id) {
 				$("#" + id).removeClass(Modifiers.H_FLASH_CLASS);
 			}, 2000, id);
+		});
+
+		$(".content-nav__toggle-button").click(function(){
+			$(".content-nav").toggle();
 		});
 	}
 
@@ -80,6 +86,7 @@ class ContentNav {
 
 	toggleActive() {
 		let i = this.getCheckpoint();
+		let $currentActiveText = $(this.$contentNavItems[i]).text();
 
 		if (isNaN(i)) {
 			return;
@@ -90,6 +97,7 @@ class ContentNav {
 
 		$(this.$contentNavItems[i]).addClass(Modifiers.ACTIVE);
 		$(this.$contentNavItems[i]).attr(Modifiers.ARIA_CURRENT, true);
+		$(".content-nav__currently-active").text($currentActiveText);
 	}
 }
 
