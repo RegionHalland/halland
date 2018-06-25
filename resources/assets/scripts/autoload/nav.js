@@ -1,3 +1,5 @@
+import debounce from 'debounce'
+
 const Nav = (() => {
 
 	const Selectors = {
@@ -5,9 +7,10 @@ const Nav = (() => {
 		NAV_LIST: '.site-nav__list',
 		NAV_ITEM: '.site-nav__item',
 		NAV_LINK: '.site-nav__link',
-		OVERLAY: '.site-nav-overlay',
-		NAV_DROPDOWN: '.dropdown',
+		NAV_OVERLAY: '.site-nav__overlay',
 		NAV_TOGGLE_BTN: '.site-nav__menu-btn',
+		DROPDOWN: '.dropdown',
+		DROPDOWN_CLOSE_BTN: '.dropdown__close-btn',
 	}
 	
 	const Modifiers = {
@@ -18,98 +21,106 @@ const Nav = (() => {
 	
 	class Nav {
 		constructor() {
-			this.cache();
-			this.bind();
+			this.cache()
+			this.bind()
 		}
 
 		cache() {
-			this.$nav = $(Selectors.NAV);
-			this.$navList = this.$nav.find(Selectors.NAV_LIST);
-			this.$navItems = this.$nav.find(Selectors.NAV_ITEM);
-			this.$navLinks = this.$nav.find(Selectors.NAV_LINK);
-			this.$dropdowns = this.$nav.find(Selectors.NAV_DROPDOWN);
-			this.$toggleNavButton = $(Selectors.NAV_TOGGLE_BTN);
-			this.$navOverlay = $(Selectors.OVERLAY);
+			this.$nav = $(Selectors.NAV)
+			this.$navList = this.$nav.find(Selectors.NAV_LIST)
+			this.$navItems = this.$nav.find(Selectors.NAV_ITEM)
+			this.$navLinks = this.$nav.find(Selectors.NAV_LINK)
+			this.$toggleNavBtn = $(Selectors.NAV_TOGGLE_BTN)
+			this.$navOverlay = $(Selectors.NAV_OVERLAY)
+			this.$dropdowns = this.$nav.find(Selectors.DROPDOWN)
+			this.$closeDropdownBtn = $(Selectors.DROPDOWN_CLOSE_BTN)
 		}
 
 		bind() {
-			this.$navLinks.each((i, el) => {
-				$(el).on('click', event => this.toggleItem(event.target));
-			});
+			this.$toggleNavBtn.on('click', () => this.toggleNav())
+			this.$navLinks.on('click', event => this.toggleDropdown(event.target))
+			this.$closeDropdownBtn.on('click', () => this.closeDropdown())
 
-			this.$toggleNavButton.on('click', () => this.toggleNav());
-			this.$navOverlay.on('click', () => this.toggleItem(event.target));
-			// this.$nav.on('keyup', () => this.keypad());
-		}
+			this.$navOverlay.on('click', () => {
+				this.closeNav()
+				this.closeDropdown()
+			})
 
-		toggleItem(target) {
-			for (let i = 0; i < this.$navLinks.length; i++) {
-				let $item = $(this.$navItems[i]);
-				let $link = $item.children(Selectors.NAV_LINK);
-				let $dropdown = $item.children(Selectors.DROPDOWN);
-
-				if ($item[0] === $(target).parent()[0]) {
-					
-					if ($item.hasClass(Modifiers.OPEN)) {
-						$item.removeClass(Modifiers.OPEN);
-						$link.removeClass(Modifiers.OPEN);
-						$link.removeClass(Modifiers.OPEN_SIBLING)
-						$dropdown.removeClass(Modifiers.OPEN);
-						
-						continue;
-					}
-					
-					$item.addClass(Modifiers.OPEN);
-					$link.addClass(Modifiers.OPEN);
-					$link.removeClass(Modifiers.OPEN_SIBLING);
-					$dropdown.addClass(Modifiers.OPEN);
-					
-					continue;
-				}
-				
-				$item.removeClass(Modifiers.OPEN);
-				$link.removeClass(Modifiers.OPEN);
-				$link.addClass(Modifiers.OPEN_SIBLING);
-				$dropdown.removeClass(Modifiers.OPEN);
-			}
-
-			if (!this.isNavOpen()) {
-				this.$navLinks.removeClass(Modifiers.OPEN_SIBLING);
-			}
-
-			this.toggleOverlay();
-		}
-
-		isNavOpen() {
-			return this.$navItems.hasClass(Modifiers.OPEN);
+			// Make sure the overlay is in sync with the dropdown state
+			window.onresize = debounce(() => this.syncOverlay())
 		}
 
 		toggleNav() {
-			if (this.$navList.hasClass(Modifiers.OPEN)) {
-				this.$navList.removeClass(Modifiers.OPEN);
-				this.$navOverlay.removeClass(Modifiers.ACTIVE);
-				return;
-			}
-
-			this.$navList.addClass(Modifiers.OPEN);
-			this.$navOverlay.addClass(Modifiers.ACTIVE);
-
+			this.$navList.hasClass(Modifiers.OPEN) ? this.closeNav() : this.openNav()
 		}
 
-		toggleOverlay() {
-			this.isNavOpen() ?
-				this.$navOverlay.addClass(Modifiers.ACTIVE) :
-				this.$navOverlay.removeClass(Modifiers.ACTIVE)
+		openNav() {
+			this.$nav.addClass(Modifiers.OPEN)
+			this.$navList.addClass(Modifiers.OPEN)
+			this.$navOverlay.addClass(Modifiers.ACTIVE)
 		}
 
 		closeNav() {
-			this.$navOverlay.removeClass(Modifiers.ACTIVE);
-			this.$dropdowns.removeClass(Modifiers.OPEN);
+			this.$nav.removeClass(Modifiers.OPEN)
+			this.$navList.removeClass(Modifiers.OPEN)
+			this.$dropdowns.removeClass(Modifiers.OPEN)
+			this.$navOverlay.removeClass(Modifiers.ACTIVE)
+		}
+
+		toggleDropdown(target) {
+			let $target = $(target)
+
+			if ($target.hasClass(Modifiers.OPEN)) {
+				return this.closeDropdown()
+			}
+			
+			return this.openDropdown($target)
+		}
+
+		openDropdown(target) {
+			let $link = target
+			let $item = $link.parent()
+			let $dropdown = $link.next(Selectors.NAV_DROPDOWN)
+
+			// Remove modifiers of non clicked element
+			this.$navItems.each((index, element) => {
+				let $element = $(element)
+
+				// Return if the current element is not the clicked element
+				if ($element === $item) {
+					return
+				}
+
+				$element.removeClass(Modifiers.OPEN)
+				$element.children(Selectors.NAV_LINK).removeClass(Modifiers.OPEN)
+				$element.children(Selectors.NAV_LINK).addClass(Modifiers.OPEN_SIBLING)
+				$element.children(Selectors.NAV_DROPDOWN).removeClass(Modifiers.OPEN)
+			})
+
+			// Add correct modifiers to the clicked element and it's children
+			$item.addClass(Modifiers.OPEN)
+			$link.addClass(Modifiers.OPEN)
+			$link.removeClass(Modifiers.OPEN_SIBLING)
+			$dropdown.addClass(Modifiers.OPEN)
+			this.$nav.addClass(Modifiers.OPEN)
+		}
+
+		closeDropdown() {
+			this.$navItems.removeClass(Modifiers.OPEN)
+			this.$navLinks.removeClass(`${Modifiers.OPEN} ${Modifiers.OPEN_SIBLING}`)
+			this.$dropdowns.removeClass(Modifiers.OPEN)
+			this.$nav.removeClass(Modifiers.OPEN)
+		}
+
+		syncOverlay() {
+			if (this.$dropdowns.css('display') !== 'none') {
+				this.$navOverlay.removeClass(Modifiers.ACTIVE)
+			}
 		}
 	}
 
-	return new Nav();
+	return new Nav()
 
-})();
+})()
 
-export default Nav;
+export default Nav
