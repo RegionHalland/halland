@@ -33,6 +33,13 @@
 								</li>
 								@endforeach
 							</ul>
+							<div class="dropdown__close">
+								<button class="dropdown__close-btn">
+									<svg class="icon-badge">
+										<use xlink:href="#x"></use>
+									</svg>
+								</button>
+							</div>
 						</div>
 					</nav>
 					@endif
@@ -41,6 +48,6 @@
 			</ul>
 		</div>
 	</div>
+	<div class="site-nav__overlay"></div>
 </nav>
-<div class="site-nav-overlay"></div>
 @endif
