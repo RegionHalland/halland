@@ -15,7 +15,8 @@ class Import
 				$acfExportManager->setTextdomain('halland');
 				$acfExportManager->setExportFolder(__DIR__);
 				$acfExportManager->autoExport(array(
-				    'options-theme-cookie-notice' => 'group_5aa63e3f4d0c8',
+					'theme-options' => 'group_5b3239313bbe6',
+				    // 'options-theme-cookie-notice' => 'group_5aa63e3f4d0c8',
 					'options-theme-data-curator' => 'group_5ac48d9ea70de',
 					'template-top-links' => 'group_5accade8e6c07'
 				));

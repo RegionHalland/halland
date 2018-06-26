@@ -13,8 +13,8 @@ trait CookieNotice
 		$cookieName = 'cookie_notice_accepted';
 
 		if (!isset($_COOKIE[$cookieName])) {
-			$cookie_notice['message'] = get_field('cookie-notice_message', 'options');
-			$cookie_notice['button'] = get_field('cookie-notice_button', 'options');
+			$cookie_notice['message'] = get_field('cookies_message', 'options');
+			$cookie_notice['button'] = get_field('cookies_button', 'options');
 			return $cookie_notice;
 		}
 	}

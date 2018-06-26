@@ -14,11 +14,7 @@ new \App\Theme\Enqueue();
 new \App\Theme\Support();
 new \App\Theme\Navigation();
 new \App\Theme\Sidebars();
-
-/**
- * Admin
- */
-new \App\Admin\Options();
+new \App\Theme\ThemeOptions();
 
 /**
  * ACF
