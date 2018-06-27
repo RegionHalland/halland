@@ -46,7 +46,7 @@ class ThemeOptions
 	{	
 		$show_tags = get_field('show_tags', 'options');
 
-		if ($show_tags === false) {
+		if ($show_tags === '1') {
 			return false;
 		}
 
