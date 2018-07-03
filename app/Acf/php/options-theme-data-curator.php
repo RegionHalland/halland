@@ -1,7 +1,7 @@
 <?php 
 
-if (function_exists('acf_add_local_field_group')) {
-    acf_add_local_field_group(array(
+if (function_exists('acf_add_local_field_group')) {
+    acf_add_local_field_group(array(
     'key' => 'group_5ac48d9ea70de',
     'title' => 'Innehåll',
     'fields' => array(
@@ -174,8 +174,8 @@
         1 => array(
             0 => array(
                 'param' => 'post_type',
-                'operator' => '!=',
-                'value' => 'post',
+                'operator' => '==',
+                'value' => 'page',
             ),
         ),
     ),
@@ -188,4 +188,4 @@
     'active' => 1,
     'description' => '',
 ));
-}
+}

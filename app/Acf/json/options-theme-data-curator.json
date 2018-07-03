@@ -170,8 +170,8 @@
         [
             {
                 "param": "post_type",
-                "operator": "!=",
-                "value": "post"
+                "operator": "==",
+                "value": "page"
             }
         ]
     ],
@@ -184,4 +184,3 @@
     "active": 1,
     "description": ""
 }]
-
