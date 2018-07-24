@@ -6,15 +6,14 @@ const Selectors = {
 	CONTENT_NAV: '.content-nav',
 	CONTENT_NAV_LIST: '.content-nav__list',
 	CONTENT_NAV_ITEM: '.content-nav__item',
-	CONTENT_NAV_LINK_DATA: 'data-pointstoid',
+	CONTENT_NAV_LINK: '.content-nav__link',
 }
 
 const Modifiers = {
 	ACTIVE: 'active',
 	JS_PARENT: 'js--content-nav-parent',
 	JS_IS_STUCK: 'js--content-nav-is-stuck',
-	ARIA_CURRENT: 'aria-current',
-	H_FLASH_CLASS: 'headline__focused',
+	HIGHLIGHT: 'content-highlight',
 }
 
 class ContentNav {
@@ -35,6 +34,7 @@ class ContentNav {
 		this.$contentNav = $(Selectors.CONTENT_NAV);
 		this.$contentNavList = $(Selectors.CONTENT_NAV_LIST);
 		this.$contentNavItems = $(Selectors.CONTENT_NAV_ITEM);
+		this.$contentNavLinks = $(Selectors.CONTENT_NAV_LINK);
 	}
 
 	polyfillSticky() {
@@ -50,17 +50,21 @@ class ContentNav {
 			this.setCheckpoints()
 			this.toggleActive()
 		}, 100))
-
-		$(".content-nav__link").click(function(){
-			let id = $(this).attr(Selectors.CONTENT_NAV_LINK_DATA);
+		
+		$(Selectors.CONTENT_NAV_LINK).on('click', event => {
 			let currentChoiceText = $(this).text();
 			$(".content-nav__currently-active").text(currentChoiceText);
-			$(".content-nav__item").removeClass(Modifiers.ACTIVE).removeAttr(Modifiers.ARIA_CURRENT);
-			$(this).parent().addClass(Modifiers.ACTIVE).attr(Modifiers.ARIA_CURRENT, true); // TODO: Better way than parent?
-			$("#" + id).addClass(Modifiers.H_FLASH_CLASS);
-			setTimeout(function(id) {
-				$("#" + id).removeClass(Modifiers.H_FLASH_CLASS);
-			}, 2000, id);
+			let heading = this.$contentHeadings.filter((index, element) => {
+				return `#${element.getAttribute('id')}` === event.target.getAttribute('href')
+			});
+
+			heading.addClass(Modifiers.HIGHLIGHT);
+			heading.attr(Modifiers.ARIA_CURRENT, true);
+
+			setTimeout(() => {
+				heading.removeClass(Modifiers.HIGHLIGHT);
+				heading.removeAttr(Modifiers.ARIA_CURRENT);
+			}, 1500);
 		});
 
 		$(".content-nav__toggle-button").click(function(){
@@ -93,7 +97,7 @@ class ContentNav {
 		}
 
 		this.$contentNavItems.removeClass(Modifiers.ACTIVE);
-		this.$contentNavItems.removeAttr(Modifiers.ARIA_CURRENT);
+		this.$contentNavItems.removeAttr('aria-current');
 
 		$(this.$contentNavItems[i]).addClass(Modifiers.ACTIVE);
 		$(this.$contentNavItems[i]).attr(Modifiers.ARIA_CURRENT, true);
