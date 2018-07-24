@@ -2,7 +2,8 @@
 @php($id = uniqid())
 <nav class="content-nav-container">
 	<div class="content-nav__head">
-		<div class="content-nav__page-name">{{ the_title() }}</div><div class="content-nav__toggle-container"><a class="content-nav__toggle-button">&#65088;</a></div>
+		<div class="content-nav__page-name">Hitta på sidan</div>
+		<div class="content-nav__toggle-container"><a class="content-nav__toggle-button">&#65088;</a></div>
 		<div class="content-nav__currently-active"></div>
 	</div>
 	<div class="content-nav">

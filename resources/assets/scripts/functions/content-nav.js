@@ -50,10 +50,10 @@ class ContentNav {
 			this.setCheckpoints()
 			this.toggleActive()
 		}, 100))
-		
+
 		$(Selectors.CONTENT_NAV_LINK).on('click', event => {
-			let currentChoiceText = $(this).text();
-			$(".content-nav__currently-active").text(currentChoiceText);
+			// let currentChoiceText = $(this).text();
+			// $(".content-nav__currently-active").text(currentChoiceText);
 			let heading = this.$contentHeadings.filter((index, element) => {
 				return `#${element.getAttribute('id')}` === event.target.getAttribute('href')
 			});
@@ -65,11 +65,23 @@ class ContentNav {
 				heading.removeClass(Modifiers.HIGHLIGHT);
 				heading.removeAttr(Modifiers.ARIA_CURRENT);
 			}, 1500);
+
+			if (this.smallScreenDetected()) {
+				$(".content-nav").toggle();
+			}
 		});
 
 		$(".content-nav__toggle-button").click(function(){
 			$(".content-nav").toggle();
 		});
+	}
+
+	smallScreenDetected() {
+		var isScreenSmall = true;
+		if ($(window).width() > 768) {
+			isScreenSmall = false;
+		}
+		return isScreenSmall;
 	}
 
 	setCheckpoints() {
@@ -90,7 +102,7 @@ class ContentNav {
 
 	toggleActive() {
 		let i = this.getCheckpoint();
-		let $currentActiveText = $(this.$contentNavItems[i]).text();
+		// let $currentActiveText = $(this.$contentNavItems[i]).text();
 
 		if (isNaN(i)) {
 			return;
@@ -101,7 +113,7 @@ class ContentNav {
 
 		$(this.$contentNavItems[i]).addClass(Modifiers.ACTIVE);
 		$(this.$contentNavItems[i]).attr(Modifiers.ARIA_CURRENT, true);
-		$(".content-nav__currently-active").text($currentActiveText);
+		// $(".content-nav__currently-active").text($currentActiveText);
 	}
 }
 

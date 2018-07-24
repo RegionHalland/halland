@@ -48,12 +48,18 @@
 		padding-left: 2ex;
 	}
 
+	.content-nav__page-name {
+		font-size: 80%;
+		float: left;
+	}
+
 	.content-nav__toggle-container {
 		float: right;
 		padding-right: 1em;
 		padding-bottom: 1em;
 		font-weight: bold;
 		font-size: 150%;
+		height: 1ex;
 	}
 
 	.content-nav-container {
@@ -65,12 +71,9 @@
 		box-shadow: 2px 5px 5px grey;
 	}
 
-	.content-nav__page-name {
-		font-size: 80%;
-	}
-
 	.content-nav__currently-active {
 		font-weight: bold;
+		clear: both;
 	}
 
 	.content-nav__item {
@@ -95,5 +98,9 @@
 
 	.content-nav h4 {
 		display: none;
+	}
+
+	:target {
+		padding-top: 25px;
 	}
 }
