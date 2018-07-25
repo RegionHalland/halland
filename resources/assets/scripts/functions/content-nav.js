@@ -44,11 +44,17 @@ class ContentNav {
 	bind() {
 		$(document).scroll(() => {
 			this.toggleActive()
+			if (window.pageYOffset == 0 && this.smallScreenDetected() === true) {
+				$(".content-nav").hide();
+			}
 		})
 
 		$(window).resize(debounce(() => {
 			this.setCheckpoints()
 			this.toggleActive()
+			if (this.smallScreenDetected() === false) {
+				$(".content-nav").show();
+			}
 		}, 100))
 
 		$(Selectors.CONTENT_NAV_LINK).on('click', event => {
