@@ -3,7 +3,7 @@
 	<div class="site-nav__top">
 		<div class="site-nav__container">
 			<a href="{{ esc_url( home_url( '/' ) ) }}" class="site-nav__logo" aria-label="Till startsidan">
-				<img src="@asset('images/navigation_logo.svg')" alt="">
+				<img src="@asset('images/logo_standard_no_tagline.svg')" alt="">
 			</a>
 			@if(isset($site_description))
 			<span class="site-nav__description">{{ $site_description }}</span>
@@ -21,7 +21,7 @@
 				@foreach($nav_site as $topLevelPage)
 				<li class="site-nav__item">
 					<a href="#" onclick="return false" class="site-nav__link {{ $topLevelPage->active ? 'active' : '' }}">{{ $topLevelPage->post_title }}</a>
-				
+
 					@if(isset($topLevelPage->children))
 					<nav class="dropdown">
 						<div class="site-nav__container">
