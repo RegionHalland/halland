@@ -4,7 +4,7 @@
 	<div class="py4 px3">
 		<div class="container mx-auto">
 			<div class="clearfix mxn3">
-				@if (is_active_sidebar('sidebar-left'))		
+				@if (is_active_sidebar('sidebar-left'))
 					<div class="col col-12 md-col-3 px3">
 						@include('partials.sidebar-left')
 					</div>
@@ -12,7 +12,7 @@
 
 				<main class="col col-12 md-col-9 px3" id="content-nav-container">
 					<h1>{{ the_title() }}</h1>
-					@include('partials.content-utility-bar')
+					{{-- @include('partials.content-utility-bar') --}}
 					@include('partials.content-page')
 				</main>
 
