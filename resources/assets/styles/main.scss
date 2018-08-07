@@ -1,6 +1,6 @@
 /**
  *  The following imports are manually copied from the component library.
- *  It's probably a good idea to only add things that do not compile, like variables and mixins.
+ *  Do not add styles or imports that compile to actual CSS.
  *. https://github.com/RegionHalland/styleguide/
  *
 **/
@@ -35,3 +35,18 @@
 	0% { background: $blue; }
 	100% { background: none; }
 }
+
+.cookie-notice__container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	@media screen and (min-width: $breakpoint-sm) {
+		flex-wrap: nowrap;
+	}
+}
+
+.cookie-notice__btn-container {
+	flex: 1 0 auto;
+}
+
