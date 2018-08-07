@@ -24,7 +24,7 @@
 			<main>
 				<div class="col col-12 px3 flex justify-between items-baseline">
 					<h2 class="flex-auto p0 m0" id="{{ $id }}">Nyheter</h2>
-					<a class="mr1 flex-auto right-align" href="{{ get_bloginfo_rss() }}" >
+					<a class="mr1 flex-auto right-align" href="{{ bloginfo('rss_url') }}" >
 						<svg class="icon-badge icon-badge--md mr1">
 							<use xlink:href="#rss"/>
 						</svg>Prenumerera på RSS
