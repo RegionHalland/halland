@@ -2,8 +2,12 @@
 
 Halland is a Wordpress theme built by Region Halland, based on [Sage](https://github.com/roots/sage) by Roots. It's a good idea to check out their documentation to get a better understanding of theme and/or if some.
 
-<details><summary>Click to expand the theme structure</summary>
+<details><summary>
+View theme structure
+</summary>
 <p>
+
+
 ```shell
 themes/halland/           # → Root
 ├── app/                  # → Theme PHP
