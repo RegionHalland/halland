@@ -1,1 +1,0 @@
-<h1>Custom Rss Template</h1>
