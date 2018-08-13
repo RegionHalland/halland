@@ -1,6 +1,6 @@
 # Halland 🍲
 
-Halland is a Wordpress theme built by Region Halland, based on [Sage](https://github.com/roots/sage) by Roots. It's a good idea to check out their documentation to get a better understanding of theme and/or if some.
+Halland is a Wordpress theme built by Region Halland, based on [Sage](https://github.com/roots/sage).
 
 <details><summary>
 View theme structure
@@ -54,10 +54,7 @@ themes/halland/           # → Root
 
 ## Getting started
 
-Clone this repository into the themes directory of [your Wordpress installation](https://github.com/RegionHalland/wordpress-boilerplate) and install dependencies:
-
-1. Clone Halland into your themes directory and install dependencies:
-
+1. Clone Halland into the themes directory of [your Wordpress installation](https://github.com/RegionHalland/wordpress-boilerplate) and install dependencies:
 ```sh
 $ cd <your site>/web/app/themes/
 $ git clone https://github.com/RegionHalland/halland.git
@@ -66,32 +63,32 @@ $ composer install && yarn
 ```
 
 2. Update `resources/assets/config.json` settings:
-
 - `devUrl` should reflect your local development hostname, for example `http://site.test`
 - `publicPath` should reflect your WordPress directory structure (`/web/app/themes/halland` or `/wp-content/themes/halland` for non-[Bedrock](https://roots.io/bedrock/) installs)
 
 3. Build commands
-
 * `yarn start` — Compile assets when file changes are made, start Browsersync session
 * `yarn build` — Compile and optimize the files in your assets directory
 * `yarn build:production` — Compile assets for production
 
 ## Styleguide
 
-Halland uses CSS-classes and components from our [styleguide](https://github.com/regionhalland/styleguide) by looking for the environment variable `COMPONENT_LIBRARY_URI`. If the variable can't be found, Halland uses the styleguide published on [Github Pages](https://regionhalland.github.io/styleguide).
+Almost all of the CSS on the front-end is defined in our [styleguide](https://github.com/regionhalland/styleguide). Halland uses it by looking for the environment variable `COMPONENT_LIBRARY_URI`. If the variable can't be found, Halland defaults to the styleguide published on [Github Pages](https://regionhalland.github.io/styleguide).
 
-If you get a CORS related error, allow requests by adding the following headers to your *local* version of the styleguide: 
+If you want to work with CSS, set up up a local version of the styleguide by [following the instructions in it's repo](https://github.com/regionhalland/styleguide) and make your changes there.
 
-1. SSH into your [Homestead](https://laravel.com/docs/5.6/homestead) server and edit the styleguides nginx config:
+### CORS
 
+Allow requests to your local version of the styleguide by adding the following headers to it's nginx config: 
+
+1. SSH into your Homestead server and edit the styleguides nginx config:
 ```sh
 $ cd ~/Homestead
 $ homestead ssh
 $ sudo nano /etc/nginx/sites-enabled/styleguide.test
 ```
 
-2. Place the headers in the server block of the nginx config, ie `/etc/nginx/sites-enabled/styleguide.test`:
-
+2. Place the headers in the server block of the nginx config:
 ```nginx
 # Allow CORS
 add_header 'Access-Control-Allow-Origin' '*' always;
@@ -107,7 +104,7 @@ $ sudo service nginx reload
 
 ## ACF Fields
 
-Halland uses [Advanced Custom Fields](https://www.advancedcustomfields.com/) to create custom fields and [ACF Export Manager](https://github.com/helsingborg-stad/acf-export-manager/) to save the field definitions as PHP-files, so that we can keep them under version control.
+Halland uses [Advanced Custom Fields](https://www.advancedcustomfields.com/) to create custom fields and [ACF Export Manager](https://github.com/helsingborg-stad/acf-export-manager/) to save the field definitions as `.php` and `.json` files, so that we can keep them under version control.
 
 ### Importing
 
@@ -142,6 +139,6 @@ $acfExportManager->autoExport(array(
 4. Edit your field group. When you **Save / Publish**, the changes will automatically be exported to code. Commit your changes! 🤓 
 
 
-## Halland as a parent theme
+## Child themes
 
-WIP
+TBD
