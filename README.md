@@ -1,6 +1,44 @@
 # Halland 🍲
 
-Halland is a Wordpress theme based on [Sage](https://github.com/roots/sage). Halland is the starting point of websites built by Region Halland.
+Halland is a Wordpress theme built by Region Halland, based on [Sage](https://github.com/roots/sage) by Roots. It's a good idea to check out their documentation to get a better understanding of theme and/or if some.
+
+<details><summary>Click to expand the theme structure</summary>
+<p>
+```shell
+themes/halland/           # → Root
+├── app/                  # → Theme PHP
+│   ├── Acf/              # → ACF Fields
+│   ├── controllers/      # → Controller files
+│   ├── Theme/            # → Enqueue files, register sidebars
+│   ├── Traits/           # → Traits used in the theme
+│   ├── admin.php         # → Theme customizer setup
+│   ├── filters.php       # → Theme filters
+│   ├── helpers.php       # → Helper functions
+│   └── setup.php         # → Theme setup
+├── composer.json         # → Autoloading for `app/` files
+├── composer.lock         # → Composer lock file (never edit)
+├── dist/                 # → Built theme assets (never edit)
+├── node_modules/         # → Node.js packages (never edit)
+├── package.json          # → Node.js dependencies and scripts
+├── resources/            # → Theme assets and templates
+│   ├── assets/           # → Front-end assets
+│   │   ├── config.json   # → Settings for compiled assets
+│   │   ├── build/        # → Webpack and ESLint config
+│   │   ├── fonts/        # → Theme fonts
+│   │   ├── images/       # → Theme images
+│   │   ├── scripts/      # → Theme JS
+│   │   └── styles/       # → Theme stylesheets
+│   ├── functions.php     # → Composer autoloader, theme includes
+│   ├── index.php         # → Never manually edit
+│   ├── screenshot.png    # → Theme screenshot for WP admin
+│   ├── style.css         # → Theme meta information
+│   └── views/            # → Theme templates
+│       ├── layouts/      # → Base templates
+│       └── partials/     # → Partial templates
+└── vendor/               # → Composer packages (never edit)
+```
+<p>
+</details>
 
 ## Requirements
 
@@ -36,7 +74,7 @@ $ composer install && yarn
 
 ## Styleguide
 
-Halland uses classes and component from our [styleguide](https://github.com/regionhalland/styleguide) by looking for the environment variable `COMPONENT_LIBRARY_URI`. If the variable can't be found, Halland uses the styleguide published on [Github Pages](https://regionhalland.github.io/styleguide).
+Halland uses CSS-classes and components from our [styleguide](https://github.com/regionhalland/styleguide) by looking for the environment variable `COMPONENT_LIBRARY_URI`. If the variable can't be found, Halland uses the styleguide published on [Github Pages](https://regionhalland.github.io/styleguide).
 
 If you get a CORS related error, allow requests by adding the following headers to your *local* version of the styleguide: 
 
@@ -65,54 +103,41 @@ $ sudo service nginx reload
 
 ## ACF Fields
 
-Halland uses [Advanced Custom Fields](https://www.advancedcustomfields.com/) to create custom fields.
+Halland uses [Advanced Custom Fields](https://www.advancedcustomfields.com/) to create custom fields and [ACF Export Manager](https://github.com/helsingborg-stad/acf-export-manager/) to save the field definitions as PHP-files, so that we can keep them under version control.
 
-The field definitions can be imported manually from the Wordpress admin interface, but in [Vårdgivarwebben](https://github.com/regionhalland/vardgivare.regionhalland.se) we import them automatically using [ACF Export Manager](https://github.com/helsingborg-stad/acf-export-manager/).
+### Importing
 
-### Register new fields
+The field definitions are imported automatically with [ACF Export Manager](https://github.com/helsingborg-stad/acf-export-manager/). The export manager will automatically import all field groups defined in [`/halland/Acf/Import.php`](https://github.com/RegionHalland/halland/blob/master/app/Acf/Import.php#L17).
 
-1. Start by 
+To be imported, they must first be exported by following the instructions below. ⤵️
 
+### Exporting
+
+1. Create your field group in the Wordpress admin panel like you normally would under **Fields → Add new**.
+
+2. Over the **Save / Publish** button to the right, you will find your field groups unique ID. It looks something like `group_5b716c7b279da`. Copy the field groups ID and add it to the array defined in [`/halland/Acf/Import.php`](https://github.com/RegionHalland/halland/blob/master/app/Acf/Import.php#L17):
+```php
+$acfExportManager->autoExport(array(
+	...
+	...
+	'my-new-fieldgroup' => 'group_5b716c7b279da'
+));
+```
+
+3. **Save / Publish** your field group and ACF Export Manager will create a `.php` and a `.json` file for your new field group in each respective folder. Make sure to commit these files.
+
+
+### Editing existing field groups
+
+1. First of you need to identify the filename of the field group you want to edit. The easiest way to do this is probably to look at the key-value pairs found in the import array in [`/halland/Acf/Import.php`](https://github.com/RegionHalland/halland/blob/master/app/Acf/Import.php#L17).
+
+2. For minor changes you can edit the field groups directly in code. Remember to edit **both** the `.json` and the `.php` files found in `/halland/Acf/<json or php>/my-new-field-group.<json or php>`.
+
+3. For bigger changes you might want to use the admin panels interface. Go to **Fields → Tools** and import your field groups `.json` file (found in `/halland/Acf/json/my-new-field-group.json`).
+
+4. Edit your field group. When you **Save / Publish**, the changes will automatically be exported to code. Commit your changes! 🤓 
 
 
 ## Halland as a parent theme
 
 WIP
-
-## Theme structure
-
-The theme mostly follow the [Sage](https://roots.io/sage/docs/theme-installation/) structure, check out their docs to get a better understanding of how things are structured.
-
-```shell
-themes/halland/           # → Root
-├── app/                  # → Theme PHP
-│   ├── Acf/              # → ACF Fields
-│   ├── controllers/      # → Controller files
-│   ├── Theme/            # → Enqueue files, register sidebars
-│   ├── Traits/           # → Traits used in the theme
-│   ├── admin.php         # → Theme customizer setup
-│   ├── filters.php       # → Theme filters
-│   ├── helpers.php       # → Helper functions
-│   └── setup.php         # → Theme setup
-├── composer.json         # → Autoloading for `app/` files
-├── composer.lock         # → Composer lock file (never edit)
-├── dist/                 # → Built theme assets (never edit)
-├── node_modules/         # → Node.js packages (never edit)
-├── package.json          # → Node.js dependencies and scripts
-├── resources/            # → Theme assets and templates
-│   ├── assets/           # → Front-end assets
-│   │   ├── config.json   # → Settings for compiled assets
-│   │   ├── build/        # → Webpack and ESLint config
-│   │   ├── fonts/        # → Theme fonts
-│   │   ├── images/       # → Theme images
-│   │   ├── scripts/      # → Theme JS
-│   │   └── styles/       # → Theme stylesheets
-│   ├── functions.php     # → Composer autoloader, theme includes
-│   ├── index.php         # → Never manually edit
-│   ├── screenshot.png    # → Theme screenshot for WP admin
-│   ├── style.css         # → Theme meta information
-│   └── views/            # → Theme templates
-│       ├── layouts/      # → Base templates
-│       └── partials/     # → Partial templates
-└── vendor/               # → Composer packages (never edit)
-```
