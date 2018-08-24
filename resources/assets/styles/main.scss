@@ -50,3 +50,70 @@
 	flex: 1 0 auto;
 }
 
+/* Tabeller m "sticky column"-beteende */
+
+.table__sticky-column {
+	left: 0;
+	position: absolute;
+	width: 8em;
+	border-right: 10px solid grey;
+	border-image: linear-gradient(to right, rgba(80, 80, 80, 0.2), rgba(220, 220, 220, 0.2)) 1 100%;
+	font-weight: bold;
+}
+
+thead .table__sticky-column {
+	background: $dark-blue !important;
+	color: $white;
+	text-align: center;
+	vertical-align: middle;
+	height: 3em;
+}
+
+.sticky-column__vertical-center {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+}
+
+th {
+	text-transform: none;
+	height: 3em;
+	vertical-align: middle;
+	text-align: center;
+	white-space: nowrap;
+}
+
+th .sticky-column__vertical-center {
+	left: 0;
+}
+
+.sticky-column__vertical-center {
+	left: 0;
+}
+
+td,
+th .table__sticky-column {
+	padding: $space-1 $space-2;
+	white-space: nowrap;
+	height: 3em;
+	vertical-align: middle;
+	text-align: center;
+}
+
+tbody tr:nth-child(even) .table__sticky-column {
+	background: palette(grey, light);
+}
+
+.article tbody tr:nth-child(even) {
+	background: palette(grey, light);
+}
+
+.table__sticky-column-container {
+	margin-left: 7.5em;
+}
+
+.table,
+article .table {
+	border: 0;
+}
