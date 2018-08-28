@@ -20,5 +20,6 @@
 		@yield('content')
 
 		@include('partials.footer')
+		<div style="padding-bottom: 1500px;"></div>
 	</body>
 </html>
