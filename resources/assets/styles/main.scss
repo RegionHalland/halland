@@ -52,13 +52,25 @@
 
 /* Tabeller m "sticky column"-beteende */
 
+.article table,
+table {
+	border: none;
+}
+
 .table__sticky-column {
 	left: 0;
 	position: absolute;
 	width: 8em;
+	font-weight: bold;
+}
+
+.table__sticky-column-shadow {
 	border-right: 10px solid grey;
 	border-image: linear-gradient(to right, rgba(80, 80, 80, 0.2), rgba(220, 220, 220, 0.2)) 1 100%;
-	font-weight: bold;
+}
+
+.table__sticky-column-container {
+	overflow-x: auto;
 }
 
 thead .table__sticky-column {
@@ -110,7 +122,7 @@ tbody tr:nth-child(even) .table__sticky-column {
 }
 
 .table__sticky-column-container {
-	margin-left: 7.5em;
+	margin-left: 8em;
 }
 
 .table,
