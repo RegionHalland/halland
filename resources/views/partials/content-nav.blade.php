@@ -1,13 +1,12 @@
 @if(isset($content_nav) && count($content_nav) > 0)
 @php($id = uniqid())
 <nav class="content-nav-container">
-	<div class="content-nav__head">
-		<div class="content-nav__page-name">Hitta på sidan</div>
-		<div class="content-nav__toggle-container"><a class="content-nav__toggle-button">&#65088;</a></div>
-		<div class="content-nav__currently-active"></div>
-	</div>
 	<div class="content-nav">
-		<h4 id="{{ $id }}">Hitta på sidan</h4>
+		<div class="content-nav__header">
+			<h4 class="content-nav__title">Hitta på sidan</h4>
+			<a class="content-nav__toggle-button">
+			</a>
+		</div>
 		<ul class="content-nav__list" itemscope itemtype="http://schema.org/ItemList" aria-labelledby="{{ $id }}">
 			@foreach ($content_nav as $item)
 			<li class="content-nav__item" itemprop="itemListElement">

@@ -4,6 +4,8 @@ import debounce from 'debounce';
 const Selectors = {
 	CONTENT: '#main',
 	CONTENT_NAV: '.content-nav',
+	CONTENT_NAV_HEADER: '.content-nav__header',
+	CONTENT_NAV_TITLE: '.content-nav__title',
 	CONTENT_NAV_LIST: '.content-nav__list',
 	CONTENT_NAV_ITEM: '.content-nav__item',
 	CONTENT_NAV_LINK: '.content-nav__link',
@@ -30,6 +32,7 @@ class ContentNav {
 
 	cache() {
 		this.$content = $(Selectors.CONTENT);
+		this.$contentNavTitle = $(Selectors.CONTENT_NAV_TITLE);
 		this.$contentHeadings = $(Selectors.CONTENT).find('h2, h3, h4');
 		this.$contentNav = $(Selectors.CONTENT_NAV);
 		this.$contentNavList = $(Selectors.CONTENT_NAV_LIST);
@@ -43,51 +46,25 @@ class ContentNav {
 
 	bind() {
 		$(document).scroll(() => {
-			this.toggleActive()
-			if (window.pageYOffset == 0 && this.smallScreenDetected() === true) {
-				$(".content-nav").hide();
-			}
+			this.toggleActiveContentNavHeading()
 		})
 
 		$(window).resize(debounce(() => {
 			this.setCheckpoints()
-			this.toggleActive()
-			if (this.smallScreenDetected() === false) {
-				$(".content-nav").show();
-			}
+			this.toggleActiveContentNavHeading()
 		}, 100))
 
 		$(Selectors.CONTENT_NAV_LINK).on('click', event => {
-			// let currentChoiceText = $(this).text();
-			// $(".content-nav__currently-active").text(currentChoiceText);
 			let heading = this.$contentHeadings.filter((index, element) => {
 				return `#${element.getAttribute('id')}` === event.target.getAttribute('href')
-			});
+			})
 
-			heading.addClass(Modifiers.HIGHLIGHT);
-			heading.attr(Modifiers.ARIA_CURRENT, true);
-
+			heading.addClass(Modifiers.HIGHLIGHT)
+			
 			setTimeout(() => {
-				heading.removeClass(Modifiers.HIGHLIGHT);
-				heading.removeAttr(Modifiers.ARIA_CURRENT);
+				heading.removeClass(Modifiers.HIGHLIGHT)
 			}, 1500);
-
-			if (this.smallScreenDetected()) {
-				$(".content-nav").toggle();
-			}
-		});
-
-		$(".content-nav__toggle-button").click(function(){
-			$(".content-nav").toggle();
-		});
-	}
-
-	smallScreenDetected() {
-		var isScreenSmall = true;
-		if ($(window).width() > 768) {
-			isScreenSmall = false;
-		}
-		return isScreenSmall;
+		})
 	}
 
 	setCheckpoints() {
@@ -106,9 +83,8 @@ class ContentNav {
 		return false;
 	}
 
-	toggleActive() {
+	toggleActiveContentNavHeading() {
 		let i = this.getCheckpoint();
-		// let $currentActiveText = $(this.$contentNavItems[i]).text();
 
 		if (isNaN(i)) {
 			return;
@@ -118,8 +94,10 @@ class ContentNav {
 		this.$contentNavItems.removeAttr('aria-current');
 
 		$(this.$contentNavItems[i]).addClass(Modifiers.ACTIVE);
-		$(this.$contentNavItems[i]).attr(Modifiers.ARIA_CURRENT, true);
-		// $(".content-nav__currently-active").text($currentActiveText);
+		$(this.$contentNavItems[i]).attr('aria-current', true);
+
+		//this.$contentNavTitle[0].innerHTML = this.$contentHeadings[i].innerHTML ?
+		//	this.$contentHeadings[i].innerHTML : 'Hitta på sidan'
 	}
 }
 

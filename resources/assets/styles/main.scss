@@ -24,87 +24,163 @@
 	height: auto;
 }
 
-.content-highlight {
-	animation-name: content-hightlight-animation;
-	animation-duration: 1.5s;
-	animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-	animation-iteration-count: 1;
+// From styleguide
+
+.content-nav-container {
+	width: 100%;
 }
 
-@keyframes content-hightlight-animation {
-	0% { background: $blue; }
-	100% { background: none; }
-}
+.content-nav {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: $light-yellow;
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.03);
 
-@media screen and (min-width: 769px) {
-	.content-nav__head {
-		display: none;
+	@media screen and (min-width: $breakpoint-md) {
+		position: sticky;
+		background-color: transparent;
+		box-shadow: none;
 	}
 }
 
-@media screen and (max-width: 1169px) {
-	.content-nav__head {
+.content-nav__header {
+	@media screen and (max-width: $breakpoint-md) {
 		display: block;
-		padding-left: 2ex;
-	}
-
-	.content-nav__page-name {
-		font-size: 80%;
-		float: left;
-	}
-
-	.content-nav__toggle-container {
-		float: right;
-		padding-right: 1em;
-		padding-bottom: 1em;
-		font-weight: bold;
-		font-size: 150%;
-		height: 1ex;
-	}
-
-	.content-nav {
-		display: none;
-	}
-
-	.content-nav-container {
-		width: 100%;
-		background-color: $light-yellow;
-		position: fixed;
-		top: 0;
-		left: 0;
-		box-shadow: 2px 5px 5px grey;
-	}
-
-	.content-nav__currently-active {
-		font-weight: bold;
-		clear: both;
-	}
-
-	.content-nav__item {
-		padding-top: 1ex;
-		padding-bottom: 1ex;
-		padding-left: 2ex;
-		border-bottom: 1px solid $grey;
-		border-left: 0;
-	}
-
-	.content-nav__item.active {
-		background-color: whitesmoke;
-	}
-
-	.content-nav__level_h3 {
-		padding-left: 4ex;
-	}
-
-	.content-nav__level_h4 {
-		padding-left: 6ex;
-	}
-
-	.content-nav h4 {
-		display: none;
-	}
-
-	:target {
-		padding-top: 25px;
+		padding: $space-2 $space-3;
 	}
 }
+
+.content-nav__list {
+	//display: none;
+
+	@media screen and (min-width: $breakpoint-md) {
+		display: block;
+	}
+}
+
+.content-nav__item {
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding-left: $space-2;
+	border-left: 4px solid $grey;
+
+	&.active {
+		border-left: 4px solid $dark-blue;
+		font-weight: bold;
+	}
+}
+
+.content-nav__level_h3 {
+	padding-left: $space-3;
+}
+
+.content-nav__level_h4 {
+	padding-left: $space-4;
+}
+
+.content-nav__link {
+	display: inline;
+	font-size: 0.875rem;
+	border-radius: $border-radius;
+	color: palette(dark-blue, dark);
+
+	&:hover {
+		color: palette(black, base);
+	}
+}
+
+// Classes for Stickybit, position sticky polyfill
+// https://github.com/dollarshaveclub/stickybits
+.js--content-nav-is-stuck {
+	position: fixed;
+	max-width: 218px;
+}
+
+// .content-highlight {
+// 	animation-name: content-hightlight-animation;
+// 	animation-duration: 1.5s;
+// 	animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+// 	animation-iteration-count: 1;
+// }
+
+// @keyframes content-hightlight-animation {
+// 	0% { background: $blue; }
+// 	100% { background: none; }
+// }
+
+// @media screen and (min-width: 769px) {
+// 	.content-nav__head {
+// 		display: none;
+// 	}
+// }
+
+// @media screen and (max-width: 1169px) {
+// 	.content-nav__header {
+// 		display: block;
+// 		padding-left: $space-2;
+// 	}
+// }
+// 	.content-nav__page-name {
+// 		font-size: 80%;
+// 		float: left;
+// 	}
+
+// 	.content-nav__toggle-container {
+// 		float: right;
+// 		padding-right: 1em;
+// 		padding-bottom: 1em;
+// 		font-weight: bold;
+// 		font-size: 150%;
+// 		height: 1ex;
+// 	}
+
+// 	.content-nav {
+// 		display: none;
+// 	}
+
+// 	.content-nav-container {
+// 		width: 100%;
+// 		background-color: $light-yellow;
+// 		position: fixed;
+// 		top: 0;
+// 		left: 0;
+// 		box-shadow: 2px 5px 5px grey;
+// 	}
+
+// 	.content-nav__currently-active {
+// 		font-weight: bold;
+// 		clear: both;
+// 	}
+
+// 	.content-nav__item {
+// 		padding-top: 1ex;
+// 		padding-bottom: 1ex;
+// 		padding-left: 2ex;
+// 		border-bottom: 1px solid $grey;
+// 		border-left: 0;
+// 	}
+
+// 	.content-nav__item.active {
+// 		background-color: whitesmoke;
+// 	}
+
+// 	.content-nav__level_h3 {
+// 		padding-left: 4ex;
+// 	}
+
+// 	.content-nav__level_h4 {
+// 		padding-left: 6ex;
+// 	}
+
+// 	.content-nav h4 {
+// 		display: none;
+// 	}
+
+// 	:target {
+// 		padding-top: 25px;
+// 	}
+// }
