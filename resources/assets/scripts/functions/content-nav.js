@@ -13,6 +13,7 @@ const Selectors = {
 
 const Modifiers = {
 	ACTIVE: 'active',
+	OPEN: 'open',
 	JS_PARENT: 'js--content-nav-parent',
 	JS_IS_STUCK: 'js--content-nav-is-stuck',
 	HIGHLIGHT: 'content-highlight',
@@ -98,6 +99,14 @@ class ContentNav {
 
 		//this.$contentNavTitle[0].innerHTML = this.$contentHeadings[i].innerHTML ?
 		//	this.$contentHeadings[i].innerHTML : 'Hitta på sidan'
+	}
+
+	openContentNav() {
+		this.$contentNavList.addClass(Modifiers.OPEN)
+	}
+
+	closeContentNav() {
+		this.$contentNavList.removeClass(Modifiers.OPEN)
 	}
 }
 

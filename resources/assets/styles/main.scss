@@ -53,7 +53,11 @@
 }
 
 .content-nav__list {
-	//display: none;
+	display: none;
+
+	&.open {
+		display: block;
+	}
 
 	@media screen and (min-width: $breakpoint-md) {
 		display: block;
