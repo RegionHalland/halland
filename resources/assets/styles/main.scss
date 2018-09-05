@@ -46,9 +46,21 @@
 }
 
 .content-nav__header {
-	@media screen and (max-width: $breakpoint-md) {
+	display: flex;
+	justify-content: space-between;
+	padding: $space-2 $space-3;
+	align-items: center;
+
+	@media screen and (min-width: $breakpoint-md) {
 		display: block;
-		padding: $space-2 $space-3;
+		padding: 0;
+		margin-bottom: $space-2;
+	}
+}
+
+.content-nav__toggle-button {
+	@media screen and (min-width: $breakpoint-md) {
+		display: none;
 	}
 }
 

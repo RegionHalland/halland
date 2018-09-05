@@ -9,6 +9,7 @@ const Selectors = {
 	CONTENT_NAV_LIST: '.content-nav__list',
 	CONTENT_NAV_ITEM: '.content-nav__item',
 	CONTENT_NAV_LINK: '.content-nav__link',
+	CONTENT_NAV_TOGGLE_BUTTON: '.content-nav__toggle-button',
 }
 
 const Modifiers = {
@@ -25,29 +26,31 @@ class ContentNav {
 			return;
 		}
 
-		this.cache();
-		this.polyfillSticky();
-		this.setCheckpoints();
-		this.bind();
+		this.cache()
+		this.polyfillSticky()
+		this.setCheckpoints()
+		this.bind()
 	}
 
 	cache() {
-		this.$content = $(Selectors.CONTENT);
-		this.$contentNavTitle = $(Selectors.CONTENT_NAV_TITLE);
-		this.$contentHeadings = $(Selectors.CONTENT).find('h2, h3, h4');
-		this.$contentNav = $(Selectors.CONTENT_NAV);
-		this.$contentNavList = $(Selectors.CONTENT_NAV_LIST);
-		this.$contentNavItems = $(Selectors.CONTENT_NAV_ITEM);
-		this.$contentNavLinks = $(Selectors.CONTENT_NAV_LINK);
+		this.$content = $(Selectors.CONTENT)
+		this.$contentNavTitle = $(Selectors.CONTENT_NAV_TITLE)
+		this.$contentHeadings = $(Selectors.CONTENT).find('h2, h3, h4')
+		this.$contentNav = $(Selectors.CONTENT_NAV)
+		this.$contentNavList = $(Selectors.CONTENT_NAV_LIST)
+		this.$contentNavItems = $(Selectors.CONTENT_NAV_ITEM)
+		this.$contentNavLinks = $(Selectors.CONTENT_NAV_LINK)
+		this.$contentNavToggleButton = $(Selectors.CONTENT_NAV_TOGGLE_BUTTON)
 	}
 
 	polyfillSticky() {
-		Stickyfill.add(this.$contentNav);
+		Stickyfill.add(this.$contentNav)
 	}
 
 	bind() {
 		$(document).scroll(() => {
 			this.toggleActiveContentNavHeading()
+			this.autoCloseContentNav()
 		})
 
 		$(window).resize(debounce(() => {
@@ -55,16 +58,23 @@ class ContentNav {
 			this.toggleActiveContentNavHeading()
 		}, 100))
 
+		this.$contentNavToggleButton.on('click', () => {
+			console.log
+			this.toggleContentNav()
+		})
+
 		$(Selectors.CONTENT_NAV_LINK).on('click', event => {
 			let heading = this.$contentHeadings.filter((index, element) => {
 				return `#${element.getAttribute('id')}` === event.target.getAttribute('href')
 			})
 
 			heading.addClass(Modifiers.HIGHLIGHT)
-			
+
 			setTimeout(() => {
 				heading.removeClass(Modifiers.HIGHLIGHT)
 			}, 1500);
+
+			this.closeContentNav();
 		})
 	}
 
@@ -99,6 +109,17 @@ class ContentNav {
 
 		//this.$contentNavTitle[0].innerHTML = this.$contentHeadings[i].innerHTML ?
 		//	this.$contentHeadings[i].innerHTML : 'Hitta på sidan'
+	}
+
+	autoCloseContentNav() {
+		if (window.scrollY <= 80) {
+			this.closeContentNav()
+		}
+	}
+
+	toggleContentNav() {
+		this.$contentNavList.hasClass(Modifiers.OPEN) ?
+			this.$contentNavList.removeClass(Modifiers.OPEN) : this.$contentNavList.addClass(Modifiers.OPEN)
 	}
 
 	openContentNav() {
