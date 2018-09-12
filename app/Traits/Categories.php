@@ -19,6 +19,11 @@ trait Categories
 		$terms = get_the_terms($post->ID, 'category');
 		$arr = array();
 
+		// Return if there are no terms
+		if (empty($terms)) {
+			return false;
+		}
+
 		foreach ($terms as $term) {
 			// Don't return uncategorized
 			if ($term->term_id === 1) {
