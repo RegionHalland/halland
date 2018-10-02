@@ -6,18 +6,39 @@
 
 @section('content')
 
-<div class="container mx-auto mt4 mb4">
-	<div class="clearfix mxn3 mt4">
-		<div class="col col-12 sm-col-4 md-col-4 mt2 mb2 px3">
-			<h2 class="mb2">{!! get_the_title() !!} - Översikt</h2>
-			@while(have_posts()) @php(the_post())
-				@php(the_content())
-			@endwhile
-		</div>
-		<div class="col col-12 sm-col-8 md-col-8 mt2 mb2 px3">
-			@include('partials.nav-section')
-		</div>
-	</div>
-</div>
+<!-- **************************** -->
+<!-- Content with grey background -->
+<!-- **************************** -->
+<div class="relative">
+	
+	<!-- **************************** -->
+	<!-- Bredacrumbs & new navigation -->
+	<!-- **************************** -->
+	<nav aria-label="Huvudnavigation" class="container background-dark-blue relative mx-auto pl5 pr5 pt4 pb4 z1">
+			@include('partials.new_breadcrumbs')
+			@include('partials.new_nav-section')
+	</nav>
+	
+	<!-- ************ -->
+	<!-- Page content -->
+	<!-- ************ -->
+	<main class="background-white">
+		<div class="container mx-auto p4">
+			<div class="m4">
+				@while(have_posts()) @php(the_post())
+				<div class="pb3">
+					<h2>{!! get_the_title() !!}</h2>
+				</div>
+				<div class="mr6">
+					<article>
+						@php(the_content())
+					</article>
+				</div>
+				@include('partials.new_entry-meta')
+				@endwhile
+			</div>	
+		</div>	
+	</main>
 
+</div>	
 @endsection
