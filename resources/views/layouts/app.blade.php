@@ -27,7 +27,7 @@
 			-->
 			
 			<div class="col-12 flex content-stretch">
-				<div class="container mx-auto">
+				<div class="container col-12 mx-auto">
 					
 					@yield('content')
 

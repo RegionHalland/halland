@@ -23,6 +23,9 @@
 				<div class="m2 flex flex-wrap">
 					<div class="col-12 lg-col-3">
 						<div>
+							@include('partials.new_nav-sidebar')
+						</div>
+						<div class="pt4">
 							@include('partials.new_content-nav')
 						</div>
 					</div>
@@ -32,6 +35,9 @@
 					<!-- ************ -->
 					<div class="col-12 lg-col-9">
 						<div class="ml4">
+							<div>
+								<h1>{{ the_title() }}</h1>
+							</div>
 							<main id="main">
 								@include('partials.new_content-page')
 							</main>

@@ -37,7 +37,9 @@
 										</div>
 										<div class="col-8">
 											<div>
-												<img src="img/HomeLogo.png">
+												<a href="{{ esc_url( home_url( '/' ) ) }}" class="site-nav__logo" aria-label="Till startsidan">
+													<img src="@asset('images/navigation_logo.svg')" alt="">
+												</a>
 											</div>
 										</div>
 									</div>
@@ -47,77 +49,24 @@
 							<div class="site-nav__bottom">
 								<div class="site-nav__container">
 									<ul class="site-nav__list">
-										
-										<!-- Item A -->
+										@foreach($nav_site as $topLevelPage)
 										<li class="site-nav__item">
-											<a href="#" onclick="return false" class="site-nav__link" ">Aaa</a>
+											<a href="#" onclick="return false" class="site-nav__link" ">{{ $topLevelPage->post_title }}</a>
+											@if(isset($topLevelPage->children))
 											<nav class="dropdown">
 												<div class="site-nav__container">
 													<ul class="dropdown__list">
+														@foreach($topLevelPage->children as $childPage)
 														<li class="dropdown__item">
-															<a href="" class="dropdown__link">A 0011111111</a>
-															<span class="dropdown__link-description"></span>
+															<a href="{{ get_page_link($childPage->ID) }}" class="dropdown__link">{{ $childPage->post_title }}</a>
 														</li>
-														<li class="dropdown__item">
-															<a href="" class="dropdown__link">A 0022222222</a>
-															<span class="dropdown__link-description"></span>
-														</li>
-														<li class="dropdown__item">
-															<a href="" class="dropdown__link">A 0033333333333</a>
-															<span class="dropdown__link-description"></span>
-														</li>
+														@endforeach
 													</ul>
 												</div>
 											</nav>
-
+											@endif
 										</li>
-
-										<!-- Item B -->
-										<li class="site-nav__item background-white">
-										<a href="#" onclick="return false" class="site-nav__link ">Bb</a>
-											<nav class="dropdown">
-												<div class="site-nav__container">
-													<ul class="dropdown__list">
-														<li class="dropdown__item">
-															<a href="" class="dropdown__link">B 00111111111111111</a>
-															<span class="dropdown__link-description"></span>
-														</li>
-														<li class="dropdown__item">
-															<a href="" class="dropdown__link">B 0022222222222</a>
-															<span class="dropdown__link-description"></span>
-														</li>
-														<li class="dropdown__item">
-															<a href="" class="dropdown__link">B 003333333333333</a>
-															<span class="dropdown__link-description"></span>
-														</li>
-													</ul>
-												</div>
-											</nav>
-										</li>
-
-										<!-- Item C -->
-										<li class="site-nav__item background-white">
-										<a href="#" onclick="return false" class="site-nav__link ">Cc</a>
-											<nav class="dropdown">
-												<div class="site-nav__container">
-													<ul class="dropdown__list">
-														<li class="dropdown__item">
-															<a href="" class="dropdown__link">C 001111111111</a>
-															<span class="dropdown__link-description"></span>
-														</li>
-														<li class="dropdown__item">
-															<a href="" class="dropdown__link">C 0022222222222</a>
-															<span class="dropdown__link-description"></span>
-														</li>
-														<li class="dropdown__item">
-															<a href="" class="dropdown__link">C 00333333</a>
-															<span class="dropdown__link-description"></span>
-														</li>
-													</ul>
-												</div>
-											</nav>
-										</li>
-
+										@endforeach
 									</ul>
 								</div>
 							</div>
