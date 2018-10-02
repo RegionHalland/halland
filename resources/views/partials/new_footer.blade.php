@@ -10,12 +10,11 @@
 									<strong class="h4" id="111222">Vårdgivare i Halland</strong>
 								</div>
 								<ul class="small" aria-labelledby="111222">
-									<li class="mb1"><a href="">Medicinska områden</a></li>
-									<li class="mb1"><a href="">Behandlingsstöd</a></li>
-									<li class="mb1"><a href="">Patientadministration</a></li>
-									<li class="mb1"><a href="">Utveckling och Forskning</a></li>
-									<li class="mb1"><a href="">Uppdrag och Samverkan</a></li>
-									<li class="mb1"><a href="">Service och IT</a></li>
+									@foreach($nav_site as $topLevelPage)
+									<li class="mb1">
+										<a <a href="{{ get_page_link($topLevelPage->ID) }}">{{ $topLevelPage->post_title }}</a>
+									</li>
+									@endforeach
 								</ul>
 							</div>
 						</div>
