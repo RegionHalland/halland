@@ -16,10 +16,8 @@ class ShowNewsCategory
 			$categories = get_categories();
 			
 			foreach ($categories as $category) {
-				$field['choices'][ $category->term_ID ] = $category->name;
+				$field['choices'][ $category->term_id ] = $category->name;
 			}
-
-			//var_dump($field);
 		
 			return $field;
 		});
