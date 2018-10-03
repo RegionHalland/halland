@@ -36,7 +36,9 @@
 						<h1 id="223344">Nyheter</h1>
 					</div>
 					<span class="mt2 ml4 mr2 mb4">
-						<object aria-hidden="true" tabindex="-1" class="pr2" type="image/svg+xml" data="img/icon-rss.svg" style="vertical-align: middle;"></object>
+						<svg class="icon-badge icon-badge--sm">
+	 						<use xlink:href="#rss"/>
+						</svg>
 						<a href="" style="text-decoration: underline; vertical-align: middle;">Prenumerera på RSS</a>
 					</span>     <!--   Look in current blade file for correct way to fetch link --> 
 										
@@ -77,7 +79,8 @@
 							<li class="col-12 lg-col-6">
 								<div class="mb4 ml3 mr3 pt0" style="border-bottom: 4px solid #004B93; box-shadow: 0px 0px 5px #888888;">
 									<div class="pb3">
-										<img src="img/th.jpg" style="width:100%" alt="" />
+										<!--
+										<img src="img/th.jpg" style="width:100%" alt="" />-->
 									</div>
 									<div class="center pb2">
 										<h2 class="h4"><a href="" style="color: #004B93">Lediga jobb</a></h2>
@@ -90,7 +93,7 @@
 							<li class="col-12 lg-col-6">
 								<div class="mb4 ml3 mr3 pt0" style="border-bottom: 4px solid #004B93; box-shadow: 0px 0px 5px #888888;">
 									<div class="pb3">
-										<img src="img/th.jpg" style="width:100%" alt="" />
+										<!--<img src="img/th.jpg" style="width:100%" alt="" />-->
 									</div>
 									<div class="center pb2">
 										<h2 class="h4"><a href="" style="color: #004B93">Flytta hit</a></h2>
@@ -103,7 +106,7 @@
 							<li class="col-12 lg-col-6">
 								<div class="mb4 ml3 mr3 pt0" style="border-bottom: 4px solid #004B93; box-shadow: 0px 0px 5px #888888;">
 									<div class="pb3">
-										<img src="img/th.jpg" style="width:100%" alt="" />
+										<!--<img src="img/th.jpg" style="width:100%" alt="" />-->
 									</div>
 									<div class="center pb2">
 										<h2 class="h4"><a href="" style="color: #004B93">Ansökan och antagning</a></h2>
@@ -116,7 +119,7 @@
 							<li class="col-12 lg-col-6">
 								<div class="mb4 ml3 mr3 pt0" style="border-bottom: 4px solid #004B93; box-shadow: 0px 0px 5px #888888;">
 									<div class="pb3">
-										<img src="img/th.jpg" style="width:100%" alt="" />
+										<!--<img src="img/th.jpg" style="width:100%" alt="" />-->
 									</div>
 									<div class="center pb2">
 										<h2 class="h4"><a href="" style="color: #004B93">Nu gör vi det enklare för dig</a></h2>

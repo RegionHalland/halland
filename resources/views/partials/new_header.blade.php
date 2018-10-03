@@ -6,7 +6,7 @@
 		<nav aria-label="toppmeny" class="container mx-auto pb1 pt0 pr5 small bredcrumbs" style="text-align: right; background-color: #F3F3F3; border-bottom: 1px solid lightgrey;">
 			<ul aria-label="Toppmenylänkar">
 				<li class="pl4" style="display:inline">
-					<object aria-hidden="true" tabindex="-1" class="pr1" type="image/svg+xml" data="img/icon-etjanst.svg" style="vertical-align: middle;"></object>
+					<!-- SVG here when icon is in styleguide -->
 					<a href="" style="vertical-align: middle; color: black;">E-tjänster</a>
 				</li>
 			</ul>
