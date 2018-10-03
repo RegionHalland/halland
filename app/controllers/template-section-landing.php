@@ -7,6 +7,7 @@ use Sober\Controller\Controller;
 class TemplateSectionLanding extends Controller
 {
 	use Traits\PageChildren;
+	use Traits\NewsByCategory;
 
 	public function topLinks()
 	{

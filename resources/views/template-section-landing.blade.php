@@ -70,6 +70,9 @@
 				</div>
 				<div class="container mx-auto">
 					<div class="flex flex-wrap">
+						{{-- Loop här --}}
+						@php(var_dump($news_by_category))
+						{{-- Loop här --}}
 						<div class="col-12 lg-col-4">
 							<div class="pb3 pl3 pr3 pt0">
 								<div class="pb2">
