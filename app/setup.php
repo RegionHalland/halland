@@ -21,6 +21,7 @@ new \App\Theme\ThemeOptions();
  */
 new \App\Acf\Import();
 new \App\Acf\DataCurator();
+new \App\Acf\ShowNewsCategory();
 
 /**
  * Updates the `$post` variable on each iteration of the loop.
