@@ -6,7 +6,9 @@
 		<div class="background-white">
 			<div class="p3">
 				<span class="center strong">
-					<object aria-hidden="true" tabindex="-1" class="pr1" type="image/svg+xml" data="img/icon-navlink.svg" style="vertical-align: middle;"></object>
+					<svg class="icon-badge icon-badge--sm">
+	 					<use xlink:href="#chevron-right"/>
+					</svg>
 					<a href="{{ $page->url }}" style="vertical-align: middle; color: #004B93">{{ $page->post_title }}</a>
 				</span>
 			</div>
