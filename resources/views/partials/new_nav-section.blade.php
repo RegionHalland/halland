@@ -3,7 +3,7 @@
 @foreach($page_children as $page)
 <li class="col-12 lg-col-4">
 	<div class="p2">
-		<div class="background-white">
+		<div class="background-white" style="min-height: 5em">
 			<div class="p3">
 				<span class="center strong">
 					<svg class="icon-badge icon-badge--sm">
