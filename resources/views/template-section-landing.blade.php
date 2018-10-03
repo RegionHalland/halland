@@ -66,7 +66,7 @@
 		<div class="container mx-auto pl4 pr4 pb1 pt2">
 			<div class="m4">
 				<div class="pb3 ml3">
-					<h1 class="h2">Nyheter Läkemedel</h1>
+					<h1 class="h2">Nyheter {{ $post -> post_title }}</h1>
 				</div>
 				<div class="container mx-auto">
 					<div class="flex flex-wrap">
