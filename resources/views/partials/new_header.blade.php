@@ -25,26 +25,26 @@
 						<nav class="site-nav">
 							
 							<div class="site-nav__top">
-								<div class="site-nav__container">
-									<div class="flex" style="width:100%;">
-										<div class="col-4 pt2">
-											<button class="site-nav__menu-btn">
-												<svg class="icon-badge-nav icon-badge-nav--md">
-													<use xlink:href="#menu"/>
-												</svg>
-												<span class="hidden-inline-sm">Meny</span>
-											</button>
-										</div>
-										<div class="col-8">
-											<div>
-												<a href="{{ esc_url( home_url( '/' ) ) }}" class="site-nav__logo" aria-label="Till startsidan">
-													<img src="@asset('images/navigation_logo.svg')" alt="">
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+                                <div class="site-nav__container">
+                                    <div class="flex" style="width:100%;">
+                                        <div class="col-4 pt2">
+                                            <button class="site-nav__menu-btn">
+                                                <svg class="icon-badge-nav icon-badge-nav--md">
+                                                    <use xlink:href="#menu"/>
+                                                </svg>
+                                                <span class="hidden-inline-sm">Meny</span>
+                                            </button>
+                                        </div>
+                                        <div class="col-8">
+                                            <div>
+                                                <a href="{{ esc_url( home_url( '/' ) ) }}" class="site-nav__logo" aria-label="Till startsidan">
+                                                    <img src="@asset('images/navigation_logo.svg')" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 							
 							<div class="site-nav__bottom">
 								<div class="site-nav__container">

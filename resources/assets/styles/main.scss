@@ -52,6 +52,7 @@
 
 .site-nav__menu-btn {
 	display: block;
+	margin-right: auto;
 }
 
 .site-nav__bottom {
@@ -209,4 +210,19 @@
 		padding-right: 0;
 		padding-left: 0;
 	}
+}
+
+.icon-badge-nav {
+	box-sizing: content-box;
+	display: inline-block;
+	height: 18px;
+	width: 18px;
+	padding: 12px;
+	overflow: visible;
+	vertical-align: middle;
+}
+
+.icon-badge-nav--md {
+	width: 22px;
+	height: 22px;
 }
