@@ -3,7 +3,7 @@
 
 @section('content')
 
-<!-- **************************** -->
+			<!-- **************************** -->
 			<!-- Content with grey background -->
 			<!-- **************************** -->
 			<div class="relative">
@@ -19,7 +19,7 @@
 				<!-- *********************** -->
 				<!-- White box with headings -->
 				<!-- *********************** -->
-				<nav aria-label="Huvudnavigation" class="container background-dark-blue relative mx-auto pl5 pr5 pt4 pb4 z1">
+				<nav aria-label="Huvudnavigation" class="container background-dark-blue relative mx-auto z1 frontpage_nav">
 					<ul class="flex flex-wrap p3 background-white" aria-label="Huvudnavigation">
 						@include('partials.new_nav-front')
 					</ul>
