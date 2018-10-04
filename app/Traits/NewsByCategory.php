@@ -11,6 +11,7 @@ trait NewsByCategory
 	public function newsByCategory()
 	{	
 		$posts = get_posts(array(
+			'numberposts' => 3,
 			'category' => get_field('show_news_category')
 		));
 
