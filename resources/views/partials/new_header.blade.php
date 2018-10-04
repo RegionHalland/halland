@@ -3,7 +3,7 @@
 		<!-- Top navigation -->
 		<!-- NOTE! Class "breadcrumbs" only for hide in mobile. Change to another class later -->
 		<!-- ************** -->
-		<nav aria-label="toppmeny" class="container mx-auto pb1 pt0 pr5 small bredcrumbs" style="text-align: right; background-color: #F3F3F3; border-bottom: 1px solid lightgrey;">
+		<nav aria-label="toppmeny" class="container mx-auto pb1 pt0 pr5 small bredcrumbs" style="text-align: right; background-color: #F3F3F3;">
 			<ul aria-label="Toppmenylänkar">
 				<li class="pl4" style="display:inline">
 					<!-- SVG here when icon is in styleguide -->
