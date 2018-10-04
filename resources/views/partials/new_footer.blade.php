@@ -6,7 +6,7 @@
 					<div class="m2 flex flex-wrap">
 						<div class="col-12 md-col-6 lg-col-3 pb2">
 							<div class="mb3">
-								<div class="mb4">
+								<div class="mb2">
 									<strong class="h4" id="111222">Vårdgivare i Halland</strong>
 								</div>
 								<ul class="small" aria-labelledby="111222">
@@ -20,7 +20,7 @@
 						</div>
 						<div class="col-12 md-col-6 lg-col-3 pb2">
 							<div class="mb3">
-								<div class="mb4">
+								<div class="mb2">
 									<h1 class="h4" id="121212">Kontakt</h1>
 								</div>
 								<ul class="small" aria-labelledby="121212">
@@ -34,7 +34,7 @@
 						</div>
 						<div class="col-12 md-col-6 lg-col-3 pb2">
 							<div class="mb3">
-								<div class="mb4">
+								<div class="mb2">
 									<h1 class="h4" id="212121">Övriga webbplatser</h1>
 								</div>
 								<ul class="small" aria-labelledby="212121">
@@ -46,7 +46,7 @@
 						</div>
 						<div class="col-12 md-col-6 lg-col-3 pb2">
 							<div class="mb3">
-								<div class="mb4">
+								<div class="mb2">
 									<h1 class="h4" id="443322">Sociala medier</h1>
 								</div>
 								<ul class="small" aria-labelledby="443322">
