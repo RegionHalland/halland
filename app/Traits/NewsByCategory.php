@@ -12,6 +12,8 @@ trait NewsByCategory
 	{	
 		$posts = get_posts(array(
 			'numberposts' => 3,
+			'orderby' => 'date',
+			'order' => 'DESC',
 			'category' => get_field('show_news_category')
 		));
 
