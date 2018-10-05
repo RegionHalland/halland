@@ -22,7 +22,7 @@
 	<!-- ************ -->
 	<!-- Page content -->
 	<!-- ************ -->
-	<main class="background-white">
+	<main  style="background-color: #F0F6FA;">
 		<div class="container mx-auto p4">
 			<div class="m4">
 				@while(have_posts()) @php(the_post())
