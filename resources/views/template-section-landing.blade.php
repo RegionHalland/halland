@@ -22,14 +22,10 @@
 	<!-- Quick find -->
 	<!-- ********** -->
 	<nav aria-labelledby="690690" class="" style="background-color: #F0F6FB">
-		<div class="container mx-auto pl4 pr4 pb1 pt2">
-			<div class="m4">
-				
-				<div class="pb2 pl4 ml4">
-					<h1 class="h2" id="690690">Hitta snabbt</h1>
-				</div>
-
-				<div class="container mx-auto pl5 pr5 pb3 pt0">
+		<div class="container mx-auto mobile-friendly-padding">
+			<div class="m0">
+				<div class="container mx-auto mobile-friendly-padding">
+					<h1 class="h2 pb3" id="690690">Hitta snabbt</h1>
 					<div class="flex flex-wrap">
 						@if($top_links)
 							@foreach($top_links as $key => $top_link)
