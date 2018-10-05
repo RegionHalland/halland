@@ -1,5 +1,5 @@
 @if(isset($page_children))
-<ul class="flex flex-wrap pt3 pb3 pl5 pr5 background-dark-blue" aria-label="Huvudnavigation">
+<ul class="flex flex-wrap mobile-friendly-padding background-dark-blue" aria-label="Huvudnavigation">
 @foreach($page_children as $page)
 <li class="col-12 lg-col-4">
 	<div class="p2">

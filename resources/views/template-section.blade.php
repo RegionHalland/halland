@@ -14,7 +14,7 @@
 	<!-- **************************** -->
 	<!-- Bredacrumbs & new navigation -->
 	<!-- **************************** -->
-	<nav aria-label="Huvudnavigation" class="container background-dark-blue relative mx-auto pl5 pr5 pt4 pb4 z1">
+	<nav aria-label="Huvudnavigation" class="container background-dark-blue relative mx-auto mobile-friendly-padding z1">
 			@include('partials.new_breadcrumbs')
 			@include('partials.new_nav-section')
 	</nav>
