@@ -19,7 +19,7 @@
 				<!-- *********************** -->
 				<!-- White box with headings -->
 				<!-- *********************** -->
-				<nav aria-label="Huvudnavigation" class="container background-dark-blue relative mx-auto z1 mobile-friendly-padding">
+				<nav aria-label="Huvudnavigation" class="container background-dark-blue-frida relative mx-auto z1 mobile-friendly-padding">
 					<ul class="flex flex-wrap p3 background-white" aria-label="Huvudnavigation">
 						@include('partials.new_nav-front')
 					</ul>
