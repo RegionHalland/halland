@@ -2,7 +2,7 @@
 			<!-- Footer -->
 			<!-- ****** -->
 			<footer style="background-color: #FAFAFA;"><!-- Add .background-light-grey to styleguide with correct color -->
-				<div class="container mx-auto pl5 pr5 pt4 pb2">
+				<div class="container mx-auto pl5 pr5 pt4 pb2 new_footer">
 					<div class="m2 flex flex-wrap">
 						<div class="col-12 md-col-6 lg-col-3 pb2">
 							<div class="mb3">
