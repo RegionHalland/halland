@@ -6,7 +6,7 @@
 		<div class="background-white" style="min-height: 5em; border-radius: 0.7ex;">
 			<div class="p3">
 				<span class="center strong">
-					<svg class="icon-badge icon-badge--sm">
+					<svg class="icon-badge icon-badge--md mr1">
 	 					<use xlink:href="#chevron-right"/>
 					</svg>
 					<a href="{{ $page->url }}" style="vertical-align: middle; color: black">{{ $page->post_title }}</a>
