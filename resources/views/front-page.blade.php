@@ -31,7 +31,7 @@
 			<!-- News + editor boxes -->
 			<!-- ******************* -->
 			<main class="background-white">
-				<div class="container mx-auto pl5 pr5 pt4 pb4">
+				<div class="container mx-auto mobile-friendly-padding">
 					<div class="ml4">
 						<h1 id="223344">Nyheter</h1>
 					</div>
