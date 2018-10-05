@@ -30,17 +30,13 @@
 				<div class="container col-12 mx-auto">
 					
 					@yield('content')
-
-					<!-- @include('partials.footer') -->
-					@include('partials.new_footer')
+					@include('partials.footer')
 					
 				</div>
 			</div>
 		
 		<!-- END container wrap around page content -->
 		</div>
-			<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js?ver=4.9.8"></script>
-			<script type="text/javascript" src="http://stage-vardgivare.regionhalland.se/app/themes/halland/dist/scripts/main.js"></script>
-			<script type="text/javascript" src="http://stage-vardgivare.regionhalland.se/wp/wp-includes/js/wp-embed.js?ver=4.9.8"></script>
+
 	</body>
 </html>
