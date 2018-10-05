@@ -9,7 +9,7 @@
 					<svg class="icon-badge icon-badge--sm">
 	 					<use xlink:href="#chevron-right"/>
 					</svg>
-					<a href="{{ $page->url }}" style="vertical-align: middle; color: #004B93">{{ $page->post_title }}</a>
+					<a href="{{ $page->url }}" style="vertical-align: middle; color: black">{{ $page->post_title }}</a>
 				</span>
 			</div>
 		</div>
