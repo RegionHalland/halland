@@ -7,7 +7,7 @@
 						<div class="col-12 md-col-6 lg-col-3 pb2">
 							<div class="mb3">
 								<div class="mb2">
-									<strong class="h4" id="111222">Vårdgivare i Halland</strong>
+									<strong class="h3" id="111222">Vårdgivare i Halland</strong>
 								</div>
 								<ul class="small" aria-labelledby="111222">
 									@foreach($nav_site as $topLevelPage)
@@ -21,7 +21,7 @@
 						<div class="col-12 md-col-6 lg-col-3 pb2">
 							<div class="mb3">
 								<div class="mb2">
-									<h1 class="h4" id="121212">Kontakt</h1>
+									<h1 class="h3" id="121212">Kontakt</h1>
 								</div>
 								<ul class="small" aria-labelledby="121212">
 									<li class="mb1"><strong id="665577">Telefon: </strong><a href="tel://46-35-134800" aria-labelledby="665577">035-13 48 00</a></li>
@@ -35,7 +35,7 @@
 						<div class="col-12 md-col-6 lg-col-3 pb2">
 							<div class="mb3">
 								<div class="mb2">
-									<h1 class="h4" id="212121">Övriga webbplatser</h1>
+									<h1 class="h3" id="212121">Övriga webbplatser</h1>
 								</div>
 								<ul class="small" aria-labelledby="212121">
 									<li class="mb1"><a href="http://www.regionhalland.se">www.regionhalland.se</a></li>
@@ -47,7 +47,7 @@
 						<div class="col-12 md-col-6 lg-col-3 pb2">
 							<div class="mb3">
 								<div class="mb2">
-									<h1 class="h4" id="443322">Sociala medier</h1>
+									<h1 class="h3" id="443322">Sociala medier</h1>
 								</div>
 								<ul class="small" aria-labelledby="443322">
 									<li class="mb1"><a href="https://sv-se.facebook.com/regionhalland/">Region Halland på Facebook</a></li>
