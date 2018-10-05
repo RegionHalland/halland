@@ -17,7 +17,7 @@
 	<!-- ************ -->
 	<!-- Page content -->
 	<!-- ************ -->
-	<main class="background-white">
+	<main class="background-white" id="main">
 		<div class="background-white">
 			<div class="container mx-auto p4">
 				<div class="m2 flex flex-wrap">
