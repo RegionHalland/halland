@@ -47,10 +47,10 @@
 					<!-- **** -->
 					<div class="pt3 m2 flex flex-wrap">
 						<div class="col-12 lg-col-5" >
-						<ul aria-labelledby="223344">
+						<ul class="" aria-labelledby="223344">
 							@foreach($news as $newsitem)
-								<li class="mr4 mb3" style="border-bottom: 1px solid lightgrey">  
-									<div class="pl3 mb3" style="border-left: 4px solid #004B93;">
+								<li class="mr4 mb3 front-page__news" style="border-bottom: 1px solid lightgrey">  
+									<div class="pl3 mb3 front-page__news-item">
 										<div class="mb1"><h2 class="h4"><a href="@php( the_permalink($newsitem) )" style="color: #004B93">{{ $newsitem->post_title }}</a></h2></div>
 										<div class="mb2 small">
 											@include('partials.new_updated-time', ['post' => $newsitem])

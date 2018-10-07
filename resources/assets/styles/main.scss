@@ -110,3 +110,11 @@
 .background-dark-blue-frida {
 	background-color: #004b93;
 }
+
+.front-page__news:nth-child(odd) > .front-page__news-item {
+	border-left: 4px solid #004b93;
+}
+
+.front-page__news:nth-child(even) > .front-page__news-item {
+	border-left: 4px solid #cee2f2;
+}
