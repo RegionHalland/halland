@@ -1,6 +1,8 @@
 @extends('layouts.app')
-
 @section('content')
+	<div class="text-white single-page-breadcrumbs">
+    	@include('partials.breadcrumbs')
+	</div>
 	<div class="py4 px3">
 		<div class="container mx-auto">
 			<div class="clearfix mxn3">

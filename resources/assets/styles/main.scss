@@ -118,3 +118,11 @@
 .front-page__news:nth-child(even) > .front-page__news-item {
 	border-left: 4px solid #cee2f2;
 }
+
+.single-page-breadcrumbs {
+	background-color: #004b93;
+}
+
+.single-page-breadcrumbs a {
+	color: white;
+}
