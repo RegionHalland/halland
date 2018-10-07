@@ -9,7 +9,7 @@
 		<div class="mb2 small">
 			<time datetime="{{ str_limit($categoryNews -> post_modified, $limit = 10, $end = '') }}">{{ str_limit($categoryNews -> post_modified, $limit = 10, $end = '') }}</time>
 		</div>
-		<div class="pb3">
+		<div class="">
 			{{ $categoryNews -> post_excerpt }}
 		</div>
 	</div>
