@@ -36,11 +36,14 @@
                                             </button>
                                         </div>
                                         <div class="col-8">
-                                            <div>
+                                            <span>
                                                 <a href="{{ esc_url( home_url( '/' ) ) }}" class="site-nav__logo" aria-label="Till startsidan">
                                                     <img src="@asset('images/navigation_logo.svg')" alt="">
                                                 </a>
-                                            </div>
+                                            </span>
+                                            <span class="ml1 pl1" style="border-left: 1px solid grey">
+                                            	Vårdgivare&nbsp;Halland
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
