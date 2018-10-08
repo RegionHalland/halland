@@ -71,65 +71,7 @@
 							
 						</div>
 						</ul>
-						
-						<!-- ************ -->
-						<!-- Editor boxes -->
-						<!-- ************ -->
-						<ul class="col-12 lg-col-7 flex flex-wrap" aria-labelledby="223344">
-							<li class="col-12 lg-col-6">
-								<div class="mb4 ml3 mr3 pt0" style="border-bottom: 4px solid #004B93; box-shadow: 0px 0px 5px #888888;">
-									<div class="pb3">
-										<!--
-										<img src="img/th.jpg" style="width:100%" alt="" />-->
-									</div>
-									<div class="center pb2">
-										<h2 class="h4"><a href="" style="color: #004B93">Lediga jobb</a></h2>
-									</div>
-									<div class="pb3 pl3 pr3">
-										Nullam pulvinar faucibus odio, eget porttitor mauris lobortis in. Aliquam egestas ultrices ligula.
-									</div>
-								</div>
-							</li>
-							<li class="col-12 lg-col-6">
-								<div class="mb4 ml3 mr3 pt0" style="border-bottom: 4px solid #004B93; box-shadow: 0px 0px 5px #888888;">
-									<div class="pb3">
-										<!--<img src="img/th.jpg" style="width:100%" alt="" />-->
-									</div>
-									<div class="center pb2">
-										<h2 class="h4"><a href="" style="color: #004B93">Flytta hit</a></h2>
-									</div>
-									<div class="pb3 pl3 pr3">
-										Nullam pulvinar faucibus odio, eget porttitor mauris lobortis in. Aliquam egestas ultrices ligula.
-									</div>
-								</div>								
-							</li>	
-							<li class="col-12 lg-col-6">
-								<div class="mb4 ml3 mr3 pt0" style="border-bottom: 4px solid #004B93; box-shadow: 0px 0px 5px #888888;">
-									<div class="pb3">
-										<!--<img src="img/th.jpg" style="width:100%" alt="" />-->
-									</div>
-									<div class="center pb2">
-										<h2 class="h4"><a href="" style="color: #004B93">Ansökan och antagning</a></h2>
-									</div>
-									<div class="pb3 pl3 pr3">
-										Nullam pulvinar faucibus odio, eget porttitor mauris lobortis in. Aliquam egestas ultrices ligula.
-									</div>
-								</div>
-							</li>
-							<li class="col-12 lg-col-6">
-								<div class="mb4 ml3 mr3 pt0" style="border-bottom: 4px solid #004B93; box-shadow: 0px 0px 5px #888888;">
-									<div class="pb3">
-										<!--<img src="img/th.jpg" style="width:100%" alt="" />-->
-									</div>
-									<div class="center pb2">
-										<h2 class="h4"><a href="" style="color: #004B93">Nu gör vi det enklare för dig</a></h2>
-									</div>
-									<div class="pb3 pl3 pr3">
-										Nullam pulvinar faucibus odio, eget porttitor mauris lobortis in. Aliquam egestas ultrices ligula. 
-									</div>
-								</div>								
-							</li>
-						</ul>
+
 					</div>
 
 				</div>
