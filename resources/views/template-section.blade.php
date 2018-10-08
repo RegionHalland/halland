@@ -22,8 +22,8 @@
 	<!-- ************ -->
 	<!-- Page content -->
 	<!-- ************ -->
-	<main  style="background-color: #F0F6FA;">
-		<div class="container mx-auto p4">
+	<main>
+		<div class="container mx-auto p4" style="background-color: #F0F6FA;">
 			<div class="m4">
 				@while(have_posts()) @php(the_post())
 				<div class="pb3">
