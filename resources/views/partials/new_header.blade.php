@@ -25,13 +25,13 @@
 			<div class="container mx-auto" style="width: 1320px;">
 				<div class="flex flex-wrap background-white">
 					<div class="col-12 left-align">
-						<nav class="site-nav">
+						<nav class="rh-site-nav">
 							
-							<div class="site-nav__top">
-                                <div class="site-nav__container">
+							<div class="rh-site-nav__top">
+                                <div class="rh-site-nav__container">
                                     <div class="flex" style="width:100%;">
                                         <div class="col-4 pt2">
-                                            <button class="site-nav__menu-btn">
+                                            <button class="rh-site-nav__menu-btn">
                                                 <svg class="icon-badge-nav icon-badge-nav--md">
                                                     <use xlink:href="#menu"/>
                                                 </svg>
@@ -40,7 +40,7 @@
                                         </div>
                                         <div class="col-8">
                                             <span>
-                                                <a href="{{ esc_url( home_url( '/' ) ) }}" class="site-nav__logo" aria-label="Till startsidan">
+                                                <a href="{{ esc_url( home_url( '/' ) ) }}" class="rh-site-nav__logo" aria-label="Till startsidan">
                                                     <img src="@asset('images/navigation_logo.svg')" alt="">
                                                 </a>
                                             </span>
@@ -52,19 +52,19 @@
                                 </div>
                             </div>
 							
-							<div class="site-nav__bottom">
-								<div class="site-nav__container">
-									<ul class="site-nav__list">
+							<div class="rh-site-nav__bottom">
+								<div class="rh-site-nav__container">
+									<ul class="rh-site-nav__list">
 										@foreach($nav_site as $topLevelPage)
-										<li class="site-nav__item">
-											<a href="#" onclick="return false" class="site-nav__link" ">{{ $topLevelPage->post_title }}</a>
+										<li class="rh-site-nav__item">
+											<a href="#" onclick="return false" class="rh-site-nav__link" ">{{ $topLevelPage->post_title }}</a>
 											@if(isset($topLevelPage->children))
-											<nav class="dropdown">
-												<div class="site-nav__container">
-													<ul class="dropdown__list">
+											<nav class="rh-dropdown">
+												<div class="rh-site-nav__container">
+													<ul class="rh-dropdown__list">
 														@foreach($topLevelPage->children as $childPage)
-														<li class="dropdown__item">
-															<a href="{{ get_page_link($childPage->ID) }}" class="dropdown__link">{{ $childPage->post_title }}</a>
+														<li class="rh-dropdown__item">
+															<a href="{{ get_page_link($childPage->ID) }}" class="rh-dropdown__link">{{ $childPage->post_title }}</a>
 														</li>
 														@endforeach
 													</ul>
