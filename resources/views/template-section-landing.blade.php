@@ -83,8 +83,8 @@
 	<!-- ************ -->
 	<!-- Page content -->
 	<!-- ************ -->
-	<main class="" style="background-color: #F0F6FB">
-		<div class="container mx-auto pt3 pb4 pl4 pr4">
+	<main class="">
+		<div class="container mx-auto pt3 pb4 pl4 pr4" style="background-color: #F0F6FB">
 			<div class="m5">
 				@while(have_posts()) @php(the_post())
 					<div class="pb3">
