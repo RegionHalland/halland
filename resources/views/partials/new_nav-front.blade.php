@@ -1,5 +1,5 @@
 @foreach($nav_site as $topLevelPage)
-<li class="col-12 lg-col-4">
+<li class="col-12 md-col-4 lg-col-4">
 	<div class="p3">
 		<span class="center strong">
 			<svg class="icon-badge icon-badge--md mr1">
