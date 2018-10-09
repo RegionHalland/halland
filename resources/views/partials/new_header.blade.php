@@ -57,7 +57,7 @@
 									<ul class="rh-site-nav__list">
 										@foreach($nav_site as $topLevelPage)
 										<li class="rh-site-nav__item">
-											<a href="#" onclick="return false" class="rh-site-nav__link" ">{{ $topLevelPage->post_title }}</a>
+											<a href="#" onclick="return false" class="rh-site-nav__link">{{ $topLevelPage->post_title }}</a>
 											@if(isset($topLevelPage->children))
 											<nav class="rh-dropdown">
 												<div class="rh-site-nav__container">

@@ -3,71 +3,71 @@
 
 @section('content')
 
-			<!-- **************************** -->
-			<!-- Content with image background -->
-			<!-- **************************** -->
-			<div class="relative">
+<!-- **************************** -->
+<!-- Content with image background -->
+<!-- **************************** -->
+<div class="relative">
 
-				<!-- *********************** -->
-				<!-- White box with headings -->
-				<!-- *********************** -->
-				<nav aria-label="Huvudnavigation" class="container background-dark-blue-frida relative mx-auto z1 mobile-friendly-padding" style="background-image: url({{ get_the_post_thumbnail_url() }}); background-size: cover;">
-					<ul class="flex flex-wrap p3 background-white" aria-label="Huvudnavigation">
-						@include('partials.new_nav-front')
-					</ul>
-				</nav>
-				
-				
-			
-			<!-- ******************* -->
-			<!-- News + editor boxes -->
-			<!-- ******************* -->
-			<main class="background-white">
-				<div class="container mx-auto mobile-friendly-padding">
-					<div class="ml4">
-						<h1 id="223344">Nyheter</h1>
-					</div>
-					<span class="mt2 ml4 mr2 mb4">
-						<svg class="icon-badge icon-badge--sm">
-	 						<use xlink:href="#rss"/>
-						</svg>
-						<a href="{{ bloginfo('rss_url') }}" style="text-decoration: underline; vertical-align: middle;">Prenumerera på RSS</a>
-					</span>
-										
-					<!-- **** -->
-					<!-- News -->
-					<!-- **** -->
-					<div class="pt3 m2 flex flex-wrap">
-						<div class="col-12 lg-col-5" >
-						<ul class="" aria-labelledby="223344">
-							@foreach($news as $newsitem)
-								<li class="mr4 mb3 front-page__news" style="border-bottom: 1px solid lightgrey">  
-									<div class="pl3 mb3 front-page__news-item">
-										<div class="mb1"><h2 class="h4"><a href="@php( the_permalink($newsitem) )" style="color: #004B93">{{ $newsitem->post_title }}</a></h2></div>
-										<div class="mb2 small">
-											@include('partials.new_updated-time', ['post' => $newsitem])
-										</div>
-										<div class="mb3">
-											@if($newsitem->post_excerpt)
-												{{ get_the_excerpt($newsitem) }}
-											@endif
-										</div>
+	<!-- *********************** -->
+	<!-- White box with headings -->
+	<!-- *********************** -->
+	<nav aria-label="Huvudnavigation" class="container background-dark-blue-frida relative mx-auto z1 mobile-friendly-padding" style="background-image: url({{ get_the_post_thumbnail_url() }}); background-size: cover;">
+		<ul class="flex flex-wrap p3 background-white" aria-label="Huvudnavigation">
+			@include('partials.new_nav-front')
+		</ul>
+	</nav>
+	
+	<!-- ******************* -->
+	<!-- News + editor boxes -->
+	<!-- ******************* -->
+	<main class="background-white">
+		<div class="container mx-auto mobile-friendly-padding">
+			<div class="ml4">
+				<h1 id="223344">Nyheter</h1>
+			</div>
+			<span class="mt2 ml4 mr2 mb4">
+				<svg class="icon-badge icon-badge--sm">
+						<use xlink:href="#rss"/>
+				</svg>
+				<a href="{{ bloginfo('rss_url') }}" style="text-decoration: underline; vertical-align: middle;">Prenumerera på RSS</a>
+			</span>
+								
+			<!-- **** -->
+			<!-- News -->
+			<!-- **** -->
+			<div class="pt3 m2 flex flex-wrap">
+				<div class="col-12 lg-col-5" >
+					<ul class="" aria-labelledby="223344">
+						@foreach($news as $newsitem)
+							<li class="mr4 mb3 front-page__news" style="border-bottom: 1px solid lightgrey">  
+								<div class="pl3 mb3 front-page__news-item">
+									<div class="mb1">
+										<h2 class="h4"><a href="@php( the_permalink($newsitem) )" style="color: #004B93">{{ $newsitem->post_title }}</a>
+										</h2>
 									</div>
-								</li>
-							@endforeach
-							
-							<!--
-							<a class="small" href="" style="vertical-align: middle; text-decoration: underline;">Gå till nyhetsarkiv</a>
-							<object aria-hidden="true" tabindex="-1" class="pl2" type="image/svg+xml" data="img/icon-navlink.svg" style="vertical-align: middle;"></object>
-							-->
-							
-						</div>
-						</ul>
-
-					</div>
-
+									<div class="mb2 small">
+										@include('partials.new_updated-time', ['post' => $newsitem])
+									</div>
+									<div class="mb3">
+										@if($newsitem->post_excerpt)
+											{{ get_the_excerpt($newsitem) }}
+										@endif
+									</div>
+								</div>
+							</li>
+						@endforeach
+						
+						<!--
+						<a class="small" href="" style="vertical-align: middle; text-decoration: underline;">Gå till nyhetsarkiv</a>
+						<object aria-hidden="true" tabindex="-1" class="pl2" type="image/svg+xml" data="img/icon-navlink.svg" style="vertical-align: middle;"></object>
+						-->
+					</ul>
 				</div>
-			</main>
+			</div>
+
+		</div>
+	</main>
+</div>
 
 <!--
 <div class="background-gradient-blue py3 px3">

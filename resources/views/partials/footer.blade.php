@@ -12,7 +12,7 @@
 								<ul class="small" aria-labelledby="111222">
 									@foreach($nav_site as $topLevelPage)
 									<li class="mb1">
-										<a <a href="{{ get_page_link($topLevelPage->ID) }}">{{ $topLevelPage->post_title }}</a>
+										<a href="{{ get_page_link($topLevelPage->ID) }}">{{ $topLevelPage->post_title }}</a>
 									</li>
 									@endforeach
 								</ul>
