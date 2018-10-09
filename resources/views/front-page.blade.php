@@ -4,18 +4,10 @@
 @section('content')
 
 			<!-- **************************** -->
-			<!-- Content with grey background -->
+			<!-- Content with image background -->
 			<!-- **************************** -->
 			<div class="relative">
-				
-				<!-- **************** -->
-				<!-- Background image -->
-				<!-- **************** -->
-				<!--   Removed for now when we implement only limited functionality
-				<div class="absolute z0 col-12 background-grey">
-					<img src="img/himmel.jpg" style="width:100%" alt="" />
-				</div>
-				-->
+
 				<!-- *********************** -->
 				<!-- White box with headings -->
 				<!-- *********************** -->
@@ -40,7 +32,7 @@
 	 						<use xlink:href="#rss"/>
 						</svg>
 						<a href="{{ bloginfo('rss_url') }}" style="text-decoration: underline; vertical-align: middle;">Prenumerera på RSS</a>
-					</span>     <!--   Look in current blade file for correct way to fetch link --> 
+					</span>
 										
 					<!-- **** -->
 					<!-- News -->
