@@ -39,7 +39,7 @@
 						<svg class="icon-badge icon-badge--sm">
 	 						<use xlink:href="#rss"/>
 						</svg>
-						<a href="" style="text-decoration: underline; vertical-align: middle;">Prenumerera på RSS</a>
+						<a href="{{ bloginfo('rss_url') }}" style="text-decoration: underline; vertical-align: middle;">Prenumerera på RSS</a>
 					</span>     <!--   Look in current blade file for correct way to fetch link --> 
 										
 					<!-- **** -->
