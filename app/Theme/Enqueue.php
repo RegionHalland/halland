@@ -4,7 +4,7 @@ namespace App\Theme;
 
 class Enqueue
 {
-	protected $COMPONENT_LIB_URL = '//regionhalland.github.io/styleguide/dist/css/main.min.css';
+	protected $COMPONENT_LIB_URL = '//unpkg.com/@regionhalland/styleguide-v2@latest/dist/css/main.min.css';
 
 	public function __construct()
 	{

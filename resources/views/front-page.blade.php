@@ -1,7 +1,47 @@
 @extends('layouts.app')
 @php($id = uniqid())
-
 @section('content')
+
+<div class="bg-blue-light pt-16 pb-8">
+	<div class="container mx-auto px-4">
+		<div class="flex flex-wrap items-stretch -mx-4">
+			<div class="w-full sm:w-6/12 lg:w-4/12 px-4 mb-8">
+				<h3 class="mb-2">Medicinska områden</h3>
+				<p class="leading-normal">This page includes läkemedel, analysförteckning and something else.</p>
+			</div>
+			<div class="w-full sm:w-6/12 lg:w-4/12 px-4 mb-8">
+				<h3 class="mb-2">Service & IT</h3>
+				<p class="leading-normal">This page includes läkemedel, analysförteckning and something else.</p>
+			</div>
+			<div class="w-full sm:w-6/12 lg:w-4/12 px-4 mb-8">
+				<h3 class="mb-2">Medicinska områden</h3>
+				<p class="leading-normal">This page includes läkemedel, analysförteckning and something else.</p>
+			</div>
+			<div class="w-full sm:w-6/12 lg:w-4/12 px-4 mb-8">
+				<h3 class="mb-2">Service & IT</h3>
+				<p class="leading-normal">This page includes läkemedel, analysförteckning and something else.</p>
+			</div>
+			<div class="w-full sm:w-6/12 lg:w-4/12 px-4 mb-8">
+				<h3 class="mb-2">Medicinska områden</h3>
+				<p class="leading-normal">This page includes läkemedel, analysförteckning and something else.</p>
+			</div>
+			<div class="w-full sm:w-6/12 lg:w-4/12 px-4 mb-8">
+				<h3 class="mb-2">Service & IT</h3>
+				<p class="leading-normal">This page includes läkemedel, analysförteckning and something else.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="pt-16 pb-8">
+	<div class="container mx-auto px-4">
+		<div class="-mx-4">
+			
+		</div>
+	</div>
+</div>
+
+{{-- 
 <div class="background-gradient-blue py3 px3">
 	<div class="container mx-auto">
 		<div class="clearfix mxn3">
@@ -63,5 +103,6 @@
 			@endif
 		</div>
 	</div>
-</div>
+</div> 
+--}}
 @endsection
