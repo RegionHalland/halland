@@ -7,7 +7,7 @@
 	<!-- **************************** -->
 	<div class="relative">
 		
-		<nav aria-label="Huvudnavigation" class="container background-dark-blue relative mx-auto pl5 pr5 pt4 pb4 z1">
+		<nav aria-label="Huvudnavigation" class="breadcrumbs container background-dark-blue relative mx-auto pl5 pr5 pt1 pb2 z1">
 
 			@include('partials.new_breadcrumbs')
 			

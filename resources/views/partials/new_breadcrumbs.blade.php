@@ -1,6 +1,6 @@
 @if(isset($breadcrumbs))
 <div class="breadcrumbs pr4 pl4 pb0 pt0">
-	<div class="pr2 pl2 pb0 pt3">
+	<div class="pr2 pl2 pb0 pt1">
 		<div class="px3">
 			<div class="container mx-auto">
 				<div class="clearfix mxn3">

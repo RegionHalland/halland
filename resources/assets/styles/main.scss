@@ -99,6 +99,14 @@
 	}
 }
 
+.nav-boxes-container {
+	padding: $space-1 $space-3 $space-4 $space-3;
+
+	@media screen and (min-width: $breakpoint-sm) {
+		padding: $space-1 $space-5 $space-4 $space-5;
+	}
+}
+
 .new_footer {
 	text-align: center;
 
