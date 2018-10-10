@@ -16,6 +16,7 @@
 	<!-- **************************** -->
 	<nav aria-label="Huvudnavigation" class="container background-dark-blue-frida relative mx-auto mobile-friendly-padding z1">
 			@include('partials.new_breadcrumbs')
+			<h1 class="pl5 pt3 text-white">{{ $post -> post_title }}</h1>
 			@include('partials.new_nav-section')
 	</nav>
 	
@@ -26,9 +27,6 @@
 		<div class="container mx-auto p4" style="background-color: #F0F6FA;">
 			<div class="m4">
 				@while(have_posts()) @php(the_post())
-				<div class="pb3">
-					<h2>{!! get_the_title() !!}</h2>
-				</div>
 				<div class="mr6">
 					<article>
 						@php(the_content())
