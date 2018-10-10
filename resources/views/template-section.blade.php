@@ -32,7 +32,6 @@
 						@php(the_content())
 					</article>
 				</div>
-				@include('partials.new_entry-meta')
 				@endwhile
 			</div>	
 		</div>	
