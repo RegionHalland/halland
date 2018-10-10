@@ -87,9 +87,6 @@
 		<div class="container mx-auto pt3 pb4 pl4 pr4" style="background-color: #F0F6FB">
 			<div class="m5">
 				@while(have_posts()) @php(the_post())
-					<div class="pb3">
-						<h2>{!! get_the_title() !!}</h2>
-					</div>
 					<div class="mr6">
 						<article>
 							@php(the_content())
