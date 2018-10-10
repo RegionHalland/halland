@@ -57,20 +57,7 @@
 									<ul class="rh-site-nav__list">
 										@foreach($nav_site as $topLevelPage)
 										<li class="rh-site-nav__item">
-											<a href="#" onclick="return false" class="rh-site-nav__link">{{ $topLevelPage->post_title }}</a>
-											@if(isset($topLevelPage->children))
-											<nav class="rh-dropdown">
-												<div class="rh-site-nav__container">
-													<ul class="rh-dropdown__list">
-														@foreach($topLevelPage->children as $childPage)
-														<li class="rh-dropdown__item">
-															<a href="{{ get_page_link($childPage->ID) }}" class="rh-dropdown__link">{{ $childPage->post_title }}</a>
-														</li>
-														@endforeach
-													</ul>
-												</div>
-											</nav>
-											@endif
+											<a href="{{ get_page_link($topLevelPage->ID) }}" class="rh-site-nav__link">{{ $topLevelPage->post_title }}</a>
 										</li>
 										@endforeach
 									</ul>
