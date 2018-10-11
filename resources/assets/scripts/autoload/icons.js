@@ -6,7 +6,7 @@ const Icons = (() => {
 
 	class Icons {
 		constructor() {
-			this.spriteURL = 'https://regionhalland.github.io/styleguide/dist/icons/sprite.svg';
+			this.spriteURL = 'https://unpkg.com/@regionhalland/styleguide-v2@latest/dist/icons/icons.svg';
 			this.getIcons(this.spriteURL);
 		}
 
