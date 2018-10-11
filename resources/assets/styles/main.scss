@@ -170,7 +170,6 @@
 .rh-site-nav__bottom {
 	position: relative;
 	z-index: $z4;
-	width: 100%;
 	background-color: $white;
 }
 
@@ -433,4 +432,20 @@
 			transform: translateY(0);
 		}
 	}
+}
+
+.background-burger-dark-blue {
+	background-color: #004a70;
+}
+
+.burger-dropdown__container {
+	position: absolute;
+
+	@media (max-width: $breakpoint-sm) {
+		width: 100%;
+	}
+}
+
+.burger-dropdown__list-item-link {
+	color: white;
 }
