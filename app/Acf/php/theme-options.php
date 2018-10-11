@@ -106,8 +106,7 @@
                 'id' => '',
             ),
             'choices' => array(
-                'news' => __('Nyhet', 'halland'),
-                'blurb' => __('Puff', 'halland'),
+                'news' => __('Nyheter', 'halland'),
             ),
             'allow_custom' => 0,
             'save_custom' => 0,

@@ -103,8 +103,7 @@
                 "id": ""
             },
             "choices": {
-                "news": "Nyhet",
-                "blurb": "Puff"
+                "news": "Nyheter"
             },
             "allow_custom": 0,
             "save_custom": 0,

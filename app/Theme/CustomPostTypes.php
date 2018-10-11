@@ -43,7 +43,7 @@ class CustomPostTypes
 	public function register_custom_post_types()
 	{
 		if (function_exists('get_field')) {
-			$post_types_to_activate = get_field('field_5bbe0f502774c', 'option');
+			$post_types_to_activate = get_field('activated_custom_post_types', 'option');
 			
 			if(isset($post_types_to_activate) && is_array($post_types_to_activate)) {
 				foreach ($post_types_to_activate as $key => $value) {
