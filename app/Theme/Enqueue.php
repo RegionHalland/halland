@@ -27,6 +27,7 @@ class Enqueue
 	{			
 		wp_enqueue_style('rh-components', $this->COMPONENT_LIB_URL, false, null);
 		wp_enqueue_style('halland/main.css', \App\asset_path('styles/main.css'), false, null);
+		wp_enqueue_style('typekit', 'https://use.typekit.net/vip6kss.css', false, null);
 	}
 
 	/**

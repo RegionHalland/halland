@@ -2,41 +2,117 @@
 @php($id = uniqid())
 @section('content')
 
-<div class="bg-blue-light pt-16 pb-8">
-	<div class="container mx-auto px-4">
-		<div class="flex flex-wrap items-stretch -mx-4">
-			<div class="w-full sm:w-6/12 lg:w-4/12 px-4 mb-8">
-				<h3 class="mb-2">Medicinska områden</h3>
-				<p class="leading-normal">This page includes läkemedel, analysförteckning and something else.</p>
+
+
+<div class="bg-blue-dark">
+	<div class="container mx-auto px-4 pt-20 pb-12">
+		<div class="w-full md:w-11/12 mx-auto flex justify-between flex-wrap">
+			<div class="w-full md:w-6/12">
+				<h1 class="text-3xl md:text-4xl text-white mb-4">Välkommen till Vårdgivarwebben</h1>
+				<p class="text-blue-light text-lg leading-tight md:text-xl mb-6">Den officiella webbplatsen för vårdgivare i Halland. Här hittar du allt från analysförteckningar till terapirekommendationer och allmänna uppgifter.</p>
+				<form>
+					<div role="search" class="bg-white rounded overflow-hidden relative">
+						<input id="search" placeholder="Sök på webbplatsen" class="text-lg bg-transparent h-12 md:h-16 pin-t px-6 pin-l w-full" type="text">
+						<button type="submit" class="bg-yellow flex items-center justify-center absolute pin-r pin-b h-12 w-12 md:h-16 md:w-16">
+							<svg class="h-6 w-6">
+								<use xlink:href="#search"/>
+							</svg>
+						</button>
+					</div>
+				</form>
 			</div>
-			<div class="w-full sm:w-6/12 lg:w-4/12 px-4 mb-8">
-				<h3 class="mb-2">Service & IT</h3>
-				<p class="leading-normal">This page includes läkemedel, analysförteckning and something else.</p>
-			</div>
-			<div class="w-full sm:w-6/12 lg:w-4/12 px-4 mb-8">
-				<h3 class="mb-2">Medicinska områden</h3>
-				<p class="leading-normal">This page includes läkemedel, analysförteckning and something else.</p>
-			</div>
-			<div class="w-full sm:w-6/12 lg:w-4/12 px-4 mb-8">
-				<h3 class="mb-2">Service & IT</h3>
-				<p class="leading-normal">This page includes läkemedel, analysförteckning and something else.</p>
-			</div>
-			<div class="w-full sm:w-6/12 lg:w-4/12 px-4 mb-8">
-				<h3 class="mb-2">Medicinska områden</h3>
-				<p class="leading-normal">This page includes läkemedel, analysförteckning and something else.</p>
-			</div>
-			<div class="w-full sm:w-6/12 lg:w-4/12 px-4 mb-8">
-				<h3 class="mb-2">Service & IT</h3>
-				<p class="leading-normal">This page includes läkemedel, analysförteckning and something else.</p>
+			<div class="w-full md:w-4/12 mt-12 md:mt-0">
+				<header class="text-lg font-bold text-white block mb-2">Populära länkar</header>
+				<ol class="list-reset bg-white relative rounded overflow-hidden">
+					<li class="px-3 py-4 border-b border-grey-lightest bg-white">
+						<svg class="h-4 w-4 align-middle mr-1">
+							<use xlink:href="#link-2"/>
+						</svg>
+						<a class="text-black" href="">Analysförteckning</a>
+					</li>
+					<li class="px-3 py-4 border-b border-grey-lightest bg-white">
+						<svg class="h-4 w-4 align-middle mr-1">
+							<use xlink:href="#link-2"/>
+						</svg>
+						<a class="text-black" href="">Terapirekommendationer</a>
+					</li>
+					<li class="px-3 py-4 border-b border-grey-lightest bg-white">
+						<svg class="h-4 w-4 align-middle mr-1">
+							<use xlink:href="#link-2"/>
+						</svg>
+						<a class="text-black" href="">Nyhetsarkiv</a>
+					</li>
+					<li class="px-3 py-4 border-b border-grey-lightest bg-white">
+						<svg class="h-4 w-4 align-middle mr-1">
+							<use xlink:href="#link-2"/>
+						</svg>
+						<a class="text-black" href="">Aktuella driftstörningar</a>
+					</li>
+				</ol>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="pt-16 pb-8">
+
+
+
+<div class="bg-white pt-16 pb-8">
 	<div class="container mx-auto px-4">
-		<div class="-mx-4">
-			
+		<div class="w-full md:w-11/12 mx-auto">
+			<header class="relative pb-4 block mb-8">
+				<span class="border-b-2 border-blue-dark text-2xl font-bold text-black pb-2 z-20 relative leading-none">Vad letar du efter?</span>
+				<hr class="absolute pin-b pin-l w-full h-0 border-b-2 mb-1 border-blue-light z-10">
+			</header>
+
+			<div class="flex flex-wrap items-stretch -mx-4">
+				<div class="w-full sm:w-6/12 lg:w-4/12 px-4 mb-8">
+					<a href="" class="text-blue-dark">
+						<h3 class="mb-2 text-xl md:text-2xl">Medicinska områden</h3>
+					</a>
+					<p class="leading-tight text-lg text-grey-darkest">This page includes läkemedel, analysförteckning and something else. Check documentation for more.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="bg-white pt-16 pb-8">
+	<div class="container mx-auto px-4">
+		<div class="w-full md:w-11/12 mx-auto">
+			<header class="relative pb-4 block mb-8">
+				<span class="border-b-2 border-blue-dark text-2xl font-bold text-black pb-2 z-20 relative leading-none">Nyheter</span>
+				<hr class="absolute pin-b pin-l w-full h-0 border-b-2 mb-1 border-blue-light z-10">
+			</header>
+
+			<div class="flex flex-wrap -mx-4">
+				<div class="w-full w-full lg:w-6/12 px-4 mb-8">
+					<article>
+						<a href="" title="" class="text-blue-dark mb-2 inline-block">
+							<h2 class="text-xl sm:text-2xl leading-tight">Syn, hörsel och DAKO igång med webbtidbok</h2>
+						</a>
+						<span class="text-base block text-grey-dark mb-4">Publicerad : 27/10/2019</span>
+						<p class="text-lg text-grey-darkest leading-tight mb-4">Webbtidbokning innebär att en patient kan sköta sina bokningar genom att logga in via www.1177.se. Inne i tjänsten guidas patienten bland annat till att välja rätt typ av besök.</p>
+						<a href="#" class="px-2 mr-2 mb-2 py-1 text-sm no-underline hover:underline text-black bg-grey-lightest rounded-full inline-block">Kategori</a>
+						<a href="#" class="px-2 mr-2 mb-2 py-1 text-sm no-underline hover:underline text-black bg-grey-lightest rounded-full inline-block">Läkemedel</a>
+						<a href="#" class="px-2 mr-2 mb-2 py-1 text-sm no-underline hover:underline text-black bg-grey-lightest rounded-full inline-block">Behandlingsstöd</a>
+					</article>
+				</div>
+				<div class="w-full lg:w-6/12 px-4 mb-8">
+					<article class="px-6 py-6 bg-red-light rounded">
+        				<div class="h-16 w-16 rounded-full flex items-center justify-center bg-red mb-6">
+							<svg class="h-8 w-8">
+								<use xlink:href="#search"/>
+							</svg>
+				        </div>
+				        <a class="inline-block text-black font-sans" href="">
+				        	<h2 class="mb-4 font-sans">Vaccinationskampanj</h2>
+				        </a>
+				        <p class="mb-6 font-sans text-lg leading-tight">This is an excerpt that is meant to convey the full articles content.  Read first and pick the article you want afterwards.</p>
+				        <a class="underline text-black font-sans text-lg" href="#">Läs mer</a>
+				    </article>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

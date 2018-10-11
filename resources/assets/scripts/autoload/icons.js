@@ -1,7 +1,7 @@
 const Icons = (() => {
 
 	const Modifiers = {
-		DISPLAY_NONE: 'display-none',
+		DISPLAY_NONE: 'hidden',
 	}
 
 	class Icons {
