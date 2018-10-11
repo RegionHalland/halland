@@ -11,14 +11,11 @@ class CustomPostTypes
 		$this->custom_post_types = array(
 			"news"  => array(
 				"name" => "Nyheter",
-				"singular_name" => "Nyhet",
-				'rewrite' => "nyheter",
-				'has_archive' => true
+				"singular_name" => "Nyhet"
 			)
 		);
 		
 		add_action('init', array($this, 'register_custom_post_types'));
-		$this->populate_acf_alternatives();
 	}
 
 	/**
@@ -57,6 +54,7 @@ class CustomPostTypes
 							'menu_name'		=> _x($post_label, 'admin menu', 'halland' ),
 						),
 						'rewrite' => array('slug' => strtolower($post_label)),
+						'has_archive' => true,
 						'public' => true,
 						'taxonomies' => array('category'),
 						
@@ -65,7 +63,7 @@ class CustomPostTypes
 					register_post_type($post_name, $args);
 				}
 			}
-			
+			flush_rewrite_rules();
 	    }
 	}
 
