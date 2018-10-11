@@ -3,7 +3,7 @@
 	<!-- Top navigation -->
 	<!-- NOTE! Class "breadcrumbs" only for hide in mobile. Change to another class later -->
 	<!-- ************** -->
-	<nav aria-label="toppmeny" class="container mx-auto pb1 pt0 pr5 small bredcrumbs" style="text-align: right; background-color: #F3F3F3;">
+	<nav aria-label="toppmeny" class="container mx-auto pb1 pt0 pr5 small bredcrumbs z4" style="text-align: right; background-color: #F3F3F3; position: relative;">
 		<ul aria-label="Toppmenylänkar">
 			<li class="pl4" style="display:inline">
 				<!-- SVG here when icon is in styleguide -->
@@ -20,7 +20,7 @@
 	<!-- NOTE. Not correct image. Just for test -->
 	<!-- NOTE. Meny + search must be defined -->
 	<!-- ******************************** -->
-	<nav class="my2 container">                              
+	<nav class="py2 container z4" style="background-color: white; position: relative;">                              
         
         <div class="clearfix">
         	<div class="col col-4 pl4">
@@ -45,7 +45,7 @@
 	    	</div>
         </div>
 
-		<div class="burger-dropdown__container z4 mt2 text-white background-burger-dark-blue">
+		<div class="burger-dropdown__container z4 mt2 text-white background-burger-dark-blue" style="display: none;">
 			<ul class="pb6 pt3">
 				@foreach($nav_site as $topLevelPage)
 				<li class="pl4 py2 pr5">

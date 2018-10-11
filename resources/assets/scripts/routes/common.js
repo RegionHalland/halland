@@ -2,6 +2,7 @@ export default {
 	init() {
 		$( ".burger-menu__button" ).on( "click", function() {
 			$(".burger-dropdown__container").toggle();
+			$(".overlay").toggle();
 		});
 	},
 	finalize() {

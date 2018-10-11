@@ -4,7 +4,7 @@
 <li class="col-12 md-col-4 lg-col-4">
 	<div class="p2">
 		<div class="background-white" style="min-height: 5em; border-radius: 0.7ex;">
-			<div class="p3">
+			<div class="pt3 px3">
 				<span class="center strong">
 					<svg class="icon-badge icon-badge--md mr1">
 	 					<use xlink:href="#chevron-right"/>
