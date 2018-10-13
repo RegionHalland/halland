@@ -25,8 +25,11 @@
         <div class="clearfix">
         	<div class="col col-4 pl4">
 		        <button class="burger-menu__button">
-		            <svg class="icon-badge-nav icon-badge-nav--md">
+		            <svg class="burger-menu__burger-icon icon-badge-nav icon-badge-nav--md">
 		                <use xlink:href="#menu"/>
+		            </svg>
+		            <svg class="burger-menu__close-icon icon-badge-nav icon-badge-nav--md" style="display: none;">
+		                <use xlink:href="#x"/>
 		            </svg>
 		            <span class="hidden-inline-sm">
 		           		Meny

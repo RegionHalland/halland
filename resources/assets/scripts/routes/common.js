@@ -3,6 +3,8 @@ export default {
 		$( ".burger-menu__button" ).on( "click", function() {
 			$(".burger-dropdown__container").toggle();
 			$(".overlay").toggle();
+			$(".burger-menu__burger-icon").toggle();
+			$(".burger-menu__close-icon").toggle();
 		});
 	},
 	finalize() {
