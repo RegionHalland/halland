@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Controllers;
 
 use Sober\Controller\Controller;
 
 class Archive extends Controller
 {
-	use Traits\Pagination;
+	//use \Traits\Pagination;
 }

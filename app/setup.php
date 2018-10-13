@@ -22,6 +22,10 @@ new \App\Theme\ThemeOptions();
 new \App\Acf\Import();
 new \App\Acf\DataCurator();
 
+if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
+    require_once __DIR__ . '/../vendor/autoload.php';
+}
+
 /**
  * Updates the `$post` variable on each iteration of the loop.
  * Note: updated value is only available for subsequently loaded views, such as partials

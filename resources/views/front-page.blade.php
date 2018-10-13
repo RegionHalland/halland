@@ -2,7 +2,7 @@
 @php($id = uniqid())
 @section('content')
 
-
+@php(var_dump($tist));
 
 <div class="bg-blue-dark">
 	<div class="container mx-auto px-4 pt-20 pb-12">
