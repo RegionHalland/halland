@@ -2,8 +2,6 @@
 @php($id = uniqid())
 @section('content')
 
-
-
 <div class="bg-blue-dark">
 	<div class="container mx-auto px-4 pt-20 pb-12">
 		<div class="w-full md:w-11/12 mx-auto flex justify-between flex-wrap">
