@@ -1,131 +1,134 @@
-[
-    {
-        "key": "group_5b3239313bbe6",
-        "title": "Temainställningar",
-        "fields": [
-            {
-                "key": "field_5b323d0d20e3b",
-                "label": "Allmänt",
-                "name": "",
-                "type": "tab",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "placement": "top",
-                "endpoint": 0
+[{
+    "key": "group_5b3239313bbe6",
+    "title": "Temainst\u00e4llningar",
+    "fields": [
+        {
+            "key": "field_5b323d0d20e3b",
+            "label": "Allm\u00e4nt",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
             },
-            {
-                "key": "field_5b323e3a33ca1",
-                "label": "Cookies",
-                "name": "cookies",
-                "type": "group",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "layout": "block",
-                "sub_fields": [
-                    {
-                        "key": "field_5b323d3820e3d",
-                        "label": "Meddelande",
-                        "name": "message",
-                        "type": "textarea",
-                        "instructions": "Fyll i information om att kakor används",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "På den här webbplatsen använder vi cookies (kakor) för att webbplatsen ska fungera på ett bra sätt för dig. Genom att klicka vidare eller på ”Jag förstår” godkänner du att vi använder cookies.",
-                        "placeholder": "",
-                        "maxlength": "",
-                        "rows": 3,
-                        "new_lines": ""
-                    },
-                    {
-                        "key": "field_5b323d8620e3e",
-                        "label": "Knappttext",
-                        "name": "button",
-                        "type": "text",
-                        "instructions": "Fyll i knapptext för godkännande av användning av kakor",
-                        "required": 1,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "Jag förstår",
-                        "placeholder": "",
-                        "prepend": "",
-                        "append": "",
-                        "maxlength": ""
-                    }
-                ]
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5b323e3a33ca1",
+            "label": "Cookies",
+            "name": "cookies",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
             },
-            {
-                "key": "field_5b323b4a6c2d7",
-                "label": "Nyheter",
-                "name": "",
-                "type": "tab",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "placement": "top",
-                "endpoint": 0
-            },
-            {
-                "key": "field_5b323b6e6c2d8",
-                "label": "Taggar",
-                "name": "show_tags",
-                "type": "true_false",
-                "instructions": "Aktiverar \"taggar\" för inlägg",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "message": "Aktivera taggar",
-                "default_value": 0,
-                "ui": 0,
-                "ui_on_text": "",
-                "ui_off_text": ""
-            }
-        ],
-        "location": [
-            [
+            "layout": "block",
+            "sub_fields": [
                 {
-                    "param": "options_page",
-                    "operator": "==",
-                    "value": "acf-options-temainstallningar"
+                    "key": "field_5b323d3820e3d",
+                    "label": "Meddelande",
+                    "name": "message",
+                    "type": "textarea",
+                    "instructions": "Fyll i information om att kakor anv\u00e4nds",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "P\u00e5 den h\u00e4r webbplatsen anv\u00e4nder vi cookies (kakor) f\u00f6r att webbplatsen ska fungera p\u00e5 ett bra s\u00e4tt f\u00f6r dig. Genom att klicka vidare eller p\u00e5 \u201dJag f\u00f6rst\u00e5r\u201d godk\u00e4nner du att vi anv\u00e4nder cookies.",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 3,
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_5b323d8620e3e",
+                    "label": "Knappttext",
+                    "name": "button",
+                    "type": "text",
+                    "instructions": "Fyll i knapptext f\u00f6r godk\u00e4nnande av anv\u00e4ndning av kakor",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Jag f\u00f6rst\u00e5r",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
-        ],
-        "menu_order": 0,
-        "position": "normal",
-        "style": "default",
-        "label_placement": "top",
-        "instruction_placement": "label",
-        "hide_on_screen": "",
-        "active": 1,
-        "description": ""
-    }
-]
+        },
+        {
+            "key": "field_5bbe0f3f2774b",
+            "label": "Egna inl\u00e4ggstyper",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5bbe0f502774c",
+            "label": "Aktiverade inl\u00e4ggstyper",
+            "name": "activated_custom_post_types",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "news": "Nyheter"
+            },
+            "allow_custom": 0,
+            "save_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-temainstallningar"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": ""
+}]
+

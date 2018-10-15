@@ -16,6 +16,8 @@ new \App\Theme\Navigation();
 new \App\Theme\Sidebars();
 new \App\Theme\ThemeOptions();
 
+new \App\Theme\CustomPostTypes();
+
 /**
  * ACF
  */

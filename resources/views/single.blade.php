@@ -21,6 +21,8 @@
 					@include('partials.sidebar-tags')
 					@include('partials.sidebar-right')
 					@include('partials.content-nav')
+
+					<a href="<?php echo get_post_type_archive_link('news'); ?>">Arkiv</a>
 				</div>
 			</div>
 		</div>

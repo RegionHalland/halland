@@ -1,27 +1,31 @@
 @extends('layouts.app')
 
-@section('subheader')
-<div class="col col-12 mt4 mb2 px3">
-	<h1 class="h2 text-white mb0 inline-block align-middle">
-		{!! get_the_archive_title() !!}
-	</h1>
-</div>
-@endsection
-
 @section('content')
-<div class="px3">
-	<div class="container mx-auto">
-		<div class="clearfix mxn3 py4">
-		@if (!have_posts())
-			<div class="alert alert-warning">
-				{{ __('Oj, här var det tomt!', 'halland') }}
+	<div class="container m-auto">
+		<div class="flex flex-wrap">
+		  	<div class="w-full sm:w-6/12 md:w-4/12 lg:w-8/12 mb-4 bg-grey-light">
+				<h1>{{ get_the_archive_title() }}</h1>
+				<ul>
+					@while($archive_posts->have_posts()) @php($archive_posts->the_post())
+						<li>
+							<h2>{{ get_the_title() }}</h2>
+							<p>{!! get_the_excerpt() !!}</p>
+						</li>
+					@endwhile
+				</ul>
 			</div>
-			{!! get_search_form(false) !!}
-		@endif
-		<div class="col col-12 px3">
-			@include('partials.content-archive')
-		</div>
+
+			<div class="w-full sm:w-6/12 md:w-4/12 lg:w-4/12 mb-4 bg-grey">
+				<h2>Kategorier</h2>
+				<ul>
+					@foreach($categories as $key => $value)
+						<li>
+							<a class="read-more" href="{{ get_post_type_archive_link(get_post_type()) }}?{{'filter[category]=' .  $value->slug }}">{{ $value->name }}</a>
+						</li>
+					@endforeach
+				</ul>
+			</div>
+
 		</div>
 	</div>
-</div>
 @endsection

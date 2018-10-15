@@ -7,7 +7,6 @@ class ThemeOptions
 	public function __construct()
 	{	
 		add_action( 'admin_menu', array($this, 'addOptionsPage') );
-		add_action( 'init', array($this, 'unregisterTags') );
 	}
 
 	public function addOptionsPage()
@@ -36,20 +35,5 @@ class ThemeOptions
 			'capability'    => $themeOptionsCapability,
 			'redirect'      => false
 		));
-	}
-
-	/**
-	 * Unregister tags from the theme
-	 * @return void
-	 */
-	public function unregisterTags()
-	{	
-		$show_tags = get_field('show_tags', 'options');
-
-		if ($show_tags === '1') {
-			return false;
-		}
-
-		unregister_taxonomy_for_object_type( 'post_tag', 'post' );
 	}
 }
