@@ -10,8 +10,8 @@
 	<!-- **************************** -->
 	<!-- Content with grey background -->
 	<!-- **************************** -->
-	<div class="relative">
-		<nav aria-label="Huvudnavigation" class="container background-dark-blue-frida relative mx-auto nav-boxes-container z1">
+	<div>
+		<nav aria-label="Huvudnavigation" class="container background-dark-blue-frida mx-auto nav-boxes-container z1">
 			@include('partials.new_breadcrumbs')
 			<h1 class="pl5 pt3 text-white">{{ $post -> post_title }}</h1>
 			@include('partials.new_nav-section')

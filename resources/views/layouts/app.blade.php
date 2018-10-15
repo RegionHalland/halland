@@ -16,19 +16,7 @@
 
 			@include('partials.new_header')
 
-			<!-- 
-			@include('partials.header')
-			
-			@hasSection ('subheader')
-				<div class="background-gradient-blue py3 px2">
-					<div class="container mx-auto">
-						<div class="clearfix mxn2">
-							@yield('subheader')
-						</div>
-					</div>
-				</div>
-			@endif
-			-->
+
 			
 			<div class="col-12 flex content-stretch">
 				<div class="container col-12 mx-auto">
@@ -41,6 +29,6 @@
 		
 		<!-- END container wrap around page content -->
 		</div>
-
+    <div class="overlay" style="display: none;"></div>
 	</body>
 </html>
