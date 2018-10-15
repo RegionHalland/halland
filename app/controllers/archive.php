@@ -19,7 +19,18 @@ class Archive extends Controller
 		}
 		$args = array_merge(array('post_type' => $post->post_type), $args);
 
-		$archive_posts = get_posts($args);
+		// The Query
+		$archive_posts = new \WP_Query( $args );
 		return $archive_posts;
+	}
+
+	public function categories() 
+	{
+		return get_terms('category');
+	}
+
+	public function archive_link_url()
+	{
+		return get_post_type_archive_link(get_post_type());
 	}
 }
