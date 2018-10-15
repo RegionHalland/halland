@@ -21,40 +21,40 @@
 	<!-- ********** -->
 	<!-- Quick find -->
 	<!-- ********** -->
+	@if($top_links)
 	<nav aria-labelledby="690690" class="" style="background-color: #F0F6FB">
 		<div class="container mx-auto mobile-friendly-padding">
 			<div class="m0">
 				<div class="container mx-auto mobile-friendly-padding">
 					<h1 class="h2 pb3" id="690690">Hitta snabbt</h1>
-					<div class="flex flex-wrap">
-						@if($top_links)
-							@foreach($top_links as $key => $top_link)
-								@if($top_link["external_link_toggle"])
-									<div class="col-12 lg-col-4 p2">
-										<a class="featured-link featured-link--external background-white" href="{{ $top_link["external_link"]["link"] }}" style="color: black; font-weight: bold;">
-											<div style="max-width: 90%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ $top_link["external_link"]["link_label"] ? $top_link["external_link"]["link_label"] : $top_link["external_link"]["link"]}}</div>
-											<svg class="icon-badge featured-link__icon icon-badge--md">
-												<use xlink:href="#external-link"/>
-											</svg>
-										</a>
-									</div>
-								@else
-									<div class="col-12 lg-col-4 p2">
-										<a class="featured-link background-white" href="{{ get_permalink($top_link["internal_link"]["link"][0]->ID) }}" style="color: black; font-weight: bold;">
-											<div style="max-width: 90%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ $top_link["internal_link"]["link_label"] ? $top_link["internal_link"]["link_label"] : $top_link["internal_link"]["link"][0]->post_title }}</div>
-											<svg class="featured-link__icon icon-badge icon-badge--md">
-												<use xlink:href="#arrow-right"/>
-											</svg>
-										</a>
-									</div>
-								@endif
-							@endforeach
-						@endif
+					<div class="flex flex-wrap">	
+						@foreach($top_links as $key => $top_link)
+							@if($top_link["external_link_toggle"])
+								<div class="col-12 lg-col-4 p2">
+									<a class="featured-link featured-link--external background-white" href="{{ $top_link["external_link"]["link"] }}" style="color: black; font-weight: bold;">
+										<div style="max-width: 90%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ $top_link["external_link"]["link_label"] ? $top_link["external_link"]["link_label"] : $top_link["external_link"]["link"]}}</div>
+										<svg class="icon-badge featured-link__icon icon-badge--md">
+											<use xlink:href="#external-link"/>
+										</svg>
+									</a>
+								</div>
+							@else
+								<div class="col-12 lg-col-4 p2">
+									<a class="featured-link background-white" href="{{ get_permalink($top_link["internal_link"]["link"][0]->ID) }}" style="color: black; font-weight: bold;">
+										<div style="max-width: 90%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ $top_link["internal_link"]["link_label"] ? $top_link["internal_link"]["link_label"] : $top_link["internal_link"]["link"][0]->post_title }}</div>
+										<svg class="featured-link__icon icon-badge icon-badge--md">
+											<use xlink:href="#arrow-right"/>
+										</svg>
+									</a>
+								</div>
+							@endif
+						@endforeach
 					</div>
 				</div>
 			</div>
 		</div>
 	</nav>
+	@endif
 
 	<!-- **** -->
 	<!-- News (Must be fixed) -->
