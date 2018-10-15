@@ -17,7 +17,7 @@
 	<!-- ************ -->
 	<!-- Page content -->
 	<!-- ************ -->
-	<main class="background-white" id="main">
+	<div class="background-white">
 		<div class="background-white">
 			<div class="container mx-auto p4">
 				<div class="m2 flex flex-wrap">
@@ -34,19 +34,19 @@
 					<!-- Page content -->
 					<!-- ************ -->
 					<div class="col-12 lg-col-9">
-						<div class="ml4">
+						<main class="ml4">
 							<div>
 								<h1>{{ the_title() }}</h1>
 							</div>
-							<main id="main">
+							<div id="main">
 								@include('partials.new_content-page')
-							</main>
-						</div>
+							</div>
+						</main>
 					</div>
 				</div>
 			</div>
 		</div>	
 		
-	</main>
+	</div>
 
 @endsection
