@@ -6,10 +6,6 @@ use Sober\Controller\Controller;
 
 class App extends Controller
 {
-	public function ass() 
-	{
-		return 'titis';
-	}
 	
 	// use Traits\Bloginfo;
 	// use Traits\CookieNotice;
