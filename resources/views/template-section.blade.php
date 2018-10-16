@@ -33,8 +33,15 @@
 					</article>
 				</div>
 				@endwhile
+				@if (is_active_sidebar('sidebar-article-bottom'))
+					<hr>
+					<div class="col-12">
+						@include('partials.sidebar-article-bottom')
+					</div>
+				@endif
 			</div>	
-		</div>	
+		</div>
+
 	</main>
 
 </div>	
