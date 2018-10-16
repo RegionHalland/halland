@@ -10,6 +10,13 @@
 				<svg class="icon icon--sm mr1">
 					<use xlink:href="#monitor"/>
 				</svg>
+				<a id="bapluslogo" class="logo" title="Aktivera Talande Webb" onclick="toggleBar();" href="#" style="vertical-align: middle; color: black;">Aktivera Talande Webb</a>
+			</li>
+			<li class="pl4" style="display:inline">
+				<!-- SVG here when icon is in styleguide -->
+				<svg class="icon icon--sm mr1">
+					<use xlink:href="#monitor"/>
+				</svg>
 				<a href="https://etjanster.regionhalland.se" style="vertical-align: middle; color: black;">E-tjänster</a>
 			</li>
 		</ul>

@@ -30,5 +30,7 @@
 		<!-- END container wrap around page content -->
 		</div>
     <div class="overlay" style="display: none;"></div>
+    <script type="text/javascript">var _baTheme=0, _baMode='Aktivera Talande Webb', _baUseCookies=true, _baHideOnLoad=true;</script>
+	<script type="text/javascript" src="//www.browsealoud.com/plus/scripts/ba.js"></script>
 	</body>
 </html>
