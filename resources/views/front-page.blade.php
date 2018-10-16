@@ -46,7 +46,7 @@
 										</h2>
 									</div>
 									<div class="mb2 small">
-										@include('partials.new_updated-time', ['post' => $newsitem])
+										@include('partials.new_published-time', ['post' => $newsitem])
 									</div>
 									<div class="mb3">
 										@if($newsitem->post_excerpt)
