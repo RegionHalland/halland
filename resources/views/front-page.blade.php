@@ -20,33 +20,20 @@
 				</form>
 			</div>
 			<div class="w-full md:w-4/12 mt-12 md:mt-0">
+			@php($popular_links = get_field('popular_links'))
+			@if(isset($popular_links) && !empty($popular_links))
 				<header class="text-lg font-bold text-white block mb-2">Populära länkar</header>
 				<ol class="list-reset bg-white relative rounded overflow-hidden">
+					@foreach($popular_links as $link)
 					<li class="px-3 py-4 border-b border-grey-lightest bg-white">
 						<svg class="h-4 w-4 align-middle mr-1">
 							<use xlink:href="#link-2"/>
 						</svg>
-						<a class="text-black" href="">Analysförteckning</a>
+						<a class="text-black" href="{{ $link['link']['url'] }}">{{ $link['link']['title'] }}</a>
 					</li>
-					<li class="px-3 py-4 border-b border-grey-lightest bg-white">
-						<svg class="h-4 w-4 align-middle mr-1">
-							<use xlink:href="#link-2"/>
-						</svg>
-						<a class="text-black" href="">Terapirekommendationer</a>
-					</li>
-					<li class="px-3 py-4 border-b border-grey-lightest bg-white">
-						<svg class="h-4 w-4 align-middle mr-1">
-							<use xlink:href="#link-2"/>
-						</svg>
-						<a class="text-black" href="">Nyhetsarkiv</a>
-					</li>
-					<li class="px-3 py-4 border-b border-grey-lightest bg-white">
-						<svg class="h-4 w-4 align-middle mr-1">
-							<use xlink:href="#link-2"/>
-						</svg>
-						<a class="text-black" href="">Aktuella driftstörningar</a>
-					</li>
+					@endforeach
 				</ol>
+			@endif
 			</div>
 		</div>
 	</div>
@@ -97,18 +84,7 @@
 					</article>
 				</div>
 				<div class="w-full lg:w-6/12 px-4 mb-8">
-					<article class="px-6 py-6 bg-red-light rounded">
-        				<div class="h-16 w-16 rounded-full flex items-center justify-center bg-red mb-6">
-							<svg class="h-8 w-8">
-								<use xlink:href="#search"/>
-							</svg>
-				        </div>
-				        <a class="inline-block text-black font-sans" href="">
-				        	<h2 class="mb-4 font-sans">Vaccinationskampanj</h2>
-				        </a>
-				        <p class="mb-6 font-sans text-lg leading-tight">This is an excerpt that is meant to convey the full articles content.  Read first and pick the article you want afterwards.</p>
-				        <a class="underline text-black font-sans text-lg" href="#">Läs mer</a>
-				    </article>
+					@include('partials.blurb-list')
 				</div>
 			</div>
 		</div>
