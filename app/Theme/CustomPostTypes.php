@@ -22,7 +22,7 @@ class CustomPostTypes
 				'taxonomies' => array('category'),
 			),
 
-			// Blurb
+			// Puffar
 			'blurb' => array(
 				'labels' => array(
 					'name' => _x('Puffar', 'post type general name', 'halland' ),
@@ -33,7 +33,7 @@ class CustomPostTypes
 				'has_archive' => true,
 				'public' => true,
 				'taxonomies' => array('category'),
-				'menu_icon' => 'dashicons-edit',
+				'menu_icon' => 'dashicons-megaphone',
 				'supports' => array( 'thumbnail' )
 			)
 		);
