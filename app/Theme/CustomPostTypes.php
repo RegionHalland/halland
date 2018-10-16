@@ -9,13 +9,32 @@ class CustomPostTypes
 	{
 		// Define our custom post types
 		$this->custom_post_types = array(
-			"news" => array(
-				"name" => "Nyheter",
-				"singular_name" => "Nyhet"
+			// Nyheter 
+			'news' => array(
+				'labels' => array(
+					'name' => _x('Nyheter', 'post type general name', 'halland' ),
+					'singular_name' => _x('Nyhet', 'post type singular name', 'halland' ),
+					'menu_name' => _x('Nyheter', 'admin menu', 'halland' ),
+				),
+				'rewrite' => array('slug' => 'nyheter'),
+				'has_archive' => true,
+				'public' => true,
+				'taxonomies' => array('category'),
 			),
-			"blurb" => array(
-				"name" => "Puffar",
-				"singular_name" => "Puff"
+
+			// Blurb
+			'blurb' => array(
+				'labels' => array(
+					'name' => _x('Puffar', 'post type general name', 'halland' ),
+					'singular_name' => _x('Puff', 'post type singular name', 'halland' ),
+					'menu_name' => _x('Puffar', 'admin menu', 'halland' ),
+				),
+				'rewrite' => array('slug' => 'puffar'),
+				'has_archive' => true,
+				'public' => true,
+				'taxonomies' => array('category'),
+				'menu_icon' => 'dashicons-edit',
+				'supports' => array( 'thumbnail' )
 			)
 		);
 		
@@ -26,7 +45,7 @@ class CustomPostTypes
 			$field['choices'] = array();
 				
 			foreach ($this->custom_post_types as $key => $value) {
-				$field['choices'][$key] = $value["name"];
+				$field['choices'][$key] = $value['labels']['name'];
 			}
 
 			return $field;
@@ -44,23 +63,7 @@ class CustomPostTypes
 			
 			if(isset($post_types_to_activate) && is_array($post_types_to_activate)) {
 				foreach ($post_types_to_activate as $key => $value) {
-					$post_name = $value;
-					$post_label = $this->custom_post_types[$value]["name"];
-
-					$args = array(
-						'labels' => array(
-							'name'			=> _x($post_label, 'post type general name', 'halland' ),
-							'singular_name'	=> _x($post_label, 'post type singular name', 'halland' ),
-							'menu_name'		=> _x($post_label, 'admin menu', 'halland' ),
-						),
-						'rewrite' => array('slug' => strtolower($post_label)),
-						'has_archive' => true,
-						'public' => true,
-						'taxonomies' => array('category'),
-						
-					);
-
-					register_post_type($post_name, $args);
+					register_post_type($value, $this->custom_post_types[$value]);
 				}
 			}
 			flush_rewrite_rules();
