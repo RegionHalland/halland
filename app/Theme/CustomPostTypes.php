@@ -9,29 +9,29 @@ class CustomPostTypes
 	{
 		// Define our custom post types
 		$this->custom_post_types = array(
-			"news"  => array(
+			"news" => array(
 				"name" => "Nyheter",
 				"singular_name" => "Nyhet"
+			),
+			"blurb" => array(
+				"name" => "Puffar",
+				"singular_name" => "Puff"
 			)
 		);
 		
-		add_action('init', array($this, 'register_custom_post_types'));
-	}
-
-	/**
-	 * Add available custom post types to the activated_custom_post_types field
-	*/
-	public function populate_acf_alternatives()
-	{
-		add_filter('acf/load_field/name=activated_custom_post_types', function($field) {	
+		// Add available custom post types to the activated_custom_post_types field
+		// Do it here because we need to pass the $field variable
+		// https://www.advancedcustomfields.com/resources/dynamically-populate-a-select-fields-choices/
+		add_filter('acf/load_field/name=activated_custom_post_types', function($field) {
 			$field['choices'] = array();
-			
+				
 			foreach ($this->custom_post_types as $key => $value) {
 				$field['choices'][$key] = $value["name"];
 			}
-		
+
 			return $field;
 		});
+		add_action('init', array($this, 'register_custom_post_types'));
 	}
 
 	/**
