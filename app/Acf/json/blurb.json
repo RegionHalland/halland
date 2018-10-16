@@ -1,0 +1,88 @@
+[{
+    "key": "group_5bc5c8dd38eaf",
+    "title": "Puff",
+    "fields": [
+        {
+            "key": "field_5bc5d3ed7c702",
+            "label": "Utdrag",
+            "name": "excerpt",
+            "type": "textarea",
+            "instructions": "Fyll i en utdrag som visas i puffen. Maximalt 150 tecken.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": 150,
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5bc5d1cb7aceb",
+            "label": "L\u00e4nk",
+            "name": "link",
+            "type": "link",
+            "instructions": "Fyll i en l\u00e4nk f\u00f6r puffen. Kan vara en extern l\u00e4nk, en sida eller ett inl\u00e4gg.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_5bc5d374d6388",
+            "label": "Kategori",
+            "name": "category",
+            "type": "select",
+            "instructions": "V\u00e4lj vilken kategori f\u00f6r puffen. Ikon och bakgrundsf\u00e4rg baseras p\u00e5 detta val.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Standard",
+                "staff": "Personal",
+                "warning": "Varning"
+            },
+            "default_value": [
+                "default"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "blurb"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": 1,
+    "description": ""
+}]
+
