@@ -11,7 +11,7 @@
 				@endwhile
 				<form>
 					<div role="search" class="bg-white rounded overflow-hidden relative">
-						<input id="search" placeholder="Sök på webbplatsen" class="text-lg bg-transparent h-12 md:h-16 pin-t px-6 pin-l w-full" type="text">
+						<input name="s" id="search" placeholder="Sök på webbplatsen" class="text-lg bg-transparent h-12 md:h-16 pin-t px-6 pin-l w-full" type="text">
 						<button type="submit" class="bg-yellow flex items-center justify-center absolute pin-r pin-b h-12 w-12 md:h-16 md:w-16">
 							<svg class="h-6 w-6">
 								<use xlink:href="#search"/>
