@@ -16,19 +16,8 @@ trait topLevelPages
 			return;
 		}
 
-		$frontpage = (int)get_option('page_on_front');
-
-		$pages = get_pages(array(
+		return get_pages(array(
 			'parent' => 0
 		));
-
-		foreach ($pages as $i => $page) {
-			if ($page->ID === $frontpage) {
-				unset($pages[$i]);
-				continue;
-			}
-		}
-
-		return $pages;
 	}
 }
