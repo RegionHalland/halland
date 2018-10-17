@@ -1,4 +1,4 @@
-<article>
+<article class="py-4">
 	<a href="{{ the_permalink() }}" title="" class="text-blue-dark mb-2 inline-block">
 		<h2 class="text-xl sm:text-2xl leading-tight">{{ get_the_title() }}</h2>
 	</a>
