@@ -32,8 +32,15 @@
 					{{-- Utilities END --}}
 
 					{{-- Search Field --}}
-					<form class="hidden md:flex">
-						<input class="border py-3 px-4 rounded" type="search" name="s" id="search" placeholder="Sök här">
+					<form class="">
+						<div role="search" class="bg-white rounded-full lg:rounded lg:w-64 overflow-hidden flex lg:border rounded relative">
+							<input name="s" id="search" placeholder="Sök på webbplatsen" class="hidden lg:inline-block text-base bg-transparent h-12 pin-t px-4 pin-l w-full" type="text">
+							<button type="submit" class="bg-yellow flex items-center justify-center block lg:absolute pin-r pin-b h-12 w-12">
+								<svg class="h-6 w-6">
+									<use xlink:href="#search"/>
+								</svg>
+							</button>
+						</div>
 					</form>
 					{{-- Search Field END --}}
 				</div>

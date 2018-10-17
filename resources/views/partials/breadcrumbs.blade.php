@@ -1,5 +1,5 @@
 @if(isset($breadcrumbs))
-	<div class="bg-green-light">
+	<div class="bg-green-light border-b-4 border-green-light">
 		<div class="container mx-auto">
 			<nav class="px-4">
 				<ol class="breadcrumbs list-reset" aria-label="Länkstig" itemscope itemtype="http://schema.org/BreadcrumbList">
@@ -13,7 +13,7 @@
 									</svg>
 								</span>
 							@else
-								<div class="absolute pin-b w-full -mb-1 h-1 bg-green-dark rounded-t"></div>
+								<div class="absolute pin-b w-full -mb-1 h-1 bg-green rounded-t"></div>
 								<span class="breadcrumbs__span text-black" itemprop="name">{!! $breadcrumb['name'] !!}</span>
 							@endif
 							<meta itemprop="position" content="{{ $loop->iteration }}">
