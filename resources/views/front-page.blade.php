@@ -1,13 +1,14 @@
 @extends('layouts.app')
 @php($id = uniqid())
 @section('content')
-
 <div class="bg-blue-dark">
 	<div class="container mx-auto px-4 pt-20 pb-12">
 		<div class="w-full md:w-11/12 mx-auto flex justify-between flex-wrap">
 			<div class="w-full md:w-6/12">
-				<h1 class="text-3xl md:text-4xl text-white mb-4">Välkommen till Vårdgivarwebben</h1>
-				<p class="text-blue-light text-lg leading-tight md:text-xl mb-6">Den officiella webbplatsen för vårdgivare i Halland. Här hittar du allt från analysförteckningar till terapirekommendationer och allmänna uppgifter.</p>
+				@while(have_posts()) @php(the_post())
+					<h1 class="text-3xl md:text-4xl text-white mb-4">{{ the_title() }}</h1>
+					<div class="text-blue-light text-lg leading-tight md:text-xl mb-6">{!! the_content() !!}</div>
+				@endwhile
 				<form>
 					<div role="search" class="bg-white rounded overflow-hidden relative">
 						<input id="search" placeholder="Sök på webbplatsen" class="text-lg bg-transparent h-12 md:h-16 pin-t px-6 pin-l w-full" type="text">
@@ -40,8 +41,6 @@
 </div>
 
 
-
-
 <div class="bg-white pt-16 pb-8">
 	<div class="container mx-auto px-4">
 		<div class="w-full md:w-11/12 mx-auto">
@@ -49,18 +48,26 @@
 				<span class="border-b-2 border-blue-dark text-2xl font-bold text-black pb-2 z-20 relative leading-none">Vad letar du efter?</span>
 				<hr class="absolute pin-b pin-l w-full h-0 border-b-2 mb-1 border-blue-light z-10">
 			</header>
-
 			<div class="flex flex-wrap items-stretch -mx-4">
-				<div class="w-full sm:w-6/12 lg:w-4/12 px-4 mb-8">
-					<a href="" class="text-blue-dark">
-						<h3 class="mb-2 text-xl md:text-2xl">Medicinska områden</h3>
-					</a>
-					<p class="leading-tight text-lg text-grey-darkest">This page includes läkemedel, analysförteckning and something else. Check documentation for more.</p>
-				</div>
+				@foreach($top_level_pages as $top_level_page)
+					<div class="w-full sm:w-6/12 lg:w-4/12 px-4 mb-8">
+						<a href="{{ the_permalink($top_level_page->ID) }}" class="text-blue-dark">
+							<h3 class="mb-2 text-xl md:text-2xl">{{ $top_level_page->post_title }}</h3>
+						</a>
+						<p class="leading-tight text-lg text-grey-darkest">
+							@if(get_field('excerpt', $top_level_page->ID)) 
+								{{ the_field('excerpt', $top_level_page->ID) }}
+							@else
+								{{ \App\trim_excerpt($top_level_page->post_content) }}
+							@endif
+						</p>
+					</div>
+				@endforeach
 			</div>
 		</div>
 	</div>
 </div>
+
 
 <div class="bg-white pt-16 pb-8">
 	<div class="container mx-auto px-4">

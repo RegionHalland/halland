@@ -146,5 +146,6 @@ function display_sidebar()
  */
 function trim_excerpt($content)
 {
+    $content = preg_replace('/<a href=\"(.*?)\">(.*?)<\/a>/', "", $content);
     return substr( $content, 0, 120 ) . '...';
 }
