@@ -79,16 +79,7 @@
 
 			<div class="flex flex-wrap -mx-4">
 				<div class="w-full w-full lg:w-6/12 px-4 mb-8">
-					<article>
-						<a href="" title="" class="text-blue-dark mb-2 inline-block">
-							<h2 class="text-xl sm:text-2xl leading-tight">Syn, hörsel och DAKO igång med webbtidbok</h2>
-						</a>
-						<span class="text-base block text-grey-dark mb-4">Publicerad : 27/10/2019</span>
-						<p class="text-lg text-grey-darkest leading-tight mb-4">Webbtidbokning innebär att en patient kan sköta sina bokningar genom att logga in via www.1177.se. Inne i tjänsten guidas patienten bland annat till att välja rätt typ av besök.</p>
-						<a href="#" class="px-2 mr-2 mb-2 py-1 text-sm no-underline hover:underline text-black bg-grey-lightest rounded-full inline-block">Kategori</a>
-						<a href="#" class="px-2 mr-2 mb-2 py-1 text-sm no-underline hover:underline text-black bg-grey-lightest rounded-full inline-block">Läkemedel</a>
-						<a href="#" class="px-2 mr-2 mb-2 py-1 text-sm no-underline hover:underline text-black bg-grey-lightest rounded-full inline-block">Behandlingsstöd</a>
-					</article>
+					@include('partials.news-list')
 				</div>
 				<div class="w-full lg:w-6/12 px-4 mb-8">
 					@include('partials.blurb-list')

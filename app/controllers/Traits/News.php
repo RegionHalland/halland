@@ -12,7 +12,10 @@ trait News
 	{
 		global $post;
 
-		$args = array('post_type' => 'news');
+		$args = array(
+			'post_type' => 'news',
+			'posts_per_page' => 3
+		);
 
 		// The Query
 		$news = new \WP_Query( $args );
