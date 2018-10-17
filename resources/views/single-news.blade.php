@@ -24,8 +24,10 @@
 			</div>
 			<div class="w-full sm:w-full md:w-8/12 lg:w-8/12 px-4">
 				@while(have_posts()) @php(the_post())
-					<h1>{{ get_the_title() }}</h1>
-					<p>{{ the_content() }}</p>
+					<article class="article">
+						<h1>{{ get_the_title() }}</h1>
+						<p>{{ the_content() }}</p>
+					</article>
 				@endwhile
 			</div>
 		</div>
