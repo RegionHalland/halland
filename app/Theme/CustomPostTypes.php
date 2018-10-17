@@ -35,7 +35,7 @@ class CustomPostTypes
 				'public' => true,
 				'taxonomies' => array('category'),
 				'menu_icon' => 'dashicons-megaphone',
-				'supports' => array( 'thumbnail' )
+				'supports' => array( 'title', 'thumbnail' )
 			)
 		);
 		
