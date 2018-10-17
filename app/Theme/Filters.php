@@ -16,6 +16,6 @@ class Filters
 	 */
 	public function update_excerpt_more()
 	{			
-		return '<a class="block" href="' . get_permalink() . '">' . __('Läs mer...', 'halland') . '</a>';
+		return '';
 	}
 }
