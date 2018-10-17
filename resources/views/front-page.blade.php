@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="bg-blue-dark">
-	<div class="container mx-auto px-4 pt-20 pb-12">
+	<div class="container mx-auto px-4 pt-16 pb-12">
 		<div class="w-full md:w-11/12 mx-auto flex justify-between flex-wrap">
 			<div class="w-full md:w-6/12">
 				@while(have_posts()) @php(the_post())
