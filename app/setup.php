@@ -15,8 +15,8 @@ new \App\Theme\Support();
 new \App\Theme\Navigation();
 new \App\Theme\Sidebars();
 new \App\Theme\ThemeOptions();
-
 new \App\Theme\CustomPostTypes();
+new \App\Theme\Filters();
 
 /**
  * ACF
@@ -27,6 +27,17 @@ new \App\Acf\DataCurator();
 if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
     require_once __DIR__ . '/../vendor/autoload.php';
 }
+
+add_filter( 'get_the_excerpt', function( $output ) {
+    global $post;
+
+    if ( has_excerpt() ) {
+        $output .= '<p><a class="read-more" href="'. get_permalink( $post->ID ) .'">Readasda More</a></p>';
+    }
+
+    return preg_replace( '/<a [^>]+>Continue reading.*?< \/a>/i', '', $output );
+});
+
 
 /**
  * Updates the `$post` variable on each iteration of the loop.
