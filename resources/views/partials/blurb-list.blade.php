@@ -1,4 +1,4 @@
-@php($blurbs = get_field('blurbs'))
+@php($blurbs = get_field('blurbs', $post->ID))
 
 @if(isset($blurbs) && !empty($blurbs))
 	@foreach ($blurbs as $blurb)
