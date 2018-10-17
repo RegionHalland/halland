@@ -20,7 +20,8 @@ class Import
 					'options-theme-data-curator' => 'group_5ac48d9ea70de',
 					'template-top-links' => 'group_5accade8e6c07',
 					'front-page' => 'group_5bc5f5f211eac',
-					'blurb' => 'group_5bc5c8dd38eaf'
+					'blurb' => 'group_5bc5c8dd38eaf',
+					'blurbs' => 'group_5bc5e091993ac'
 				));
 				$acfExportManager->import();
 			}
