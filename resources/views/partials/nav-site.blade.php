@@ -1,53 +1,57 @@
-@if(isset($nav_site))
-<nav class="site-nav">
-	<div class="site-nav__top">
-		<div class="site-nav__container">
-			<a href="{{ esc_url( home_url( '/' ) ) }}" class="site-nav__logo" aria-label="Till startsidan">
-				<img src="@asset('images/navigation_logo.svg')" alt="">
-			</a>
-			@if(isset($site_description))
-			<span class="site-nav__description">{{ $site_description }}</span>
-			@endif
-			<button class="site-nav__menu-btn">
-				<svg class="icon-badge icon-badge--md">
-					<use xlink:href="#menu"/>
-				</svg>
-			</button>
+<nav>
+	{{-- Top bar --}}
+	<div class="w-full border-b border-grey-lighter">
+		<div class="container mx-auto py-3 px-4">
+			<div class="flex flex-wrap items-center justify-between -mx-4">
+
+				{{-- Logo Container --}}
+				<div class="px-4">
+					<img class="block w-32 md:w-48" src="@asset('images/navigation_logo.svg')" alt="">
+				</div>
+				{{-- Logo Container END--}}
+
+				{{-- Right Container --}}
+				<div class="flex flex-wrap px-4">
+					{{-- Utilities --}}
+					<div class="hidden md:flex flex-wrap items-center">
+						<a class="flex items-center text-black no-underline mr-4" href="#">
+							<span class="inline-flex h-6 w-6 rounded-full bg-blue-light items-center justify-center mr-2">
+								<svg class="inline-flex h-4 w-4 align-middle">
+									<use xlink:href="#external-link"/>
+								</svg>
+							</span>Talande Webb
+						</a>
+						<a class="flex items-center text-black no-underline mr-4" href="#">
+							<span class="inline-flex h-6 w-6 rounded-full bg-blue-light items-center justify-center mr-2">
+								<svg class="inline-flex h-4 w-4 align-middle">
+									<use xlink:href="#external-link"/>
+								</svg>
+							</span>E-tjänster
+						</a>
+					</div>
+					{{-- Utilities END --}}
+
+					{{-- Search Field --}}
+					<form class="flex">
+						<input class="border py-3 px-4 rounded" type="search" name="search" placeholder="Sök här">
+					</form>
+					{{-- Search Field END --}}
+				</div>
+				{{-- Right Container END --}}
+			</div>
 		</div>
 	</div>
-	<div class="site-nav__bottom">
-		<div class="site-nav__container">
-			<ul class="site-nav__list">
-				@foreach($nav_site as $topLevelPage)
-				<li class="site-nav__item">
-					<a href="#" onclick="return false" class="site-nav__link {{ $topLevelPage->active ? 'active' : '' }}">{{ $topLevelPage->post_title }}</a>
-				
-					@if(isset($topLevelPage->children))
-					<nav class="dropdown">
-						<div class="site-nav__container">
-							<ul class="dropdown__list">
-								@foreach($topLevelPage->children as $childPage)
-								<li class="dropdown__item">
-									<a href="{{ get_page_link($childPage->ID) }}" class="dropdown__link">{{ $childPage->post_title }}</a>
-									<span class="dropdown__link-description"></span>
-								</li>
-								@endforeach
-							</ul>
-							<div class="dropdown__close">
-								<button class="dropdown__close-btn">
-									<svg class="icon-badge">
-										<use xlink:href="#x"></use>
-									</svg>
-								</button>
-							</div>
-						</div>
-					</nav>
-					@endif
-				</li>
-				@endforeach
-			</ul>
-		</div>
+	{{-- Top bar END --}}
+	
+	{{-- Bottom bar --}}
+	@if(isset($top_level_pages) && !empty($top_level_pages))
+	<div class="container mx-auto py-4 px-4 overflow-auto">
+		<ul class="list-reset flex -mx-4">
+			@foreach($top_level_pages as $top_level_page)
+			<li class="px-4 flex-no-shrink"><a class="no-underline text-black" href="{{ the_permalink($top_level_page->ID) }}">{{ $top_level_page->post_title }}</a></li>
+			@endforeach
+		</ul>
 	</div>
-	<div class="site-nav__overlay"></div>
+	@endif
+	{{-- Bottom bar END --}}
 </nav>
-@endif
