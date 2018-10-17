@@ -7,6 +7,7 @@ use Sober\Controller\Controller;
 class App extends Controller
 {
 	use Traits\News;
+	use Traits\TopLevelPages;
 	// use Traits\Bloginfo;
 	// use Traits\CookieNotice;
 	// use Traits\Notices;
