@@ -15,6 +15,7 @@ class CustomPostTypes
 					'name' => _x('Nyheter', 'post type general name', 'halland' ),
 					'singular_name' => _x('Nyhet', 'post type singular name', 'halland' ),
 					'menu_name' => _x('Nyheter', 'admin menu', 'halland' ),
+					'view_items' => _x('Se alla nyheter', 'halland' )
 				),
 				'rewrite' => array('slug' => 'nyheter'),
 				'has_archive' => true,

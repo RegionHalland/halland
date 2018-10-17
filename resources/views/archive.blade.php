@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="container m-auto">
-		<div class="flex flex-wrap">
-		  	<div class="w-full sm:w-6/12 md:w-4/12 lg:w-6/12 mb-4 px-6">
+	<div class="container mx-auto px-4">
+		<div class="flex flex-wrap -mx-4">
+		  	<div class="w-full sm:w-6/12 md:w-4/12 lg:w-6/12 px-4">
 		  		<header class="relative pb-4 block mb-8">
 					<span class="border-b-2 border-blue-dark text-2xl font-bold text-black pb-2 z-20 relative leading-none">{{ get_the_archive_title() }}</span>
 					<hr class="absolute pin-b pin-l w-full h-0 border-b-2 mb-1 border-blue-light z-10">
@@ -14,7 +14,7 @@
 				@endwhile
 			</div>
 
-			<div class="w-full sm:w-6/12 md:w-4/12 lg:w-4/12 mb-4 px-6">
+			<div class="w-full sm:w-6/12 md:w-4/12 lg:w-4/12 px-4">
 				<header class="relative pb-4 block mb-8">
 					<span class="border-b-2 border-blue-dark text-2xl font-bold text-black pb-2 z-20 relative leading-none">Kategorier</span>
 					<hr class="absolute pin-b pin-l w-full h-0 border-b-2 mb-1 border-blue-light z-10">
@@ -25,7 +25,6 @@
 					@endforeach
 				</ul>
 			</div>
-
 		</div>
 	</div>
 @endsection
