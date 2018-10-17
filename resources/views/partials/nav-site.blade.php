@@ -1,4 +1,4 @@
-<nav>
+<nav class="border-b border-grey-lighter">
 	{{-- Top bar --}}
 	<div class="w-full border-b border-grey-lighter">
 		<div class="container mx-auto py-3 px-4">
@@ -14,17 +14,17 @@
 				<div class="flex flex-wrap px-4">
 					{{-- Utilities --}}
 					<div class="hidden md:flex flex-wrap items-center">
-						<a class="flex items-center text-black no-underline mr-4" href="#">
-							<span class="inline-flex h-6 w-6 rounded-full bg-blue-light items-center justify-center mr-2">
+						<a class="flex items-center text-black no-underline mr-6" href="#">
+							<span class="inline-flex h-8 w-8 rounded-full bg-green-light items-center justify-center mr-2">
 								<svg class="inline-flex h-4 w-4 align-middle">
-									<use xlink:href="#external-link"/>
+									<use xlink:href="#volume-2"/>
 								</svg>
 							</span>Talande Webb
 						</a>
-						<a class="flex items-center text-black no-underline mr-4" href="#">
-							<span class="inline-flex h-6 w-6 rounded-full bg-blue-light items-center justify-center mr-2">
+						<a class="flex items-center text-black no-underline mr-6" href="#">
+							<span class="inline-flex h-8 w-8 rounded-full bg-green-light items-center justify-center mr-2">
 								<svg class="inline-flex h-4 w-4 align-middle">
-									<use xlink:href="#external-link"/>
+									<use xlink:href="#user"/>
 								</svg>
 							</span>E-tjänster
 						</a>
@@ -32,8 +32,8 @@
 					{{-- Utilities END --}}
 
 					{{-- Search Field --}}
-					<form class="flex">
-						<input class="border py-3 px-4 rounded" type="search" name="search" placeholder="Sök här">
+					<form class="hidden md:flex">
+						<input class="border py-3 px-4 rounded" type="search" name="s" id="search" placeholder="Sök här">
 					</form>
 					{{-- Search Field END --}}
 				</div>
@@ -45,10 +45,19 @@
 	
 	{{-- Bottom bar --}}
 	@if(isset($top_level_pages) && !empty($top_level_pages))
-	<div class="container mx-auto py-4 px-4 overflow-auto">
+	<div class="container mx-auto px-4 overflow-auto scrolling-touch">
 		<ul class="list-reset flex -mx-4">
 			@foreach($top_level_pages as $top_level_page)
-			<li class="px-4 flex-no-shrink"><a class="no-underline {{ $top_level_page->active === true ? 'text-red' : 'text-black' }}" href="{{ the_permalink($top_level_page->ID) }}">{{ $top_level_page->post_title }}</a></li>
+				<li class="flex-no-shrink px-4">
+
+					@if($top_level_page->active === true)
+						<a class="no-underline text-black py-4 inline-block relative" href="{{ the_permalink($top_level_page->ID) }}">{{ $top_level_page->post_title }}
+							 <div class="absolute pin-b pin-l w-full h-1 rounded-t bg-blue-dark"></div>
+						</a>
+					@else
+						<a class="no-underline text-black py-4 inline-block" href="{{ the_permalink($top_level_page->ID) }}">{{ $top_level_page->post_title }}</a>
+					@endif
+				</li>
 			@endforeach
 		</ul>
 	</div>
