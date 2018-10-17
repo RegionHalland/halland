@@ -5,9 +5,9 @@
 			<div class="flex flex-wrap items-center justify-between -mx-4">
 
 				{{-- Logo Container --}}
-				<div class="px-4">
-					<img class="block w-32 md:w-48" src="@asset('images/navigation_logo.svg')" alt="">
-				</div>
+				<a class="px-4" href="{{ esc_url( home_url( '/' ) ) }}">
+					<img class="block w-40" src="@asset('images/navigation_logo.svg')" alt="">
+				</a>
 				{{-- Logo Container END--}}
 
 				{{-- Right Container --}}
@@ -48,7 +48,7 @@
 	<div class="container mx-auto py-4 px-4 overflow-auto">
 		<ul class="list-reset flex -mx-4">
 			@foreach($top_level_pages as $top_level_page)
-			<li class="px-4 flex-no-shrink"><a class="no-underline text-black" href="{{ the_permalink($top_level_page->ID) }}">{{ $top_level_page->post_title }}</a></li>
+			<li class="px-4 flex-no-shrink"><a class="no-underline {{ $top_level_page->active === true ? 'text-red' : 'text-black' }}" href="{{ the_permalink($top_level_page->ID) }}">{{ $top_level_page->post_title }}</a></li>
 			@endforeach
 		</ul>
 	</div>
