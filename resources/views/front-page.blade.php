@@ -12,7 +12,7 @@
 					<h1 class="text-3xl md:text-4xl text-white mb-4">{{ the_title() }}</h1>
 					<div class="text-blue-light text-lg leading-tight md:text-xl mb-6">{!! the_content() !!}</div>
 				@endwhile
-				<form>
+				<form action="{{ home_url() }}">
 					<div role="search" class="bg-white rounded overflow-hidden relative">
 						<input name="s" id="search" placeholder="Sök på webbplatsen" class="text-lg bg-transparent h-12 md:h-16 pin-t px-6 pin-l w-full" type="text">
 						<button type="submit" class="bg-yellow flex items-center justify-center absolute pin-r pin-b h-12 w-12 md:h-16 md:w-16">

@@ -7,9 +7,11 @@
 			<div class="flex flex-wrap">
 				<div class="w-full sm:w-full md:w-8/12 px-4">
 					@while(have_posts()) @php(the_post())
-						<article class="article">
+						<article class="">
 							<h1 class="mb-8">{{ get_the_title() }}</h1>
-							<p>{{ the_content() }}</p>
+							<div class="article">
+								<p>{{ the_content() }}</p>
+							</div>
 							@include('partials.author-info')
 						</article>
 					@endwhile
@@ -17,7 +19,7 @@
 				<div class="w-full sm:w-full md:w-4/12 px-4">
 					<div class="sticky pin-t">
 						@if(isset($news) && !empty($news))
-						<header class="relative pb-4 block mb-8">
+						<header class="relative pb-4 block mb-4">
 							<span class="border-b-2 border-yellow text-2xl font-bold text-black pb-2 z-20 relative leading-none">Fler nyheter</span>
 							<hr class="absolute pin-b pin-l w-full h-0 border-b-2 mb-1 border-yellow-light z-10">
 						</header>
