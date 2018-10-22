@@ -3,7 +3,8 @@
 @section('content')
 {{-- Container --}}
 <div class="container mx-auto px-4 pt-16 pb-12">
-	<div class="w-full md:w-11/12 mx-auto flex flex-wrap items-stretch">
+	<div class="w-full md:w-11/12 mx-auto">
+		<div class="flex flex-wrap items-stretch -mx-4">
 		
 		{{-- Sidebar --}}
 		<aside class="md:w-3/12 px-4">
@@ -33,8 +34,7 @@
 				
 				{{-- Sidebar Bottom --}}
 				@if (is_active_sidebar('sidebar-article-bottom'))
-				<hr class="h-1 my-4 bg-grey-light">
-				<aside class="w-full">
+				<aside class="w-full mt-8">
 					@include('partials.sidebar-article-bottom')
 				</aside>
 				@endif
@@ -47,6 +47,7 @@
 		</main>
 		{{-- Main Content END --}}
 
+		</div>
 	</div>
 </div>
 {{-- Container END --}}

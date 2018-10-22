@@ -2,17 +2,6 @@
 
 @section('content')
 
-	
-<div class="pt-16 relative bg-blue-dark">
-	<div class="container mx-auto px-4 relative">
-		<div class="w-full md:w-11/12 mx-auto">
-			<h1 class="mb-8 text-white">Nyhetsarkiv</h1>
-			@include('partials.page-toolbar')
-		</div>
-	</div>
-</div>
-
-
 <div class="bg-white pt-12 pb-8">
 	<div class="container mx-auto px-4">
 		<div class="w-full md:w-11/12 mx-auto">

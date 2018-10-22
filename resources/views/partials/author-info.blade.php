@@ -1,7 +1,7 @@
 <div class="inline-block mt-8 pb-6 border-b w-full border-grey-light">
 
 	<header class="relative pb-4 block mb-6">
-		<span class="border-b-2 border-blue-dark text-lg font-bold text-black pb-2 z-20 relative leading-none">Kontakt</span>
+		<span class="border-b-2 border-blue-dark text-xl font-bold text-black pb-2 z-20 relative leading-none">Kontakt</span>
 		<hr class="absolute pin-b pin-l w-full h-0 border-b-2 mb-1 border-blue-light z-10">
 	</header>
 	<div class="block mb-2">
