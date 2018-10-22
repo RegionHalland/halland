@@ -41,8 +41,7 @@
 				{{-- Sidebar Bottom END --}}
 
 				{{-- Author --}}
-				<hr class="h-1 my-4 bg-grey-light">
-				@include('partials.entry-meta')
+				@include('partials.author-info')
 				{{-- Author END --}}
 			@endwhile
 		</main>
