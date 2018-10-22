@@ -103,7 +103,8 @@
                 "id": ""
             },
             "choices": {
-                "news": "Nyheter"
+                "news": "Nyheter",
+                "blurb": "Puffar"
             },
             "allow_custom": 0,
             "save_custom": 0,
@@ -111,6 +112,98 @@
             "layout": "vertical",
             "toggle": 0,
             "return_format": "value"
+        },
+        {
+            "key": "field_5bc848126898f",
+            "label": "Sidfot",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5bcd6d5cf2394",
+            "label": "Kolumner",
+            "name": "footer_content",
+            "type": "repeater",
+            "instructions": "L\u00e4gg till en kolumn i sidfoten genom klicka p\u00e5 \"L\u00e4gg till kolumn\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "L\u00e4gg till kolumn",
+            "sub_fields": [
+                {
+                    "key": "field_5bcd6db8f2395",
+                    "label": "Titel",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "L\u00e4gg till en titel p\u00e5 kolumnen.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5bcd6ef58644a",
+                    "label": "L\u00e4nklista",
+                    "name": "list",
+                    "type": "repeater",
+                    "instructions": "L\u00e4gg till l\u00e4nkar. Visas som en lista i en kolumn.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "table",
+                    "button_label": "L\u00e4gg till l\u00e4nk",
+                    "sub_fields": [
+                        {
+                            "key": "field_5bcd6f238644b",
+                            "label": "L\u00e4nk",
+                            "name": "link",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "location": [
