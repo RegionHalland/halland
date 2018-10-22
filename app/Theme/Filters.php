@@ -18,7 +18,25 @@ class Filters
 		// Content
 		add_filter( 'the_content', array($this, 'auto_wrap_tables') );
 		add_filter( 'the_content', array($this, 'add_id_to_headings') );
+
+		// Archive title
+		add_filter('get_the_archive_title', array($this, 'remove_archive_prefix'));
 	}
+
+	public function remove_archive_prefix($title)
+	{	
+		// We remove ”archive: ” prefix from title
+		$new_title = explode(':', $title);
+
+		if(!isset($new_title[1])) return;
+		$new_title = $new_title[1];
+
+		$title = trim($new_title);
+
+		return "Arkiv - $title";
+	}
+
+
 
 	/**
 	 * Update excerpt
