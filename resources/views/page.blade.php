@@ -1,38 +1,52 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="px3 mt4">
-	<div class="container mx-auto mt3">
-		<div class="clearfix mxn3 flex flex-wrap content-stretch">
-			<div class="col col-12 md-col-9 flex order-1 flex-wrap content-stretch">
-				<div class="col col-12 px3">
-					<h1 class="mb0">{{ the_title() }}</h1>
-					<div class="col col-12 md-col-9">
-						{{-- @include('partials.content-utility-bar') --}}
-					</div>
-				</div>
-				<main id="main" class="col col-12 md-col-9 px3">
-					@include('partials.content-page')
-				</main>
-				<div class="col col-12 md-col-3 px3 flex mt3">
-					@if (is_active_sidebar('sidebar-right'))
-					@include('partials.sidebar-right')
-					@endif
-					@include('partials.content-nav')
-				</div>
-			</div>
-			<div class="col col-12 md-col-3 mb3 px3 flex flex order-0">
-				@include('partials.nav-sidebar')
-				@if (is_active_sidebar('sidebar-left'))
+{{-- Container --}}
+<div class="container mx-auto px-4 pt-16 pb-12">
+	<div class="w-full md:w-11/12 mx-auto flex justify-between flex-wrap">
+		
+		{{-- Sidebar --}}
+		<aside class="md:w-3/12 px-4">
+			{{-- Sidebar Navigation --}}
+			@include('partials.nav-sidebar')
+			{{-- Sidebar Navigation END--}}
+
+			{{-- Left Sidebar END --}}
+			@if (is_active_sidebar('sidebar-left'))
 				@include('partials.sidebar-left')
+			@endif
+			{{-- Left Sidebar END --}}
+		</aside>
+		{{-- Sidebar END --}}
+
+		{{-- Main Content --}}
+		<main class="w-full md:w-9/12 px-4">
+			@while(have_posts()) @php(the_post())
+				<h1>{{ the_title() }}</h1>
+				{{-- Content --}}
+				<article class="article">{!! the_content() !!}</article>
+				{{-- Content END --}}
+				
+				{{-- Sidebar Bottom --}}
+				@if (is_active_sidebar('sidebar-article-bottom'))
+				<hr class="h-1 my-4 bg-grey-light">
+				<aside class="w-full">
+					@include('partials.sidebar-article-bottom')
+				</aside>
 				@endif
-			</div>
-		</div>
+				{{-- Sidebar Bottom END --}}
+
+				{{-- Author --}}
+				<hr class="h-1 my-4 bg-grey-light">
+				@include('partials.entry-meta')
+				{{-- Author END --}}
+			@endwhile
+		</main>
+		{{-- Main Content END --}}
+
 	</div>
 </div>
-
-@if (have_comments() || comments_open())
-@include('partials.comments')
-@endif
-
+{{-- Container END --}}
 @endsection
+
+
