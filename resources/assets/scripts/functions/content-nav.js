@@ -42,9 +42,9 @@ class ContentNav {
 	}
 
 	bind() {
-		$(document).scroll(() => {
+		$(document).scroll(debounce(() => {
 			this.toggleActive()
-		})
+		}, 100))
 
 		$(window).resize(debounce(() => {
 			this.setCheckpoints()
