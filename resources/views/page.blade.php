@@ -3,7 +3,7 @@
 @section('content')
 {{-- Container --}}
 <div class="container mx-auto px-4 pt-16 pb-12">
-	<div class="w-full md:w-11/12 mx-auto flex justify-between flex-wrap">
+	<div class="w-full md:w-11/12 mx-auto flex flex-wrap items-stretch">
 		
 		{{-- Sidebar --}}
 		<aside class="md:w-3/12 px-4">
@@ -16,11 +16,15 @@
 				@include('partials.sidebar-left')
 			@endif
 			{{-- Left Sidebar END --}}
+
+			{{-- Content Navigation --}}
+			@include('partials.content-nav')
+			{{-- Content Navigation END --}}
 		</aside>
 		{{-- Sidebar END --}}
 
 		{{-- Main Content --}}
-		<main class="w-full md:w-9/12 px-4">
+		<main class="w-full md:w-9/12 px-4" id="main">
 			@while(have_posts()) @php(the_post())
 				<h1>{{ the_title() }}</h1>
 				{{-- Content --}}
