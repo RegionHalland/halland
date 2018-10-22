@@ -1,5 +1,5 @@
-<article class="px-6 py-6 bg-red-light rounded">
-	<div class="h-16 w-16 rounded-full flex items-center justify-center bg-red mb-6">
+<article class="px-6 py-6 bg-green-light rounded">
+	<div class="h-16 w-16 rounded-full flex items-center justify-center bg-green mb-6">
 		<svg class="h-8 w-8">
 			<use xlink:href="#search"/>
 		</svg>
