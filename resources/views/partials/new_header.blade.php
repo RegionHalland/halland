@@ -38,7 +38,7 @@
 		            <svg class="burger-menu__close-icon icon-badge-nav icon-badge-nav--md" style="display: none;">
 		                <use xlink:href="#x"/>
 		            </svg>
-		            <span class="hidden-inline-sm">
+		            <span class="hidden-inline-sm" style="position: relative; top: 2px;">
 		           		Meny
 		           	</span>
 		        </button>
