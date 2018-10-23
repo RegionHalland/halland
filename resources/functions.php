@@ -37,6 +37,7 @@ if (version_compare('4.7.0', get_bloginfo('version'), '>=')) {
 /**
  * Ensure dependencies are loaded
  */
+
 if (!class_exists('Roots\\Sage\\Container')) {
     if (!file_exists($composer = __DIR__.'/../vendor/autoload.php')) {
         $sage_error(
@@ -44,6 +45,7 @@ if (!class_exists('Roots\\Sage\\Container')) {
             __('Autoloader not found.', 'sage')
         );
     }
+
     require_once $composer;
 }
 

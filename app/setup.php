@@ -15,13 +15,18 @@ new \App\Theme\Support();
 new \App\Theme\Navigation();
 new \App\Theme\Sidebars();
 new \App\Theme\ThemeOptions();
+new \App\Theme\CustomPostTypes();
+new \App\Theme\Filters();
 
 /**
  * ACF
  */
 new \App\Acf\Import();
 new \App\Acf\DataCurator();
-new \App\Acf\ShowNewsCategory();
+
+if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
+    require_once __DIR__ . '/../vendor/autoload.php';
+}
 
 /**
  * Updates the `$post` variable on each iteration of the loop.

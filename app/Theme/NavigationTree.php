@@ -6,7 +6,21 @@ class NavigationTree
 {
     public function __construct($args = array(), $parent = false)
     { 
-        $pages = get_pages();
+        global $post;
+
+        $ancestors = get_post_ancestors($post->ID);
+
+        if (count($ancestors) <= 1) {
+            return false;
+        }
+
+        $parentID = $ancestors[count($ancestors) - 2];
+
+        $pages = get_pages([
+            'child_of' => $parentID,
+        ]);
+
+        var_dump($this->sortPages($pages, 0));
         return $this->sortPages($pages, 0);
     }
 

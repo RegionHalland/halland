@@ -1,56 +1,32 @@
-<!-- ****** -->
-			<!-- Footer -->
-			<!-- ****** -->
-			<footer style="background-color: #FAFAFA;"><!-- Add .background-light-grey to styleguide with correct color -->
-				<div class="container mx-auto pl5 pr5 pt4 pb2 new_footer">
-					<div class="m2 flex flex-wrap">
-						<div class="col-12 md-col-6 lg-col-3 pb2">
-							<div class="mb3">
-								<div class="mb2">
-									<strong class="h3" id="111222">Vårdgivare i Halland</strong>
-								</div>
-								<ul class="small" aria-labelledby="111222">
-									@foreach($nav_site as $topLevelPage)
-									<li class="mb1">
-										<a href="{{ get_page_link($topLevelPage->ID) }}">{{ $topLevelPage->post_title }}</a>
-									</li>
-									@endforeach
-								</ul>
-							</div>
-						</div>
-						<div class="col-12 md-col-6 lg-col-3 pb2">
-							<div class="mb3">
-								<div class="mb2">
-									<h1 class="h3" id="121212">Kontakt</h1>
-								</div>
-								<ul class="small" aria-labelledby="121212">
-									<li class="mb1"><a href="https://www.regionhalland.se/kontakta-oss">Kontakta Region Halland</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-12 md-col-6 lg-col-3 pb2">
-							<div class="mb3">
-								<div class="mb2">
-									<h1 class="h3" id="212121">Övriga webbplatser</h1>
-								</div>
-								<ul class="small" aria-labelledby="212121">
-									<li class="mb1"><a href="http://www.regionhalland.se">www.regionhalland.se</a></li>
-									<li class="mb1"><a href="https://intra.regionhalland.se/Sidor/default.aspx">Regionens intranät</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-12 md-col-6 lg-col-3 pb2">
-							<div class="mb3">
-								<div class="mb2">
-									<h1 class="h3" id="443322">Webbplatsen</h1>
-								</div>
-								<ul class="small" aria-labelledby="443322">
-									<li><a href="http://vardgivare.regionhalland.se/valkommen-till-vardgivarwebben/om-webbplatsen/">Om webbplatsen</a></li>
-									<li><a href="https://www.regionhalland.se/om-region-halland/organisation/dataskydd/">Dataskydd</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>	
+@php($footerContent = get_field('footer_content', 'options'))
+@if(isset($footerContent) && !empty($footerContent))
+<footer class="bg-white pb-8 pt-16 border-t border-grey-lighter mt-8">
+	<div class="container mx-auto px-4 mt-8">
+		<div class="w-full mx-auto">
+			<div class="w-full flex flex-wrap items-stretch -mx-4">
+				@foreach($footerContent as $column)
+				@if(isset($column) && !empty($column))
+				<div class="w-full md:w-6/12 lg:w-4/12 px-4 mb-12">
+					<header class="relative pb-4 block mb-4">
+						<span class="border-b-2 border-blue-dark text-xl md:text-2xl font-bold text-black pb-2 z-20 relative leading-none">{{ $column['title'] }}</span>
+						<hr class="absolute pin-b pin-l w-full h-0 border-b-2 mb-1 border-blue-light z-10">
+					</header>
+					<ul class="list-reset">
+						@if(isset($column['list']) && !empty($column['list'])) 
+							@foreach($column['list'] as $item)
+								<li class="mb-2">
+									<a class="text-black text-lg" href="{{ $item['link']['url'] }}">{{ $item['link']['title'] }}</a>
+								</li>
+							@endforeach
+						@endif
+					</ul>
 				</div>
-			</footer>
-			@php(wp_footer())
+				@endif
+				@endforeach
+			</div>
+		</div>
+	</div>
+</footer>
+@endif
+@php(wp_footer())
+<script type="text/javascript">var _baTheme=0, _baMode='Aktivera Talande Webb', _baUseCookies=true, _baHideOnLoad=true;</script>

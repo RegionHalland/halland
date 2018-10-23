@@ -10,7 +10,7 @@ const Selectors = {
 }
 
 const Modifiers = {
-	ACTIVE: 'active',
+	ACTIVE: 'underline',
 	JS_PARENT: 'js--content-nav-parent',
 	JS_IS_STUCK: 'js--content-nav-is-stuck',
 	HIGHLIGHT: 'content-highlight',

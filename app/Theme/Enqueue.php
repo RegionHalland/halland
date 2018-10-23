@@ -4,7 +4,7 @@ namespace App\Theme;
 
 class Enqueue
 {
-	protected $COMPONENT_LIB_URL = '//regionhalland.github.io/styleguide/dist/css/main.min.css';
+	protected $COMPONENT_LIB_URL = '//unpkg.com/@regionhalland/styleguide-v2@latest/dist/css/main.min.css';
 
 	public function __construct()
 	{
@@ -27,6 +27,7 @@ class Enqueue
 	{			
 		wp_enqueue_style('rh-components', $this->COMPONENT_LIB_URL, false, null);
 		wp_enqueue_style('halland/main.css', \App\asset_path('styles/main.css'), false, null);
+		wp_enqueue_style('typekit', 'https://use.typekit.net/vip6kss.css', false, null);
 	}
 
 	/**
@@ -37,6 +38,8 @@ class Enqueue
 	{
 		// Theme JS
 		wp_enqueue_script('halland/main.js', \App\asset_path('scripts/main.js'), ['jquery'], null, true);
+		// Talande Webb
+		wp_enqueue_script('halland/talandewebb', '//www.browsealoud.com/plus/scripts/ba.js', true, null);
 	}
 
 	/**

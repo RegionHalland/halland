@@ -1,52 +1,56 @@
 @extends('layouts.app')
 
 @section('content')
-
-	<!-- **************************** -->
-	<!-- Content with grey background -->
-	<!-- **************************** -->
-	<div class="relative">
+{{-- Container --}}
+<div class="container mx-auto px-4 pt-16 pb-12">
+	<div class="w-full mx-auto">
+		<div class="flex flex-wrap items-stretch -mx-4">
 		
-		<nav aria-label="Huvudnavigation" class="breadcrumbs container background-dark-blue relative mx-auto pl5 pr5 pt1 pb2 z1">
+		{{-- Sidebar --}}
+		<aside class="w-full md:w-3/12 px-4">
+			{{-- Sidebar Navigation --}}
+			@include('partials.nav-sidebar')
+			{{-- Sidebar Navigation END--}}
 
-			@include('partials.new_breadcrumbs')
-			
-		</nav>
-	</div>	
-	
-	<!-- ************ -->
-	<!-- Page content -->
-	<!-- ************ -->
-	<div class="background-white">
-		<div class="background-white">
-			<div class="container mx-auto p4">
-				<div class="m2 flex flex-wrap">
-					<div class="col-12 lg-col-3">
-						<div>
-							@include('partials.new_nav-sidebar')
-						</div>
-						<div class="pt4">
-							@include('partials.new_content-nav')
-						</div>
-					</div>
-					
-					<!-- ************ -->
-					<!-- Page content -->
-					<!-- ************ -->
-					<div class="col-12 lg-col-9">
-						<main class="ml4">
-							<div>
-								<h1>{{ the_title() }}</h1>
-							</div>
-							<div id="main">
-								@include('partials.new_content-page')
-							</div>
-						</main>
-					</div>
-				</div>
-			</div>
-		</div>	
-		
+			{{-- Left Sidebar END --}}
+			@if (is_active_sidebar('sidebar-left'))
+				@include('partials.sidebar-left')
+			@endif
+			{{-- Left Sidebar END --}}
+		</aside>
+		{{-- Sidebar END --}}
+
+		{{-- Main Content --}}
+		<main class="w-full md:w-6/12 px-4" id="main">
+			@while(have_posts()) @php(the_post())
+				<h1>{{ the_title() }}</h1>
+				{{-- Content --}}
+				<article class="article">{!! the_content() !!}</article>
+				{{-- Content END --}}
+				
+				{{-- Sidebar Bottom --}}
+				@if (is_active_sidebar('sidebar-article-bottom'))
+				<aside class="w-full mt-8">
+					@include('partials.sidebar-article-bottom')
+				</aside>
+				@endif
+				{{-- Sidebar Bottom END --}}
+
+				{{-- Author --}}
+				@include('partials.author-info')
+				{{-- Author END --}}
+			@endwhile
+		</main>
+		{{-- Main Content END --}}
+
+		<aside class="w-full md:w-3/12 px-4">
+			{{-- Content Navigation --}}
+			@include('partials.content-nav')
+			{{-- Content Navigation END --}}
+		</aside>
+
+		</div>
 	</div>
-
+</div>
+{{-- Container END --}}
 @endsection
