@@ -41,13 +41,11 @@
 					</div>
 				@endforeach
 			</div>
+			@if (is_active_sidebar('sidebar-article-bottom'))
+				@include('partials.sidebar-article-bottom')
+			@endif
 		</div>
 	</div>
-	
-	@if (is_active_sidebar('sidebar-article-bottom'))
-		@include('partials.sidebar-article-bottom')
-	@endif
-	
 </div>
 
 @endsection
