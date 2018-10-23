@@ -4,6 +4,10 @@ namespace App\Controllers\Traits;
 
 trait NavSidebar
 {
+	/**
+	 * Returns a tree of pages
+	 * @return array
+	 */
 	public function navSidebar()
     { 
         global $post;
@@ -20,20 +24,29 @@ trait NavSidebar
 			'child_of' => $parentID
     	]);
 
-	 	return self::buildTree($pages, $parentID);
+	 	return self::buildTree($pages, $parentID, $post->ID);
 	}
 
-	private function buildTree(array &$elements, $parentId = 0) {
+	/**
+	 * Builds a tree from a flat array of pages
+	 * https://stackoverflow.com/a/8841921
+	 * @return array
+	 */
+	private function buildTree(array &$posts, $parentId = 0, $currentID = 0) {
 	    $branch = array();
 
-	    foreach ($elements as $element) {
-	        if ($element->post_parent == $parentId) {
-	            $children = self::buildTree($elements, $element->ID);
+	    foreach ($posts as $post) {
+	    	if ($currentID === $post->ID && !isset($post->active)) {
+	    		$post->active = true;
+	    	}
+
+	        if ($post->post_parent == $parentId) {
+	            $children = self::buildTree($posts, $post->ID, $currentID);
 	            if ($children) {
-	                $element->children = $children;
+	                $post->children = $children;
 	            }
-	            $branch[$element->ID] = $element;
-	            unset($elements[$element->ID]);
+	            $branch[$post->ID] = $post;
+	            unset($posts[$post->ID]);
 	        }
 	    }
 
