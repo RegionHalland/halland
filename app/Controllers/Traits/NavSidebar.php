@@ -4,34 +4,41 @@ namespace App\Controllers\Traits;
 
 trait NavSidebar
 {
-	/**
-	 * Get navigation tree sidebar menu
-	 * @return string Menu markup
-	 */
 	public function navSidebar()
-	{
-		global $post;
+    { 
+        global $post;
 
-		if (!is_a($post, 'WP_Post')) {
-			return;
-		}
+        $ancestors = get_post_ancestors($post->ID);
 
-		$pages['current_page'] = $post;
+        if (count($ancestors) <= 1) {
+            return false;
+        }
 
-		$args = array( 
-			'child_of' => $post->ID, 
-			'parent' => $post->ID,
-			'hierarchical' => 0,
-			'sort_column' => 'menu_order', 
-			'sort_order' => 'asc'
-		);
-		$pages['page_children'] = get_pages($args);
+        $parentID = $ancestors[count($ancestors) - 2];
 
-		foreach ($pages['page_children'] as $page) {
-			$page->url = get_page_link($page->ID);
-		}
+      	$pages = get_pages([
+			'child_of' => $parentID
+    	]);
 
-		return $pages;
+	 	return self::buildTree($pages, $parentID);
+	}
+
+	private function buildTree(array &$elements, $parentId = 0) {
+	    $branch = array();
+
+	    foreach ($elements as $element) {
+	        if ($element->post_parent == $parentId) {
+	            $children = self::buildTree($elements, $element->ID);
+	            if ($children) {
+	                $element->children = $children;
+	            }
+	            $branch[$element->ID] = $element;
+	            unset($elements[$element->ID]);
+	        }
+	    }
+
+	    return $branch;
 	}
 }
+
 
