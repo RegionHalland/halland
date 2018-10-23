@@ -4,7 +4,7 @@
 <div class="bg-white pt-16 pb-8">
 	<div class="container mx-auto px-4">
 		<div class="w-full md:w-11/12 mx-auto">
-			<div class="flex flex-wrap">
+			<div class="flex flex-wrap -mx-4">
 				<div class="w-full sm:w-full md:w-8/12 px-4">
 					@while(have_posts()) @php(the_post())
 						<article class="">
@@ -16,7 +16,7 @@
 						</article>
 					@endwhile
 				</div>
-				<div class="w-full sm:w-full md:w-4/12 px-4">
+				<div class="w-full sm:w-full md:w-4/12 px-4 mt-8 md:mt-0">
 					<div class="sticky pin-t">
 						@if(isset($news) && !empty($news))
 						<header class="relative pb-4 block mb-4">
