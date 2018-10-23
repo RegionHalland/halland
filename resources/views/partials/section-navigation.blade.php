@@ -4,6 +4,13 @@
 </header>
 <div class="flex flex-wrap items-stretch -mx-4">
 	@foreach($page_children as $index => $page)
+		@php
+			global $post;
+			// Assign your post details to $post (& not any other variable name!!!!)
+			$post = $page;
+			setup_postdata( $post );
+		@endphp
+
 		@if($index <= 5)
 			<div class="w-full sm:w-6/12 lg:w-6/12 px-4 mb-8">
 				<a href="{{ $page->url }}" class="text-blue-dark">
@@ -13,7 +20,7 @@
 					@if(has_excerpt($page->ID)) 
 						{{ $page->acf_excerpt }}
 					@else
-						{{ \App\trim_excerpt($page->post_content) }}
+						{{ html_entity_decode(wp_trim_words(get_the_excerpt(), 10, '...'))  }}
 					@endif
 				</p>
 			</div>
