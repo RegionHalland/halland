@@ -21,12 +21,12 @@
 			</header>
 			<div class="flex flex-wrap items-stretch -mx-4">
 				@foreach($page_children as $page)
-					@php
+					<?php
 						global $post;
 						// Assign your post details to $post (& not any other variable name!!!!)
 						$post = $page;
 						setup_postdata( $post );
-					@endphp
+					?>
 					<div class="w-full sm:w-6/12 lg:w-4/12 px-4 mb-8">
 						<a href="{{ $page->url }}" class="text-blue-dark">
 							<h3 class="mb-2 text-xl md:text-2xl">{{ $page->post_title }}</h3>
