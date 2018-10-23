@@ -1,16 +1,16 @@
 @if (isset($cookie_notice))
-<div id="cookie-notice" class="relative background-light-blue p3 z4">
+<div id="cookie-notice" class="relative bg-blue-light p-4 z-4">
 	<div class="container mx-auto">
-		<div class="clearfix mxn3">
-			<div class="cookie-notice__container">
-				<div class="cookie-notice__text-container px3">
-					<svg class="icon mr1">
+		<div class="-mx-4">
+			<div class="cookie-notice__container px-4">
+				<div class="cookie-notice__text-container px-4">
+					<svg class="inline-flex h-4 w-4 align-middle">
 						<use xlink:href="#info"/>
 					</svg>
 					<span class="h5">{!! $cookie_notice['message'] !!}</span>
 				</div>
-				<div class="cookie-notice__btn-container px3">
-					<button id="cookie-consent" class="btn btn-primary">{!! $cookie_notice['button'] !!}</button>
+				<div class="cookie-notice__btn-container px-4">
+					<button id="cookie-consent" class="px-4 py-2 bg-yellow">{!! $cookie_notice['button'] !!}</button>
 				</div>
 			</div>
 		</div>

@@ -5,33 +5,53 @@ namespace App\Controllers\Traits;
 trait NavSidebar
 {
 	/**
-	 * Get navigation tree sidebar menu
-	 * @return string Menu markup
+	 * Returns a tree of pages
+	 * @return array
 	 */
 	public function navSidebar()
-	{
-		global $post;
+    { 
+        global $post;
 
-		if (!is_a($post, 'WP_Post')) {
-			return;
-		}
+        $ancestors = get_post_ancestors($post->ID);
 
-		$pages['current_page'] = $post;
+        if (count($ancestors) <= 1) {
+            return false;
+        }
 
-		$args = array( 
-			'child_of' => $post->ID, 
-			'parent' => $post->ID,
-			'hierarchical' => 0,
-			'sort_column' => 'menu_order', 
-			'sort_order' => 'asc'
-		);
-		$pages['page_children'] = get_pages($args);
+        $parentID = $ancestors[count($ancestors) - 2];
 
-		foreach ($pages['page_children'] as $page) {
-			$page->url = get_page_link($page->ID);
-		}
+      	$pages = get_pages([
+			'child_of' => $parentID
+    	]);
 
-		return $pages;
+	 	return self::buildTree($pages, $parentID, $post->ID);
+	}
+
+	/**
+	 * Builds a tree from a flat array of pages
+	 * https://stackoverflow.com/a/8841921
+	 * @return array
+	 */
+	private function buildTree(array &$posts, $parentId = 0, $currentID = 0) {
+	    $branch = array();
+
+	    foreach ($posts as $post) {
+	    	if ($currentID === $post->ID && !isset($post->active)) {
+	    		$post->active = true;
+	    	}
+
+	        if ($post->post_parent == $parentId) {
+	            $children = self::buildTree($posts, $post->ID, $currentID);
+	            if ($children) {
+	                $post->children = $children;
+	            }
+	            $branch[$post->ID] = $post;
+	            unset($posts[$post->ID]);
+	        }
+	    }
+
+	    return $branch;
 	}
 }
+
 

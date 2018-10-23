@@ -28,17 +28,6 @@ if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
     require_once __DIR__ . '/../vendor/autoload.php';
 }
 
-add_filter( 'get_the_excerpt', function( $output ) {
-    global $post;
-
-    if ( has_excerpt() ) {
-        $output .= '<p><a class="read-more" href="'. get_permalink( $post->ID ) .'">Readasda More</a></p>';
-    }
-
-    return preg_replace( '/<a [^>]+>Continue reading.*?< \/a>/i', '', $output );
-});
-
-
 /**
  * Updates the `$post` variable on each iteration of the loop.
  * Note: updated value is only available for subsequently loaded views, such as partials
