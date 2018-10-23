@@ -7,7 +7,7 @@
 		<div class="flex flex-wrap items-stretch -mx-4">
 		
 		{{-- Sidebar --}}
-		<aside class="md:w-3/12 px-4">
+		<aside class="w-full md:w-3/12 px-4">
 			{{-- Sidebar Navigation --}}
 			@include('partials.nav-sidebar')
 			{{-- Sidebar Navigation END--}}
@@ -43,7 +43,7 @@
 		</main>
 		{{-- Main Content END --}}
 
-		<aside class="md:w-3/12 px-4">
+		<aside class="w-full md:w-3/12 px-4">
 			{{-- Content Navigation --}}
 			@include('partials.content-nav')
 			{{-- Content Navigation END --}}
