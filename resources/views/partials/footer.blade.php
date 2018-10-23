@@ -29,3 +29,4 @@
 </footer>
 @endif
 @php(wp_footer())
+<script type="text/javascript">var _baTheme=0, _baMode='Aktivera Talande Webb', _baUseCookies=true, _baHideOnLoad=true;</script>

@@ -14,7 +14,7 @@
 				<div class="flex flex-wrap px-4">
 					{{-- Utilities --}}
 					<div class="hidden md:flex flex-wrap items-center">
-						<a class="flex items-center text-black no-underline mr-6" href="#">
+						<a onclick="toggleBar();" class="flex items-center text-black no-underline mr-6" href="#">
 							<span class="inline-flex h-8 w-8 rounded-full bg-green-light items-center justify-center mr-2">
 								<svg class="inline-flex h-4 w-4 align-middle">
 									<use xlink:href="#volume-2"/>

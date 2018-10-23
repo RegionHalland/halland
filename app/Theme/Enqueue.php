@@ -38,6 +38,8 @@ class Enqueue
 	{
 		// Theme JS
 		wp_enqueue_script('halland/main.js', \App\asset_path('scripts/main.js'), ['jquery'], null, true);
+		// Talande Webb
+		wp_enqueue_script('halland/talandewebb', '//www.browsealoud.com/plus/scripts/ba.js', true, null);
 	}
 
 	/**
