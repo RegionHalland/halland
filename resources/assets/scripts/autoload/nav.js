@@ -3,20 +3,20 @@ import debounce from 'debounce'
 const Nav = (() => {
 
 	const Selectors = {
-		NAV: '.site-nav',
-		NAV_LIST: '.site-nav__list',
-		NAV_ITEM: '.site-nav__item',
-		NAV_LINK: '.site-nav__link',
-		NAV_OVERLAY: '.site-nav__overlay',
-		NAV_TOGGLE_BTN: '.site-nav__menu-btn',
-		DROPDOWN: '.dropdown',
-		DROPDOWN_CLOSE_BTN: '.dropdown__close-btn',
+		NAV: '.rh-site-nav',
+		NAV_LIST: '.rh-site-nav__list',
+		NAV_ITEM: '.rh-site-nav__item',
+		NAV_LINK: '.rh-site-nav__link',
+		NAV_OVERLAY: '.rh-site-nav__overlay',
+		NAV_TOGGLE_BTN: '.rh-site-nav__menu-btn',
+		DROPDOWN: '.rh-dropdown',
+		DROPDOWN_CLOSE_BTN: '.rh-dropdown__close-btn',
 	}
 	
 	const Modifiers = {
-		OPEN: 'open',
-		OPEN_SIBLING: 'open-sibling',
-		ACTIVE: 'active',
+		OPEN: 'rh-open',
+		OPEN_SIBLING: 'rh-open-sibling',
+		ACTIVE: 'rh-active',
 	}
 	
 	class Nav {

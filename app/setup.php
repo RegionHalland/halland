@@ -23,6 +23,7 @@ new \App\Theme\Filters();
  */
 new \App\Acf\Import();
 new \App\Acf\DataCurator();
+new \App\Acf\ShowNewsCategory();
 
 if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
     require_once __DIR__ . '/../vendor/autoload.php';

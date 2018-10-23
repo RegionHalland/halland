@@ -1,0 +1,1 @@
+{{ __('Publicerad', 'sage') }}: {{ __('den', 'sage') }} <time datetime="{{ get_the_time('c', $post) }}">{{ get_the_time('j F Y', $post) }} {{ __('kl.', 'sage') }} {{ get_the_date('G:i', $post) }}</time>
