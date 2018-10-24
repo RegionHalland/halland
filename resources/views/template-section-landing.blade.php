@@ -6,7 +6,7 @@
 
 @section('content')
 
-@while(have_posts()) @php(the_post())
+@while (have_posts()) @php the_post() @endphp
 <div class="pt-16 relative bg-blue-dark">
 	<div class="container mx-auto px-4 relative">
 		<div class="w-full md:w-11/12 mx-auto">
