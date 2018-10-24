@@ -31,6 +31,7 @@ class CustomPostTypes
 					'menu_name' => _x('Puffar', 'admin menu', 'halland' ),
 				),
 				'rewrite' => array('slug' => 'puffar'),
+				'show_ui' => true,
 				'has_archive' => false,
 				'publicaly_queryable' => false,
 				'public' => false,
