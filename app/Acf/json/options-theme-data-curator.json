@@ -19,6 +19,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_5bd0664ec5a90",
+            "label": "Visa inneh\u00e5llsansvarig",
+            "name": "show_data_curator",
+            "type": "true_false",
+            "instructions": "Bocka i om du vill visa inneh\u00e5llsansvarig p\u00e5 sidan.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Visa inneh\u00e5llsansvarig p\u00e5 sidan",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_5acb2f3f7decc",
             "label": "Manuell Inneh\u00e5llsansvarig",
             "name": "manual_data_curator",
@@ -60,7 +79,20 @@
             },
             "choices": {
                 "1": "Admin Adminsson",
-                "2": "Johanna Olin"
+                "172": " ",
+                "179": " ",
+                "177": " ",
+                "181": " ",
+                "2": "Johanna Olin",
+                "183": "Johanna Olin",
+                "176": " ",
+                "174": " ",
+                "175": " ",
+                "180": " ",
+                "178": " ",
+                "182": " ",
+                "184": "Mattias Skoog",
+                "173": " "
             },
             "default_value": [],
             "allow_null": 0,
@@ -184,3 +216,4 @@
     "active": 1,
     "description": ""
 }]
+
