@@ -1,7 +1,7 @@
 
 <article class="py-4 border-b border-grey-lightest">
-	<a href="{{ the_permalink() }}" title="" class="text-blue-dark mb-2 inline-block">
-		<h2 class="text-xl sm:text-2xl leading-tight">{{ get_the_title() }}</h2>
+	<a href="@php the_permalink() @endphp" title="" class="text-blue-dark mb-2 inline-block">
+		<h2 class="text-xl sm:text-2xl leading-tight">@php the_title() @endphp</h2>
 	</a>
 	<span class="text-base block text-grey-dark mb-4">Publicerad: {{ get_the_date('d/m/Y', get_the_id()) }}</span>
 	<p class="text-lg text-grey-darkest leading-tight mb-4">{!! get_the_excerpt() !!}</p>
