@@ -1,35 +1,56 @@
 @extends('layouts.app')
+
 @section('content')
-	<div class="text-white single-page-breadcrumbs">
-    	@include('partials.breadcrumbs')
-	</div>
-	<div class="py4 px3">
-		<div class="container mx-auto">
-			<div class="clearfix mxn3">
-				@if (is_active_sidebar('sidebar-left'))
-					<div class="col col-12 md-col-3 px3">
-						@include('partials.sidebar-left')
-					</div>
+{{-- Container --}}
+<div class="container mx-auto px-4 pt-8 md:pt-16 pb-12">
+	<div class="w-full mx-auto">
+		<div class="flex flex-wrap items-stretch -mx-4">
+		
+		{{-- Sidebar --}}
+		<aside class="w-full md:w-3/12 px-4 mb-8">
+			{{-- Sidebar Navigation --}}
+			@include('partials.nav-sidebar')
+			{{-- Sidebar Navigation END--}}
+
+			{{-- Left Sidebar END --}}
+			@if (is_active_sidebar('sidebar-left'))
+				@include('partials.sidebar-left')
+			@endif
+			{{-- Left Sidebar END --}}
+		</aside>
+		{{-- Sidebar END --}}
+
+		{{-- Main Content --}}
+		<main class="w-full md:w-6/12 px-4" id="main">
+			@while(have_posts()) @php(the_post())
+				<h1>{{ the_title() }}</h1>
+				{{-- Content --}}
+				<article class="article">{!! the_content() !!}</article>
+				{{-- Content END --}}
+				
+				{{-- Sidebar Bottom --}}
+				@if (is_active_sidebar('sidebar-article-bottom'))
+				<aside class="w-full mt-8">
+					@include('partials.sidebar-article-bottom')
+				</aside>
 				@endif
+				{{-- Sidebar Bottom END --}}
 
-				<main class="col col-12 md-col-9 px3" id="content-nav-container">
-					<h1>{{ the_title() }}</h1>
-					{{-- @include('partials.content-utility-bar') --}}
-					@include('partials.content-page')
-				</main>
+				{{-- Author --}}
+				@include('partials.author-info')
+				{{-- Author END --}}
+			@endwhile
+		</main>
+		{{-- Main Content END --}}
 
-				<div class="col col-12 md-col-3 px3">
-					@include('partials.sidebar-categories')
-					@include('partials.sidebar-tags')
-					@include('partials.sidebar-right')
-					@include('partials.content-nav')
+		<aside class="w-full md:w-3/12 px-4">
+			{{-- Content Navigation --}}
+			@include('partials.content-nav')
+			{{-- Content Navigation END --}}
+		</aside>
 
-					<a href="<?php echo get_post_type_archive_link('news'); ?>">Arkiv</a>
-				</div>
-			</div>
 		</div>
 	</div>
-
-	@include('partials.comments')
-
+</div>
+{{-- Container END --}}
 @endsection
