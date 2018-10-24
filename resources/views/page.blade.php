@@ -2,12 +2,12 @@
 
 @section('content')
 {{-- Container --}}
-<div class="container mx-auto px-4 pt-16 pb-12">
+<div class="container mx-auto px-4 pt-8 md:pt-16 pb-12">
 	<div class="w-full mx-auto">
 		<div class="flex flex-wrap items-stretch -mx-4">
 		
 		{{-- Sidebar --}}
-		<aside class="w-full md:w-3/12 px-4">
+		<aside class="w-full md:w-3/12 px-4 mb-8">
 			{{-- Sidebar Navigation --}}
 			@include('partials.nav-sidebar')
 			{{-- Sidebar Navigation END--}}
