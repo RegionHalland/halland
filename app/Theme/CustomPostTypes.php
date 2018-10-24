@@ -31,9 +31,10 @@ class CustomPostTypes
 					'menu_name' => _x('Puffar', 'admin menu', 'halland' ),
 				),
 				'rewrite' => array('slug' => 'puffar'),
-				'has_archive' => true,
-				'public' => true,
-				'taxonomies' => array('category'),
+				'has_archive' => false,
+				'publicaly_queryable' => false,
+				'public' => false,
+				'query_var' => false,
 				'menu_icon' => 'dashicons-megaphone',
 				'supports' => array( 'title', 'thumbnail' )
 			)
