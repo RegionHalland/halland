@@ -16,7 +16,7 @@
 				</div>
 			@endwhile
 			<header class="relative pb-4 block mb-8">
-				<span class="border-b-2 border-blue-dark text-lg font-bold text-black pb-2 z-20 relative leading-none">Navigation</span>
+				<span class="border-b-2 border-blue-dark text-lg font-bold text-black pb-2 z-20 relative leading-none">Gå till område</span>
 				<hr class="absolute pin-b pin-l w-full h-0 border-b-2 mb-1 border-blue-light z-10">
 			</header>
 			<div class="flex flex-wrap items-stretch -mx-4">
