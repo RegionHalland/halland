@@ -16,9 +16,10 @@ trait NavSite
 			return;
 		}
 
+		$frontpage = (int)get_option('page_on_front');
       	$pages = get_pages();
 
-	 	return self::buildTree($pages, 0, $post->ID);
+	 	return self::buildTree($pages, 0, $post->ID, $frontpage);
 	}
 
 	/**
@@ -26,10 +27,15 @@ trait NavSite
 	 * https://stackoverflow.com/a/8841921
 	 * @return array
 	 */
-	private function buildTree(array &$posts, $parentId = 0, $currentID = 0) {
+	private function buildTree(array &$posts, $parentId = 0, $currentID = 0, $frontpage = 0) {
 	    $branch = array();
 
 	    foreach ($posts as $post) {
+
+			if ($post->ID === $frontpage) {
+				break;
+			}
+
 	    	if ($currentID === $post->ID && !isset($post->active)) {
 	    		$post->active = true;
 	    	}
