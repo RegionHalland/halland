@@ -16,19 +16,9 @@ trait NavSite
 			return;
 		}
 
-        $ancestors = get_post_ancestors($post->ID);
+      	$pages = get_pages();
 
-        if (count($ancestors) <= 1) {
-            return false;
-        }
-
-        $parentID = $ancestors[count($ancestors) - 2];
-
-      	$pages = get_pages([
-			'child_of' => $parentID
-    	]);
-
-	 	return self::buildTree($pages, $parentID, $post->ID);
+	 	return self::buildTree($pages, 0, $post->ID);
 	}
 
 	/**

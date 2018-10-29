@@ -31,13 +31,6 @@
 					</div>
 					{{-- Utilities END --}}
 
-					{{-- Mobile Menu Button --}}
-					<button type="submit" class="bg-yellow flex rounded-full mr-2 items-center justify-center block md:hidden pin-r pin-b h-12 w-12">
-						<svg class="h-6 w-6">
-							<use xlink:href="#menu"/>
-						</svg>
-					</button>
-					{{-- Mobile Menu Button END --}}
 
 					{{-- Search Field --}}
 					<form action="{{ home_url() }}">
@@ -51,6 +44,15 @@
 						</div>
 					</form>
 					{{-- Search Field END --}}
+
+					{{-- Mobile Menu Button --}}
+					<button type="submit" class="bg-yellow flex rounded-full ml-2 items-center justify-center block md:hidden pin-r pin-b h-12 w-12">
+						<svg class="h-6 w-6">
+							<use xlink:href="#menu"/>
+						</svg>
+					</button>
+					{{-- Mobile Menu Button END --}}
+
 				</div>
 				{{-- Right Container END --}}
 			</div>
@@ -59,15 +61,14 @@
 	{{-- Top bar END --}}
 	
 	{{-- Mobile Menu Drawer --}}
-	<nav class="h-64 w-full fixed pin-t pin-l bg-white pt-32 z-40">
-		<h2>test</h2>
+	<nav class="block md:hidden w-full pin-t pin-l bg-white z-40">
+		@include('partials.nav-mobile')
 	</nav>
 	{{-- Mobile Menu Drawer END --}}
 
-
 	{{-- Bottom bar --}}
 	@if(isset($top_level_pages) && !empty($top_level_pages))
-	<div class="hidden lg:block container mx-auto px-4 overflow-auto scrolling-touch">
+	<div class="hidden md:block container mx-auto px-4 overflow-auto scrolling-touch">
 		<ul class="list-reset flex -mx-4">
 			@foreach($top_level_pages as $top_level_page)
 				<li class="flex-no-shrink px-4">
