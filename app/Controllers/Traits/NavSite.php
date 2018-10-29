@@ -15,43 +15,45 @@ trait NavSite
 		if (!is_a($post, 'WP_Post')) {
 			return;
 		}
-	
-		// Get the highest ancestor of the current page
-		if (is_page() && !is_front_page() && !$post->post_parent) {
-			$top_page = $post->ID;
-		}
 
-		if (is_page() && $post->post_parent) {
-			$ancestors = get_post_ancestors($post->ID);
-			$top_page = array_values(array_slice($ancestors, -1))[0];
-		}
-		
-		// Create pages array
-		$pages = get_pages(array(
-			'parent' => 0
-		));
+        $ancestors = get_post_ancestors($post->ID);
 
-		$frontpage = (int)get_option('page_on_front');
+        if (count($ancestors) <= 1) {
+            return false;
+        }
 
-		foreach ($pages as $i => $page) {
-			if ($page->ID === $frontpage) {
-				unset($pages[$i]);
-				continue;
-			}
+        $parentID = $ancestors[count($ancestors) - 2];
 
-			if (isset($top_page) && $top_page === $page->ID) {
-				$page->active = true;
-			}
+      	$pages = get_pages([
+			'child_of' => $parentID
+    	]);
 
-			$page->children = get_pages(array( 
-				'child_of' => $page->ID, 
-				'parent' => $page->ID,
-				'hierarchical' => 0,
-				'sort_column' => 'menu_order', 
-				'sort_order' => 'asc'
-			));
-		}
+	 	return self::buildTree($pages, $parentID, $post->ID);
+	}
 
-		return $pages;
+	/**
+	 * Builds a tree from a flat array of pages
+	 * https://stackoverflow.com/a/8841921
+	 * @return array
+	 */
+	private function buildTree(array &$posts, $parentId = 0, $currentID = 0) {
+	    $branch = array();
+
+	    foreach ($posts as $post) {
+	    	if ($currentID === $post->ID && !isset($post->active)) {
+	    		$post->active = true;
+	    	}
+
+	        if ($post->post_parent == $parentId) {
+	            $children = self::buildTree($posts, $post->ID, $currentID);
+	            if ($children) {
+	                $post->children = $children;
+	            }
+	            $branch[$post->ID] = $post;
+	            unset($posts[$post->ID]);
+	        }
+	    }
+
+	    return $branch;
 	}
 }
