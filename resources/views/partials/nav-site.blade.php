@@ -1,6 +1,6 @@
 <nav class="border-b border-grey-lighter">
 	{{-- Top bar --}}
-	<div class="w-full border-b border-grey-lighter">
+	<div class="w-full border-b border-grey-lighter bg-white relative z-50">
 		<div class="container mx-auto py-3 px-4">
 			<div class="flex flex-wrap items-center justify-between -mx-4">
 
@@ -31,6 +31,14 @@
 					</div>
 					{{-- Utilities END --}}
 
+					{{-- Mobile Menu Button --}}
+					<button type="submit" class="bg-yellow flex rounded-full mr-2 items-center justify-center block md:hidden pin-r pin-b h-12 w-12">
+						<svg class="h-6 w-6">
+							<use xlink:href="#menu"/>
+						</svg>
+					</button>
+					{{-- Mobile Menu Button END --}}
+
 					{{-- Search Field --}}
 					<form action="{{ home_url() }}">
 						<div role="search" class="bg-white rounded-full lg:rounded lg:w-64 overflow-hidden flex lg:border rounded relative">
@@ -50,9 +58,16 @@
 	</div>
 	{{-- Top bar END --}}
 	
+	{{-- Mobile Menu Drawer --}}
+	<nav class="h-64 w-full fixed pin-t pin-l bg-white pt-32 z-40">
+		<h2>test</h2>
+	</nav>
+	{{-- Mobile Menu Drawer END --}}
+
+
 	{{-- Bottom bar --}}
 	@if(isset($top_level_pages) && !empty($top_level_pages))
-	<div class="container mx-auto px-4 overflow-auto scrolling-touch">
+	<div class="hidden lg:block container mx-auto px-4 overflow-auto scrolling-touch">
 		<ul class="list-reset flex -mx-4">
 			@foreach($top_level_pages as $top_level_page)
 				<li class="flex-no-shrink px-4">
