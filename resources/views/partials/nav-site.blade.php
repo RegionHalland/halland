@@ -36,8 +36,8 @@
 					<form action="{{ home_url() }}">
 						<div role="search" class="bg-white rounded-full lg:rounded lg:w-64 overflow-hidden flex lg:border rounded relative">
 							<input name="s" id="search" placeholder="Sök på webbplatsen" class="hidden lg:inline-block text-base bg-transparent h-12 pin-t px-4 pin-l w-full" type="text">
-							<button type="submit" class="bg-yellow flex items-center justify-center block lg:absolute pin-r pin-b h-12 w-12">
-								<svg class="h-6 w-6">
+							<button type="submit" class="bg-yellow flex items-center justify-center block lg:absolute pin-r pin-b h-8 w-8 md:h-12 md:w-12">
+								<svg class="h-4 w-4 md:h-6 md:w-6">
 									<use xlink:href="#search"/>
 								</svg>
 							</button>
@@ -46,8 +46,8 @@
 					{{-- Search Field END --}}
 
 					{{-- Mobile Menu Button --}}
-					<button type="submit" class="bg-yellow flex rounded-full ml-2 items-center justify-center block md:hidden pin-r pin-b h-12 w-12">
-						<svg class="h-6 w-6">
+					<button type="submit" class="bg-yellow flex rounded-full ml-2 items-center justify-center block md:hidden pin-r pin-b h-8 w-8 md:h-12 md:w-12">
+						<svg class="h-4 w-4 md:h-6 md:w-6">
 							<use xlink:href="#menu"/>
 						</svg>
 					</button>
@@ -74,11 +74,11 @@
 				<li class="flex-no-shrink px-4">
 
 					@if($top_level_page->active === true)
-						<a class="no-underline text-black py-4 inline-block relative" href="{{ the_permalink($top_level_page->ID) }}">{{ $top_level_page->post_title }}
+						<a class="no-underline text-black font-bold py-4 inline-block relative" href="{{ the_permalink($top_level_page->ID) }}">{{ $top_level_page->post_title }}
 							 <div class="absolute pin-b pin-l w-full h-1 rounded-t bg-blue-dark"></div>
 						</a>
 					@else
-						<a class="no-underline text-black py-4 inline-block" href="{{ the_permalink($top_level_page->ID) }}">{{ $top_level_page->post_title }}</a>
+						<a class="no-underline text-black font-bold py-4 inline-block" href="{{ the_permalink($top_level_page->ID) }}">{{ $top_level_page->post_title }}</a>
 					@endif
 				</li>
 			@endforeach
