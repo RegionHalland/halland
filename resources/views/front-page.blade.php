@@ -52,6 +52,7 @@
 				<hr class="absolute pin-b pin-l w-full h-0 border-b-2 mb-1 border-blue-light z-10">
 			</header>
 			<div class="flex flex-wrap items-stretch -mx-4">
+			@if(isset($top_level_pages) && !empty($top_level_pages))
 				@foreach($top_level_pages as $top_level_page)
 					<div class="w-full sm:w-6/12 lg:w-4/12 px-4 mb-8">
 						<a href="{{ the_permalink($top_level_page->ID) }}" class="text-blue-dark">
@@ -66,6 +67,7 @@
 						</p>
 					</div>
 				@endforeach
+			@endif
 			</div>
 		</div>
 	</div>
