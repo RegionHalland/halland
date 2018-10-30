@@ -46,7 +46,7 @@
 					{{-- Search Field END --}}
 
 					{{-- Mobile Menu Button --}}
-					<button type="submit" class="bg-yellow flex rounded-full ml-2 items-center justify-center block md:hidden pin-r pin-b h-12 w-12">
+					<button type="submit" class="js-site-nav--toggle bg-yellow flex rounded-full ml-2 items-center justify-center block md:hidden pin-r pin-b h-12 w-12">
 						<svg class="h-6 w-6">
 							<use xlink:href="#menu"/>
 						</svg>
@@ -61,7 +61,7 @@
 	{{-- Top bar END --}}
 	
 	{{-- Mobile Menu Drawer --}}
-	<nav class="block md:hidden w-full pin-t pin-l bg-white z-40">
+	<nav class="js-site-nav hidden md:hidden w-full pin-t pin-l bg-white z-40">
 		@include('partials.nav-mobile')
 	</nav>
 	{{-- Mobile Menu Drawer END --}}
