@@ -15,43 +15,41 @@ trait NavSite
 		if (!is_a($post, 'WP_Post')) {
 			return;
 		}
-	
-		// Get the highest ancestor of the current page
-		if (is_page() && !is_front_page() && !$post->post_parent) {
-			$top_page = $post->ID;
-		}
-
-		if (is_page() && $post->post_parent) {
-			$ancestors = get_post_ancestors($post->ID);
-			$top_page = array_values(array_slice($ancestors, -1))[0];
-		}
-		
-		// Create pages array
-		$pages = get_pages(array(
-			'parent' => 0
-		));
 
 		$frontpage = (int)get_option('page_on_front');
+      	$pages = get_pages();
 
-		foreach ($pages as $i => $page) {
-			if ($page->ID === $frontpage) {
-				unset($pages[$i]);
-				continue;
+	 	return self::buildTree($pages, 0, $post->ID, $frontpage);
+	}
+
+	/**
+	 * Builds a tree from a flat array of pages
+	 * https://stackoverflow.com/a/8841921
+	 * @return array
+	 */
+	private function buildTree(array &$posts, $parentId = 0, $currentID = 0, $frontpage = 0) {
+	    $branch = array();
+
+	    foreach ($posts as $post) {
+
+			if ($post->ID === $frontpage) {
+				break;
 			}
 
-			if (isset($top_page) && $top_page === $page->ID) {
-				$page->active = true;
-			}
+	    	if ($currentID === $post->ID && !isset($post->active)) {
+	    		$post->active = true;
+	    	}
 
-			$page->children = get_pages(array( 
-				'child_of' => $page->ID, 
-				'parent' => $page->ID,
-				'hierarchical' => 0,
-				'sort_column' => 'menu_order', 
-				'sort_order' => 'asc'
-			));
-		}
+	        if ($post->post_parent == $parentId) {
+	            $children = self::buildTree($posts, $post->ID, $currentID);
+	            if ($children) {
+	                $post->children = $children;
+	            }
+	            $branch[$post->ID] = $post;
+	            unset($posts[$post->ID]);
+	        }
+	    }
 
-		return $pages;
+	    return $branch;
 	}
 }
