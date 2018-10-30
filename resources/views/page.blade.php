@@ -7,7 +7,7 @@
 		<div class="flex flex-wrap items-stretch -mx-4">
 		
 		{{-- Sidebar --}}
-		<aside class="w-full md:w-3/12 px-4 mb-8">
+		<aside class="w-full md:w-3/12 px-4 mb-8 hidden md:block">
 			{{-- Sidebar Navigation --}}
 			@include('partials.nav-sidebar')
 			{{-- Sidebar Navigation END--}}
