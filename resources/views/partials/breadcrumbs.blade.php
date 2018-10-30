@@ -7,7 +7,7 @@
 						<li class="breadcrumbs__item inline-block py-2 sm:py-2 relative" @if ($loop->last) aria-current="page" @endif itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
 							@if ($breadcrumb['url'])
 								<a class="breadcrumbs__link text-black" href="{{ $breadcrumb['url'] }}">{!! $breadcrumb['name'] !!}</a>
-								<span class="inline-block text-grey">
+								<span class="inline-block text-black opacity-25">
 									<svg class="h-4 w-4 align-middle ml-1">
 										<use xlink:href="#chevron-right"/>
 									</svg>
