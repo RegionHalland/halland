@@ -33,7 +33,6 @@ class SidebarNav {
 	}
 
 	findActiveItem() {
-		console.log(this.$sidebarNav)
 		this.activeItem = this.$sidebarNav.find(`.${Modifiers.ACTIVE}`)
 	}
 
