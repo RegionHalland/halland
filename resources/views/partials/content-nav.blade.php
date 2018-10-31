@@ -8,7 +8,7 @@
 	<ul class="content-nav__list list-reset" itemscope itemtype="http://schema.org/ItemList">
 		@foreach ($content_nav as $item)
 		<li class="content-nav__item mb-2" itemprop="itemListElement">
-			<a class="content-nav__link text-black no-underline" href="#{{ $item['slug'] }}" data-pointstoid="{{ $item['slug'] }}">{!! $item['content'] !!}</a>
+			<a class="content-nav__link text-black no-underline hover:underline" href="#{{ $item['slug'] }}" data-pointstoid="{{ $item['slug'] }}">{!! $item['content'] !!}</a>
 			<meta itemprop="position" content="{{ $loop->iteration }}" />
 		</li>
 		@endforeach
