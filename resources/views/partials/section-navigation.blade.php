@@ -14,7 +14,7 @@
 		@if($index <= 5)
 			<div class="w-full sm:w-6/12 lg:w-6/12 px-4 mb-8">
 				<a href="{{ $page->url }}" class="text-blue-dark">
-					<h3 class="mb-2 text-xl md:text-2xl">{{ $page->post_title }}</h3>
+					<h2 class="mb-2 text-xl md:text-2xl">{{ $page->post_title }}</h2>
 				</a>
 				<p class="leading-tight text-lg text-grey-darkest">
 					@if(has_excerpt($page->ID)) 

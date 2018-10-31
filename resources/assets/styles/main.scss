@@ -17,11 +17,19 @@
 	height: 0;
 }
 
+
+.white-link {
+	a {
+		color:white !important;
+	}
+}
+
 .jump-to-content:focus {
 	position: initial;
-	border: 4px solid darken($grey, 24%);
+	background: #fcaf15;
 	padding: $space-2;
 	height: auto;
+	color:black;
 }
 
 .content-highlight {

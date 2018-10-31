@@ -7,10 +7,10 @@
 				@foreach($footerContent as $column)
 				@if(isset($column) && !empty($column))
 				<div class="w-full md:w-6/12 lg:w-4/12 px-4 mb-12">
-					<header class="relative pb-4 block mb-4">
+					<div class="relative pb-4 block mb-4">
 						<span class="border-b-2 border-blue-dark text-xl md:text-2xl font-bold text-black pb-2 z-20 relative leading-none">{{ $column['title'] }}</span>
 						<hr class="absolute pin-b pin-l w-full h-0 border-b-2 mb-1 border-blue-light z-10">
-					</header>
+					</div>
 					<ul class="list-reset">
 						@if(isset($column['list']) && !empty($column['list'])) 
 							@foreach($column['list'] as $item)

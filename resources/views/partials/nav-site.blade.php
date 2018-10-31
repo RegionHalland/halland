@@ -1,26 +1,20 @@
-<nav class="border-b border-grey-lighter">
+<nav class="border-b border-grey-lighter" aria-label="Huvudmeny">
 	{{-- Top bar --}}
 	<div class="w-full border-b border-grey-lighter bg-white relative z-50">
 		<div class="container mx-auto py-3 px-4">
 			<div class="flex flex-wrap items-center justify-between -mx-4">
 
 				{{-- Logo Container --}}
-				<a class="px-4" href="{{ esc_url( home_url( '/' ) ) }}">
-					<img class="block w-40" src="@asset('images/navigation_logo.svg')" alt="">
+				<a class="px-4" title="Gå till startsida" href="{{ esc_url( home_url( '/' ) ) }}">
+					<img class="block w-40" alt="Region Halland - Vårdgivarwebben" src="@asset('images/navigation_logo.svg')" alt="">
 				</a>
 				{{-- Logo Container END--}}
 
 				{{-- Right Container --}}
 				<div class="flex flex-wrap px-4">
+					
 					{{-- Utilities --}}
 					<div class="hidden md:flex flex-wrap items-center">
-						{{-- <a onclick="toggleBar();" class="flex items-center text-black no-underline mr-6" href="#">
-							<span class="inline-flex h-8 w-8 rounded-full bg-green-light items-center justify-center mr-2">
-								<svg class="inline-flex h-4 w-4 align-middle">
-									<use xlink:href="#volume-2"/>
-								</svg>
-							</span>Talande Webb
-						</a> --}}
 						<a class="flex items-center text-black no-underline mr-6" target="_blank" href="https://etjanster.intra.regionhalland.se/">
 							<span class="inline-flex h-8 w-8 rounded-full bg-green-light items-center justify-center mr-2">
 								<svg class="inline-flex h-4 w-4 align-middle">
@@ -33,11 +27,11 @@
 
 
 					{{-- Search Field --}}
-					<form action="{{ home_url() }}">
-						<div role="search" class="bg-white rounded-full lg:rounded lg:w-64 overflow-hidden flex lg:border rounded relative">
-							<input name="s" id="search" placeholder="Sök på webbplatsen" class="hidden lg:inline-block text-base bg-transparent h-12 pin-t px-4 pin-l w-full" type="text">
-							<button type="submit" class="bg-yellow flex items-center justify-center block lg:absolute pin-r pin-b h-8 w-8 md:h-12 md:w-12">
-								<svg class="h-4 w-4 md:h-6 md:w-6">
+					<form action="{{ home_url() }}" role="search">
+						<div class="bg-white rounded-full lg:rounded lg:w-64 overflow-hidden flex lg:border rounded relative">
+							<input name="s" id="main-search" aria-label="Sök på webbplatsen" placeholder="Sök på webbplatsen" class="hidden lg:inline-block text-base bg-transparent h-12 pin-t px-4 pin-l w-full" type="search">
+							<button type="submit" aria-label="Sök" class="bg-yellow flex items-center justify-center block lg:absolute pin-r pin-b h-8 w-8 md:h-12 md:w-12">
+								<svg class="h-4 w-4 md:h-6 md:w-6" title="Sök">
 									<use xlink:href="#search"/>
 								</svg>
 							</button>
@@ -47,7 +41,7 @@
 
 					{{-- Mobile Menu Button --}}
 					<button type="submit" class="js-site-nav--toggle bg-yellow flex rounded-full ml-2 items-center justify-center block md:hidden pin-r pin-b h-8 w-8 md:h-12 md:w-12">
-						<svg class="h-4 w-4 md:h-6 md:w-6">
+						<svg class="h-4 w-4 md:h-6 md:w-6" title="Meny">
 							<use xlink:href="#menu"/>
 						</svg>
 					</button>
