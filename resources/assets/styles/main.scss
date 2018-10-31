@@ -17,19 +17,12 @@
 	height: 0;
 }
 
-
-.white-link {
-	a {
-		color:white !important;
-	}
-}
-
 .jump-to-content:focus {
 	position: initial;
 	background: #fcaf15;
 	padding: $space-2;
 	height: auto;
-	color:black;
+	color: black;
 }
 
 .content-highlight {
