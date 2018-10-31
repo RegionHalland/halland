@@ -8,6 +8,8 @@ const Table = (() => {
 	
 	class Table {
 		constructor() {
+			console.log('sadf');
+			
 			if ($(Selectors.TABLES).length <= 0) {
 				return
 			}
