@@ -6,9 +6,9 @@
 
 @section('content')
 
-<div class="bg-white pt-16 pb-8">
+<main class="bg-white pt-16 pb-8" id="main">
 	<div class="container mx-auto px-4">
-		<div class="w-full md:w-11/12 mx-auto">
+		<div class="w-full mx-auto">
 			<h1 class="mb-4">{!! get_the_title() !!}</h1>
 			@while(have_posts()) @php(the_post())
 				<div class="text-lg leading-tight md:text-xl mb-12 text-grey-darkest lg:w-5/12">
@@ -29,7 +29,7 @@
 					?>
 					<div class="w-full sm:w-6/12 lg:w-4/12 px-4 mb-8">
 						<a href="{{ $page->url }}" class="text-blue-dark">
-							<h3 class="mb-2 text-xl md:text-2xl">{{ $page->post_title }}</h3>
+							<h2 class="mb-2 text-xl md:text-2xl">{{ $page->post_title }}</h2>
 						</a>
 						<p class="leading-tight text-lg text-grey-darkest">
 							@if(has_excerpt($page->ID)) 
@@ -46,6 +46,6 @@
 			@endif
 		</div>
 	</div>
-</div>
+</main>
 
 @endsection
