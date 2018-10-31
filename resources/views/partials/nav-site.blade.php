@@ -1,4 +1,4 @@
-<nav class="border-b border-grey-lighter" aria-label="Huvudmeny">
+<nav class="" aria-label="Huvudmeny">
 	{{-- Top bar --}}
 	<div class="w-full border-b border-grey-lighter bg-white relative z-50">
 		<div class="container mx-auto py-3 px-4">

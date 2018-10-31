@@ -1,7 +1,7 @@
 @php($footerContent = get_field('footer_content', 'options'))
 @if(isset($footerContent) && !empty($footerContent))
-<footer class="bg-grey-lightest pb-8 pt-16 border-t border-grey-lighter mt-8">
-	<div class="container mx-auto px-4 mt-8">
+<footer class="bg-grey-lightest pt-16 border-t border-grey-lighter mt-8">
+	<div class="container mx-auto px-4 mt-8 mb-12">
 		<div class="w-full mx-auto">
 			<div class="w-full flex flex-wrap items-stretch -mx-4">
 				@foreach($footerContent as $column)
@@ -25,6 +25,9 @@
 				@endforeach
 			</div>
 		</div>
+	</div>
+	<div class="py-4 bg-grey-lightest border-t border-grey-lighter">
+		<div class="container mx-auto px-4">Copyright © Region Halland</div>
 	</div>
 </footer>
 @endif
