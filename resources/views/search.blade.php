@@ -4,7 +4,7 @@
 <main id="main">
 	<div class="py-16 md:py-24 bg-blue-dark mb-12">
 		<div class="container mx-auto px-4">
-			<div class="w-full md:w-11/12 mx-auto">
+			<div class="w-full mx-auto">
 				<form role="search">
 					<label for="search" class="text-white text-xl lg:text-2xl mb-2 block font-bold">Sök på webbplatsen</label>
 					<div class="bg-white rounded overflow-hidden relative">
@@ -21,7 +21,7 @@
 	</div>
 
 	<div class="container mx-auto px-4">
-		<div class="w-full md:w-11/12 mx-auto">
+		<div class="w-full mx-auto">
 			<div class="flex flex-wrap -mx-4">
 				<div class="w-full md:w-8/12 px-4">
 					<header class="relative pb-4 block">

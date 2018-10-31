@@ -3,7 +3,7 @@
 @section('content')
 <div class="bg-white pt-16 pb-8">
 	<div class="container mx-auto px-4">
-		<div class="w-full md:w-11/12 mx-auto">
+		<div class="w-full mx-auto">
 			<div class="flex flex-wrap -mx-4">
 				<div class="w-full sm:w-full md:w-8/12 px-4">
 					@while(have_posts()) @php(the_post())

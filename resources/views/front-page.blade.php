@@ -8,7 +8,7 @@
 <main id="main">
 	<div class="bg-blue-dark">
 		<div class="container mx-auto px-4 pt-16 pb-12">
-			<div class="w-full md:w-11/12 mx-auto flex justify-between flex-wrap">
+			<div class="w-full mx-auto flex justify-between flex-wrap">
 				<div class="w-full md:w-6/12">
 					@while(have_posts()) @php(the_post())
 						<h1 class="text-3xl md:text-4xl text-white mb-4">{{ the_title() }}</h1>
@@ -47,7 +47,7 @@
 
 	<div class="bg-white pt-16 pb-8">
 		<div class="container mx-auto px-4">
-			<div class="w-full md:w-11/12 mx-auto">
+			<div class="w-full mx-auto">
 				<header class="relative pb-4 block mb-8">
 					<span class="border-b-2 border-blue-dark text-2xl font-bold text-black pb-2 z-20 relative leading-none">Vad letar du efter?</span>
 					<hr class="absolute pin-b pin-l w-full h-0 border-b-2 mb-1 border-blue-light z-10">
@@ -76,7 +76,7 @@
 
 	<div class="bg-white pt-16 pb-8">
 		<div class="container mx-auto px-4">
-			<div class="w-full md:w-11/12 mx-auto">
+			<div class="w-full mx-auto">
 				<header class="relative pb-4 block mb-8">
 					<span class="border-b-2 border-blue-dark text-2xl font-bold text-black pb-2 z-20 relative leading-none">Nyheter</span>
 					<hr class="absolute pin-b pin-l w-full h-0 border-b-2 mb-1 border-blue-light z-10">

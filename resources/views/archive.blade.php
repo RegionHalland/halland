@@ -4,7 +4,7 @@
 
 <main class="bg-white pt-12 pb-8" id="main">
 	<div class="container mx-auto px-4">
-		<div class="w-full md:w-11/12 mx-auto">
+		<div class="w-full mx-auto">
 			<div class="flex flex-wrap -mx-4">
 				<div class="w-full md:w-8/12 px-4">
 					<header class="relative pb-4 block mb-8">
