@@ -1,6 +1,6 @@
 @php($footerContent = get_field('footer_content', 'options'))
 @if(isset($footerContent) && !empty($footerContent))
-<footer class="bg-white pb-8 pt-16 border-t border-grey-lighter mt-8">
+<footer class="bg-grey-lightest pb-8 pt-16 border-t border-grey-lighter mt-8">
 	<div class="container mx-auto px-4 mt-8">
 		<div class="w-full mx-auto">
 			<div class="w-full flex flex-wrap items-stretch -mx-4">
