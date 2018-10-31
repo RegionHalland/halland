@@ -18,7 +18,7 @@ trait Breadcrumbs
 		
 		$title = get_the_title();
 		$post_type = get_post_type_object($post->post_type);
-		$breadcrumbs = self::addBreadcrumb(array(), __('Start'), get_home_url());
+		$breadcrumbs = self::addBreadcrumb(array(), __('Vårdgivarwebben'), get_home_url());
 
 		if (is_single() && $post_type->has_archive) {
 			$cpt_archive_link = (is_string($post_type->has_archive)) ? 
