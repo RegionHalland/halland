@@ -37,7 +37,7 @@
 
 					{{-- Search Field --}}
 					<form action="{{ home_url() }}" role="search">
-						<div class="bg-white rounded-full lg:rounded lg:w-64 overflow-hidden flex lg:border lg:border-grey-dark rounded relative">
+						<div class="bg-grey-lighter rounded-full lg:rounded lg:w-64 overflow-hidden flex  rounded relative">
 							<input name="s" id="main-search" aria-label="Sök på webbplatsen" placeholder="Sök på webbplatsen" class="hidden lg:inline-block text-base bg-transparent h-12 pin-t px-4 pin-l w-full" type="search">
 							<button type="submit" aria-label="Sök" class="bg-yellow flex items-center justify-center block lg:absolute pin-r pin-b h-8 w-8 md:h-12 md:w-12">
 								<svg class="h-4 w-4 md:h-6 md:w-6" title="Sök">

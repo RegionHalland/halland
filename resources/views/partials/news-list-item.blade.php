@@ -1,5 +1,5 @@
 <article class="py-4">
-	<a href="{{ the_permalink() }}" title="" class="text-blue-dark mb-2 inline-block">
+	<a href="{{ the_permalink() }}" title="" class="text-blue-dark hover:opacity-75 mb-2 inline-block">
 		<h2 class="text-xl sm:text-2xl leading-tight">{{ get_the_title() }}</h2>
 	</a>
 	<span class="text-base block text-grey-darkest mb-4">Publicerad: <time itemprop="datePublished" datetime="{{ get_the_date('Y/m/d', get_the_id()) }}">{{ get_the_date('Y/m/d', get_the_id()) }}</time></span>
