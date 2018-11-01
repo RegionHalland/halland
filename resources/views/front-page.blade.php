@@ -28,14 +28,15 @@
 				<div class="w-full md:w-4/12 mt-12 md:mt-0">
 				@php($popular_links = get_field('popular_links'))
 				@if(isset($popular_links) && !empty($popular_links))
-					<header class="text-lg font-bold text-white block mb-2">Populära länkar</header>
+					<header class="text-lg font-bold text-white block mb-2">Snabblänkar</header>
 					<ol class="list-reset bg-white relative rounded overflow-hidden">
 						@foreach($popular_links as $link)
-						<li class="px-3 py-4 border-b border-grey-lightest bg-white">
-							<svg class="h-4 w-4 align-middle mr-1">
+						<li class="px-4 py-4 border-grey-lightest truncate overflow-hidden relative">
+							<div class="absolute bg-blue pin-l pin-t h-full w-1"></div>
+							<a class="text-black whitespace-no-wrap" href="{{ $link['link']['url'] }}">{{ $link['link']['title'] }}</a>
+							<svg class="h-4 w-4 align-middle ml-1">
 								<use xlink:href="#link-2"/>
 							</svg>
-							<a class="text-black" href="{{ $link['link']['url'] }}">{{ $link['link']['title'] }}</a>
 						</li>
 						@endforeach
 					</ol>

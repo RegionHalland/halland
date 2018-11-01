@@ -4,7 +4,7 @@
 		<span class="border-b-2 border-yellow text-2xl font-bold text-black pb-2 z-20 relative leading-none">Snabblänkar</span>
 		<hr class="absolute pin-b pin-l w-full h-0 border-b-2 mb-1 border-yellow-light z-10">
 	</header>
-	<ol class="list-reset bg-yellow-light relative rounded border border-grey-lightest overflow-hidden">
+	<ol class="list-reset bg-yellow-light relative rounded overflow-hidden">
 		@foreach($top_links as $key => $top_link)
 			@if($top_link["external_link_toggle"])
 				<li class="px-4 py-4 border-grey-lightest truncate overflow-hidden relative">
