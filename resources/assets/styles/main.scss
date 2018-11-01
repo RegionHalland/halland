@@ -8,6 +8,12 @@
 @import 'settings/settings';
 @import 'mixins/palette';
 
+// TODO:
+// Fix this temporary hide on Talande Webb link
+#__ba_panel {
+	display: none;
+}
+
 .jump-to-content {
 	display: block;
 	background: $white;
