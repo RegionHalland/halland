@@ -57,7 +57,7 @@
 				@if(isset($top_level_pages) && !empty($top_level_pages))
 					@foreach($top_level_pages as $top_level_page)
 						<div class="w-full sm:w-6/12 lg:w-4/12 px-4 mb-8">
-							<a href="{{ the_permalink($top_level_page->ID) }}" class="text-blue-dark hover:opacity-75">
+							<a href="{{ the_permalink($top_level_page->ID) }}" class="text-blue-dark hover:opacity-75 inline-block">
 								<h2 class="mb-2 text-xl md:text-2xl">{{ $top_level_page->post_title }}</h2>
 							</a>
 							<p class="leading-tight text-lg text-grey-darkest">
