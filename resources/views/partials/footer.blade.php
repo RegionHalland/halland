@@ -15,7 +15,7 @@
 						@if(isset($column['list']) && !empty($column['list'])) 
 							@foreach($column['list'] as $item)
 								<li class="mb-2">
-									<a class="text-black text-lg" href="{{ $item['link']['url'] }}">{{ $item['link']['title'] }}</a>
+									<a class="text-black text-lg hover:opacity-75" href="{{ $item['link']['url'] }}">{{ $item['link']['title'] }}</a>
 								</li>
 							@endforeach
 						@endif
