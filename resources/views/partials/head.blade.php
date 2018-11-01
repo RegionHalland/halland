@@ -23,5 +23,9 @@
 	})(window,document,'script','dataLayer','GTM-WJTVNM6');</script>
 	<!-- End Google Tag Manager -->
 	
+	<!-- Browsealoud || Talande Webb --> 
+	<script type="text/javascript">var _baTheme=0, _baMode='Aktivera Talande Webb', _baUseCookies=true, _baHideOnLoad=true;</script>
+	<!-- Browsealoud || Talande Webb -->
+	
 	@php(wp_head())
 </head>
