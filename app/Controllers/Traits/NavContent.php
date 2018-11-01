@@ -32,6 +32,10 @@ trait NavContent
             $element->id = $slug;
         }
 
+        foreach ($content->find('*[style]') as $element) {
+            $element->style = null;
+        }
+
         return $content;
     }
 
