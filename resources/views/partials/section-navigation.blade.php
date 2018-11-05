@@ -12,7 +12,7 @@
 		@endphp
 
 		<div class="w-full sm:w-6/12 lg:w-6/12 px-4 mb-8">
-			<a href="{{ $page->url }}" class="text-blue-dark hover:opacity-75 inline-block">
+			<a href="{{ $page->url }}" class="text-blue-dark hover:bg-yellow-light focus:bg-yellow-light inline-block">
 				<h2 class="mb-2 text-xl md:text-2xl">{{ $page->post_title }}</h2>
 			</a>
 			<p class="leading-tight text-lg text-grey-darkest">

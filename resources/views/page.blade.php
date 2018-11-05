@@ -24,7 +24,7 @@
 		{{-- Sidebar END --}}
 
 		{{-- Main Content --}}
-		<main class="w-full px-4 md:w-6/12" id="main">
+		<main class="w-full px-4 md:w-9/12 lg:w-7/12" id="main">
 			@while(have_posts()) @php(the_post())
 				<h1>{{ the_title() }}</h1>
 				{{-- Content --}}
