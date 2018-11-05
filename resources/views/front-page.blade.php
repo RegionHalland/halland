@@ -16,6 +16,7 @@
 					@endwhile
 					<form action="{{ home_url() }}" role="search">
 						<div class="bg-white rounded overflow-hidden relative">
+							<label for="search" class="visually-hidden">Sök: </label>
 							<input name="s" aria-label="Sök på webbplatsen" id="search" placeholder="Sök på webbplatsen" class="text-lg bg-transparent h-12 md:h-16 pin-t px-4 md:px-6 pin-l w-full" type="search">
 							<button type="submit" aria-label="Sök" class="bg-yellow flex items-center justify-center absolute pin-r pin-b h-12 w-12 md:h-16 md:w-16">
 								<svg class="h-6 w-6">
