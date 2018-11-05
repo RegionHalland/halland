@@ -16,14 +16,14 @@
 					{{-- Utilities --}}
 					<div class="hidden md:flex flex-wrap items-center">
 
-						<a class="flex items-center text-black no-underline hover:underline mr-6" id="" onclick="toggleBar();" href="#">
+						<a class="flex items-center text-black no-underline hover:underline focus:underline mr-6" id="" onclick="toggleBar();" href="#">
 							<span class="inline-flex h-8 w-8 rounded-full bg-green-light items-center justify-center mr-2">
 								<svg class="inline-flex h-4 w-4 align-middle">
 									<use xlink:href="#volume-2"/>
 								</svg>
 							</span>Talande Webb
 						</a>
-						<a class="flex items-center text-black no-underline hover:underline mr-6" target="_blank" href="https://etjanster.intra.regionhalland.se/">
+						<a class="flex items-center text-black no-underline hover:underline focus:underline mr-6" target="_blank" href="https://etjanster.intra.regionhalland.se/">
 							<span class="inline-flex h-8 w-8 rounded-full bg-green-light items-center justify-center mr-2">
 								<svg class="inline-flex h-4 w-4 align-middle">
 									<use xlink:href="#user"/>
@@ -37,7 +37,7 @@
 
 					{{-- Search Field --}}
 					<form action="{{ home_url() }}" role="search">
-						<div class="bg-grey-lighter rounded-full lg:rounded lg:w-64 overflow-hidden flex  rounded relative">
+						<div class="bg-grey-lighter rounded-full lg:rounded lg:w-64 overflow-hidden flex rounded relative">
 							<input name="s" id="main-search" aria-label="Sök på webbplatsen" placeholder="Sök på webbplatsen" class="hidden lg:inline-block text-base bg-transparent h-12 pin-t px-4 pin-l w-full" type="search">
 							<button type="submit" aria-label="Sök" class="bg-yellow flex items-center justify-center block lg:absolute pin-r pin-b h-8 w-8 md:h-12 md:w-12">
 								<svg class="h-4 w-4 md:h-6 md:w-6" title="Sök">
@@ -77,11 +77,11 @@
 				<li class="flex-no-shrink px-4">
 
 					@if($top_level_page->active === true)
-						<a class="no-underline hover:underline text-black font-bold py-4 inline-block relative" href="{{ the_permalink($top_level_page->ID) }}">{{ $top_level_page->post_title }}
+						<a class="no-underline hover:underline focus:underline text-black font-bold py-4 inline-block relative" href="{{ the_permalink($top_level_page->ID) }}">{{ $top_level_page->post_title }}
 							 <div class="absolute pin-b pin-l w-full h-1 rounded-t bg-blue-dark"></div>
 						</a>
 					@else
-						<a class="no-underline hover:underline text-black font-bold py-4 inline-block" href="{{ the_permalink($top_level_page->ID) }}">{{ $top_level_page->post_title }}</a>
+						<a class="no-underline hover:underline focus:underline text-black font-bold py-4 inline-block" href="{{ the_permalink($top_level_page->ID) }}">{{ $top_level_page->post_title }}</a>
 					@endif
 				</li>
 			@endforeach

@@ -33,7 +33,7 @@
 						@foreach($popular_links as $link)
 						<li class="px-4 py-4 border-grey-lightest truncate overflow-hidden relative">
 							<div class="absolute bg-blue pin-l pin-t h-full w-1"></div>
-							<a class="text-black whitespace-no-wrap hover:opacity-75" href="{{ $link['link']['url'] }}">{{ $link['link']['title'] }}</a>
+							<a class="text-black whitespace-no-wrap hover:bg-yellow-light focus:bg-yellow-light" href="{{ $link['link']['url'] }}">{{ $link['link']['title'] }}</a>
 							<svg class="h-4 w-4 align-middle ml-1">
 								<use xlink:href="#link-2"/>
 							</svg>
@@ -57,7 +57,7 @@
 				@if(isset($top_level_pages) && !empty($top_level_pages))
 					@foreach($top_level_pages as $top_level_page)
 						<div class="w-full sm:w-6/12 lg:w-4/12 px-4 mb-8">
-							<a href="{{ the_permalink($top_level_page->ID) }}" class="text-blue-dark hover:opacity-75 inline-block">
+							<a href="{{ the_permalink($top_level_page->ID) }}" class="text-blue-dark hover:bg-yellow-light focus:bg-yellow-light inline-block">
 								<h2 class="mb-2 text-xl md:text-2xl">{{ $top_level_page->post_title }}</h2>
 							</a>
 							<p class="leading-tight text-lg text-grey-darkest">
