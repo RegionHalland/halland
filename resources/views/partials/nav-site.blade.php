@@ -15,6 +15,14 @@
 					
 					{{-- Utilities --}}
 					<div class="hidden md:flex flex-wrap items-center">
+
+						<a class="flex items-center text-black no-underline mr-6" id="" onclick="toggleBar();" href="#">
+							<span class="inline-flex h-8 w-8 rounded-full bg-green-light items-center justify-center mr-2">
+								<svg class="inline-flex h-4 w-4 align-middle">
+									<use xlink:href="#volume-2"/>
+								</svg>
+							</span>Talande Webb
+						</a>
 						<a class="flex items-center text-black no-underline mr-6" target="_blank" href="https://etjanster.intra.regionhalland.se/">
 							<span class="inline-flex h-8 w-8 rounded-full bg-green-light items-center justify-center mr-2">
 								<svg class="inline-flex h-4 w-4 align-middle">
@@ -22,6 +30,7 @@
 								</svg>
 							</span>E-tjänster
 						</a>
+
 					</div>
 					{{-- Utilities END --}}
 
@@ -63,7 +72,7 @@
 	{{-- Bottom bar --}}
 	@if(isset($top_level_pages) && !empty($top_level_pages))
 	<div class="hidden md:block container mx-auto px-4 overflow-auto scrolling-touch">
-		<ul class="list-reset flex -mx-4">
+		<ul class="list-reset flex flex-wrap -mx-4">
 			@foreach($top_level_pages as $top_level_page)
 				<li class="flex-no-shrink px-4">
 
