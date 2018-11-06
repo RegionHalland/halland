@@ -5,7 +5,7 @@
 			<div class="flex flex-wrap items-center justify-between -mx-4">
 
 				{{-- Logo Container --}}
-				<a class="px-4" title="Gå till startsida" href="{{ esc_url( home_url( '/' ) ) }}">
+				<a class="px-4" title="Gå till startsida" aria-label="Gå till startsida" href="{{ esc_url( home_url( '/' ) ) }}">
 					<img class="block w-40" alt="Region Halland - Vårdgivarwebben" src="@asset('images/navigation_logo.svg')" alt="">
 				</a>
 				{{-- Logo Container END--}}

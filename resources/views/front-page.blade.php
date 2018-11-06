@@ -30,7 +30,7 @@
 				@php($popular_links = get_field('popular_links'))
 				@if(isset($popular_links) && !empty($popular_links))
 					<header class="text-lg font-bold text-white block mb-2">Snabblänkar</header>
-					<ol class="list-reset bg-white relative rounded overflow-hidden">
+					<ol aria-labelledby="Snabblänkar" class="list-reset bg-white relative rounded overflow-hidden">
 						@foreach($popular_links as $link)
 						<li class="px-4 py-4 border-grey-lightest truncate overflow-hidden relative">
 							<div class="absolute bg-blue pin-l pin-t h-full w-1"></div>
@@ -54,10 +54,10 @@
 					<span class="border-b-2 border-blue-dark text-2xl font-bold text-black pb-2 z-20 relative leading-none">Vad letar du efter?</span>
 					<hr class="absolute pin-b pin-l w-full h-0 border-b-2 mb-1 border-blue-light z-10">
 				</header>
-				<div class="flex flex-wrap items-stretch -mx-4">
+				<ul class="flex flex-wrap items-stretch -mx-4 list-reset" aria-labelledby="Länklista">
 				@if(isset($top_level_pages) && !empty($top_level_pages))
 					@foreach($top_level_pages as $top_level_page)
-						<div class="w-full sm:w-6/12 lg:w-4/12 px-4 mb-8">
+						<li class="w-full sm:w-6/12 lg:w-4/12 px-4 mb-8">
 							<a href="{{ the_permalink($top_level_page->ID) }}" class="text-blue-dark hover:bg-yellow-light focus:bg-yellow-light inline-block">
 								<h2 class="mb-2 text-xl md:text-2xl">{{ $top_level_page->post_title }}</h2>
 							</a>
@@ -68,10 +68,10 @@
 									{{ \App\trim_excerpt($top_level_page->post_content) }}
 								@endif
 							</p>
-						</div>
+						</li>
 					@endforeach
 				@endif
-				</div>
+				</ul>
 			</div>
 		</div>
 	</div>
