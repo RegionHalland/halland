@@ -12,7 +12,7 @@ trait topLevelPages
 	{
 		global $post;
 
-		if (!is_a($post, 'WP_Post')) {
+		if (!is_a($post, 'WP_Post') && !is_search()) {
 			return;
 		}
 
