@@ -14,11 +14,11 @@ trait NavSidebar
 
         $ancestors = get_post_ancestors($post->ID);
 
-        if (count($ancestors) <= 1) {
+        if (count($ancestors) <= 0) {
             return false;
         }
 
-        $parentID = $ancestors[count($ancestors) - 2];
+        $parentID = $ancestors[count($ancestors) - 1];
 
       	$pages = get_pages([
 			'child_of' => $parentID
