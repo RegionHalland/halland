@@ -24,7 +24,7 @@ class Search extends Controller
 		$client = new Client([
 		    'base_uri' => $this->SEARCH_API_URL,
 		    // You can set any number of default request options.
-		    'timeout'  => 10.0,
+		    'timeout'  => 15.0,
 		]);
 
 		$response = $client->request('GET', '', [

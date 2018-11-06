@@ -23,7 +23,7 @@
 					</header>
 					<ul class="list-reset">
 						@foreach($categories as $key => $value)
-							<li><a href="{{ get_post_type_archive_link(get_post_type()) }}?{{'filter[category]=' .  $value->slug }}" class="px-2 mb-2 py-1 text-sm no-underline hover:underline text-black bg-grey-lightest rounded-full inline-block">{{ $value->name }}</a></li>
+							<li><a href="{{ get_post_type_archive_link(get_post_type()) }}?{{'filter[category]=' .  $value->slug }}" class="px-2 mb-2 py-1 text-sm no-underline hover:underline focus:underline text-black bg-grey-lightest rounded-full inline-block">{{ $value->name }}</a></li>
 						@endforeach
 					</ul>
 				</div>

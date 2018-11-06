@@ -20,6 +20,8 @@ const Nav = (() => {
 
 			this.cache()
 			this.bind()
+			this.findActiveItem()
+			this.showActiveItem()
 		}
 
 		cache() {
@@ -39,6 +41,16 @@ const Nav = (() => {
 		toggleNav() {
 			this.$nav.toggleClass(Modifiers.HIDDEN)
 		}
+
+		findActiveItem() {
+			this.activeItem = this.$nav.find(`.${Modifiers.ACTIVE}`)
+		}
+
+		showActiveItem() {
+			let parents = this.activeItem.parentsUntil(Selectors.NAV)
+			parents.removeClass(Modifiers.HIDDEN)
+		}
+
 	}
 
 	return new Nav()
