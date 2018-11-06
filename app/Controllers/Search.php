@@ -7,23 +7,24 @@ use Sober\Controller\Controller;
 
 class Search extends Controller
 {
+	protected $SEARCH_API_URL = '';
+
 	public function __construct()
 	{
-		/*if(isset($_GET["s"])){
-			
-			//var_dump($query);
-			$this->search_me("asdasd");
-		}*/
+		// Add field to .env in root
+		// SEARCH_API_URL=<URL to the search>
+		if (!empty(env('SEARCH_API_URL'))) {
+			$this->SEARCH_API_URL = env('SEARCH_API_URL');
+		}
 	}
 
 	public function results()
 	{
 		$query = $_GET["s"];
 		$client = new Client([
-		    // Base URI is used with relative requests
-		    'base_uri' => 'http://search.i3demo.findwise.com/rest/apps/demo/searchers/demo/',
+		    'base_uri' => $this->SEARCH_API_URL,
 		    // You can set any number of default request options.
-		    'timeout'  => 2.0,
+		    'timeout'  => 10.0,
 		]);
 
 		$response = $client->request('GET', '', [
@@ -39,7 +40,5 @@ class Search extends Controller
 			"hits" => $response_body->documentList->numberOfHits,
 			"documents" => $response_body->documentList->documents
 		);
-
-		//return $response;
 	}
 }
