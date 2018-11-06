@@ -28,14 +28,19 @@
 						<h1 class="border-b-2 border-blue-dark inline-block text-2xl font-bold text-black pb-2 z-20 relative leading-none">Dina sökresultat</h1>
 						<hr class="absolute pin-b pin-l w-full h-0 border-b-2 mb-4 border-blue-light z-10">
 					</header>
-					@if (!have_posts())
+					
+					@if ($results["hits"] == 0)
 						<div class="p-4 bg-grey-lightest text-lg rounded mt-4 mb-16">
 							{{  __('Din sökning gav tyvärr inga resultat.', 'sage') }}
 						</div>
 					@endif
-					@while(have_posts()) @php(the_post())
-						@include('partials.content-search')
-					@endwhile
+					
+					@if ($results["hits"] > 0)
+						@foreach($results["documents"] as $result)
+							@include('partials.content-search')	
+						@endforeach
+					@endif
+
 				</div>
 				<div class="w-full md:w-4/12 px-4 hidden md:block">
 					<header class="relative pb-4 block mb-8">

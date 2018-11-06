@@ -32,7 +32,8 @@
     "illuminate/support": "~5.4",
     "roots/sage-lib": "~9.0.0-beta.4",
     "soberwp/controller": "~2.1.0",
-    "helsingborg-stad/acf-export-manager": ">=1.0.0"
+    "helsingborg-stad/acf-export-manager": ">=1.0.0",
+    "guzzlehttp/guzzle": "~6.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.8.0",

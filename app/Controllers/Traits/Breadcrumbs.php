@@ -12,7 +12,7 @@ trait Breadcrumbs
 	{
 		global $post;
 
-		if (!is_a($post, 'WP_Post') || is_front_page()) {
+		if (!is_a($post, 'WP_Post') || is_front_page() || is_search()) {
 			return;
 		}
 		
