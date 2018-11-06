@@ -43,10 +43,7 @@
 
 				</div>
 				<div class="w-full md:w-4/12 px-4 hidden md:block">
-					<header class="relative pb-4 block mb-8">
-						<span class="border-b-2 border-yellow text-2xl font-bold text-black pb-2 z-20 relative leading-none">Populära sökningar</span>
-						<hr class="absolute pin-b pin-l w-full h-0 border-b-2 mb-1 border-yellow-light z-10">
-					</header>
+					
 				</div>
 			</div>
 		</div>
