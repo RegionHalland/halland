@@ -24,16 +24,16 @@
 						<span class="tab__counter">{{ $results["stats"]["all_hits"] }}</span>
 					</li>
 				</a>
-				<a href="#" data-category="vgw" class="tab">
-					<li class="tab__item">
-						<span>Sidor</span>
-						<span class="tab__counter">{{ $results["stats"]["vgw_hits"] }}</span>
-					</li>
-				</a>
 				<a href="#" data-category="std" class="tab">
 					<li class="tab__item">
 						<span>Styrda dokument</span>
 						<span class="tab__counter">{{ $results["stats"]["std_hits"] }}</span>
+					</li>
+				</a>
+				<a href="#" data-category="vgw" class="tab">
+					<li class="tab__item">
+						<span>Sidor</span>
+						<span class="tab__counter">{{ $results["stats"]["vgw_hits"] }}</span>
 					</li>
 				</a>
 			</ul>
