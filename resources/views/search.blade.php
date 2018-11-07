@@ -2,9 +2,9 @@
 
 @section('content')
 <main id="main">
-	<div class="py-16 md:py-24 bg-blue-dark mb-12">
+	<div class="pt-16 md:pt-24 bg-blue-dark mb-12">
 		<div class="container mx-auto px-4">
-			<div class="w-full mx-auto">
+			<div class="w-full mx-auto mb-16">
 				<form role="search">
 					<label for="search" class="text-white text-xl lg:text-2xl mb-2 block font-bold">Sök på webbplatsen</label>
 					<div class="bg-white rounded overflow-hidden relative">
@@ -17,8 +17,29 @@
 					</div>
 				</form>
 			</div>
+			<ul class="list-reset inline-flex rounded-tl rounded-tr overflow-scroll w-full md:w-auto whitespace-no-wrap">
+				<a href="" class="text-black no-underline whitespace-no-wrap">
+					<li class="bg-white text-lg border-t-4 border-yellow hover:bg-grey-light h-16 flex items-center px-4">
+						Alla resultat 
+						<span class="bg-yellow px-2 h-6 ml-2 inline-flex items-center text-sm justify-center rounded-full">24</span>
+					</li>
+				</a>
+				<a href="" class="text-black no-underline whitespace-no-wrap">
+					<li class="bg-grey-lightest text-lg border-t-4 border-grey hover:bg-grey-light  h-16 flex items-center px-4">
+						Sidor
+						<span class="bg-grey px-2 h-6 ml-2 inline-flex items-center text-sm justify-center rounded-full">16</span>
+					</li>
+				</a>
+				<a href="" class="text-black no-underline whitespace-no-wrap">
+					<li class="bg-grey-lightest text-lg border-t-4 border-grey hover:bg-grey-light  h-16 flex items-center px-4">
+						Styrda dokument
+						<span class="bg-grey px-2 h-6 ml-2 inline-flex items-center text-sm justify-center rounded-full">8</span>
+					</li>
+				</a>
+			</ul>
 		</div>
 	</div>
+
 
 	<div class="container mx-auto px-4">
 		<div class="w-full mx-auto">
