@@ -17,23 +17,23 @@
 					</div>
 				</form>
 			</div>
-			<ul class="list-reset inline-flex rounded-tl rounded-tr overflow-scroll w-full md:w-auto whitespace-no-wrap">
-				<a href="" class="text-black no-underline whitespace-no-wrap">
-					<li class="bg-white text-lg border-t-4 border-yellow hover:bg-grey-light h-16 flex items-center px-4">
-						Alla resultat 
-						<span class="bg-yellow px-2 h-6 ml-2 inline-flex items-center text-sm justify-center rounded-full">24</span>
+			<ul class="tabs js--tabs">
+				<a href="#" data-category="all" class="tab tab--active">
+					<li class="tab__item">
+						<span>Alla resultat</span>
+						<span class="tab__counter">{{ $results["stats"]["all_hits"] }}</span>
 					</li>
 				</a>
-				<a href="" class="text-black no-underline whitespace-no-wrap">
-					<li class="bg-grey-lightest text-lg border-t-4 border-grey hover:bg-grey-light  h-16 flex items-center px-4">
-						Sidor
-						<span class="bg-grey px-2 h-6 ml-2 inline-flex items-center text-sm justify-center rounded-full">16</span>
+				<a href="#" data-category="vgw" class="tab">
+					<li class="tab__item">
+						<span>Sidor</span>
+						<span class="tab__counter">{{ $results["stats"]["vgw_hits"] }}</span>
 					</li>
 				</a>
-				<a href="" class="text-black no-underline whitespace-no-wrap">
-					<li class="bg-grey-lightest text-lg border-t-4 border-grey hover:bg-grey-light  h-16 flex items-center px-4">
-						Styrda dokument
-						<span class="bg-grey px-2 h-6 ml-2 inline-flex items-center text-sm justify-center rounded-full">8</span>
+				<a href="#" data-category="std" class="tab">
+					<li class="tab__item">
+						<span>Styrda dokument</span>
+						<span class="tab__counter">{{ $results["stats"]["std_hits"] }}</span>
 					</li>
 				</a>
 			</ul>
@@ -50,16 +50,23 @@
 						<hr class="absolute pin-b pin-l w-full h-0 border-b-2 mb-4 border-blue-light z-10">
 					</header>
 					
-					@if ($results["hits"] == 0)
+					@if ($results["stats"]["all_hits"] == 0)
 						<div class="p-4 bg-grey-lightest text-lg rounded mt-4 mb-16">
 							{{  __('Din sökning gav tyvärr inga resultat.', 'sage') }}
 						</div>
 					@endif
-					
-					@if ($results["hits"] > 0)
-						@foreach($results["documents"] as $result)
-							@include('partials.content-search')	
-						@endforeach
+
+					@if ($results["stats"]["all_hits"] > 0)
+						<div class="js--search-results">
+							@foreach($results["all_documents"] as $result)
+								@if($result->category === "vgw")
+									@include('partials.content-search-vgw')
+								@endif
+								@if($result->category === "std")
+									@include('partials.content-search-std')
+								@endif
+							@endforeach
+						</div>
 					@endif
 
 				</div>
