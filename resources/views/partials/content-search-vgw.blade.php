@@ -1,5 +1,5 @@
 
-<article class="py-4 border-b border-grey-lightest">
+<article class="search-item py-4 border-b border-grey-lightest" data-category="{{ $result->category }}">
 	<a href="{{ isset($result->url) ? $result->url : ''  }}" title="" class="text-blue-dark mb-2 inline-block hover:bg-yellow-light focus:bg-yellow-light">
 		<h2 class="text-xl sm:text-2xl leading-tight">{{ isset($result->title) ? $result->title : '' }}</h2>
 	</a>

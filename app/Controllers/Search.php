@@ -36,9 +36,21 @@ class Search extends Controller
 
 		$response_body = json_decode($response->getBody());
 
+		foreach ($response_body->vardgivarwebben->documents as $key => $vdoc) {
+			$vdoc->category = "vgw";
+		}
+		foreach ($response_body->styrdadokument->documents as $key => $sdoc) {
+			$sdoc->category = "std";
+		}
+		$all = array_merge($response_body->vardgivarwebben->documents, $response_body->styrdadokument->documents);
+
 		return array(
-			"hits" => $response_body->documentList->numberOfHits,
-			"documents" => $response_body->documentList->documents
+			"all_documents" => $all,
+			"stats" => array(
+				"all_hits" => $response_body->stats->totalHits,
+				"vgw_hits" => $response_body->vardgivarwebben->numberOfHits,
+				"std_hits" => $response_body->styrdadokument->numberOfHits
+			)
 		);
 	}
 }
