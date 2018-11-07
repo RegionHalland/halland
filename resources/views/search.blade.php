@@ -2,9 +2,9 @@
 
 @section('content')
 <main id="main">
-	<div class="py-16 md:py-24 bg-blue-dark mb-12">
+	<div class="pt-16 md:pt-24 bg-blue-dark mb-12">
 		<div class="container mx-auto px-4">
-			<div class="w-full mx-auto">
+			<div class="w-full mx-auto mb-16">
 				<form role="search">
 					<label for="search" class="text-white text-xl lg:text-2xl mb-2 block font-bold">Sök på webbplatsen</label>
 					<div class="bg-white rounded overflow-hidden relative">
@@ -17,8 +17,29 @@
 					</div>
 				</form>
 			</div>
+			<ul class="tabs js--tabs">
+				<a href="#" data-category="all" class="tab tab--active">
+					<li class="tab__item">
+						<span>Alla resultat</span>
+						<span class="tab__counter">{{ $results["stats"]["all_hits"] }}</span>
+					</li>
+				</a>
+				<a href="#" data-category="std" class="tab">
+					<li class="tab__item">
+						<span>Styrda dokument</span>
+						<span class="tab__counter">{{ $results["stats"]["std_hits"] }}</span>
+					</li>
+				</a>
+				<a href="#" data-category="vgw" class="tab">
+					<li class="tab__item">
+						<span>Sidor</span>
+						<span class="tab__counter">{{ $results["stats"]["vgw_hits"] }}</span>
+					</li>
+				</a>
+			</ul>
 		</div>
 	</div>
+
 
 	<div class="container mx-auto px-4">
 		<div class="w-full mx-auto">
@@ -29,16 +50,23 @@
 						<hr class="absolute pin-b pin-l w-full h-0 border-b-2 mb-4 border-blue-light z-10">
 					</header>
 					
-					@if ($results["hits"] == 0)
+					@if ($results["stats"]["all_hits"] == 0)
 						<div class="p-4 bg-grey-lightest text-lg rounded mt-4 mb-16">
 							{{  __('Din sökning gav tyvärr inga resultat.', 'sage') }}
 						</div>
 					@endif
-					
-					@if ($results["hits"] > 0)
-						@foreach($results["documents"] as $result)
-							@include('partials.content-search')	
-						@endforeach
+
+					@if ($results["stats"]["all_hits"] > 0)
+						<div class="js--search-results">
+							@foreach($results["all_documents"] as $result)
+								@if($result->category === "vgw")
+									@include('partials.content-search-vgw')
+								@endif
+								@if($result->category === "std")
+									@include('partials.content-search-std')
+								@endif
+							@endforeach
+						</div>
 					@endif
 
 				</div>

@@ -10,6 +10,7 @@ import common from './routes/common';
 import home from './routes/home';
 import single from './routes/single';
 import page from './routes/page';
+import search from './routes/search';
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
@@ -21,6 +22,8 @@ const routes = new Router({
 	single,
 	// standard text pages
 	page,
+	// Search page
+	search,
 });
 
 // Load Events
