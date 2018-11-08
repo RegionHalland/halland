@@ -10,17 +10,17 @@ export default {
 			$tabs.removeClass('tab--active')
 			$(this).addClass('tab--active')
 
-			var category = $(this).data('category') 
+			var collection = $(this).data('collection') 
 			var results = $searchResults.children()
 
 			results.removeClass('hidden')
 
-			if (category === 'all') {
+			if (collection === 'all') {
 				return false
 			}
 
 			results.filter(function(index) {
-				return $(results[index]).data('category') !== category
+				return $(results[index]).data('collection') !== collection
 			}).addClass('hidden')
 		})
 	},
