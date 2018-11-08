@@ -10,6 +10,6 @@
 	@endphp
 
 	<span class="text-base block text-grey-darkest mb-4">Publicerad: <time itemprop="datePublished" datetime="{{ $published }}">{{ $published }}</time></span>
-	<p class="text-lg text-grey-darkest leading-tight mb-4">{{ isset($result->content) ? \App\trim_excerpt($result->content) : '' }}</p>
+	<p class="text-lg text-grey-darkest leading-tight mb-4">@php echo \App\truncate($result->content) @endphp</p>
 </article>
 
