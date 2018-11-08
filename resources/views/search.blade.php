@@ -59,10 +59,10 @@
 					@if ($results["stats"]["all_hits"] > 0)
 						<div class="js--search-results">
 							@foreach($results["all_documents"] as $result)
-								@if($result->collection === "vardgivarwebben")
+								@if(isset($result->collection) && $result->collection === "vardgivarwebben")
 									@include('partials.content-search-vgw')
 								@endif
-								@if($result->collection === "styrdadokument")
+								@if(isset($result->collection) && $result->collection === "styrdadokument")
 									@include('partials.content-search-std')
 								@endif
 							@endforeach
