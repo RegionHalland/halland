@@ -21,6 +21,7 @@ class Search extends Controller
 	public function results()
 	{
 		$query = $_GET["s"];
+		//$paged = $_GET["p"];
 		$client = new Client([
 		    'base_uri' => $this->SEARCH_API_URL,
 		    // You can set any number of default request options.
@@ -30,7 +31,7 @@ class Search extends Controller
 		$response = $client->request('GET', '', [
 			'query' => [
 				'q' => $query,
-				'hits' => 99,
+				'hits' => 50,
 			]
 		]);
 
@@ -45,9 +46,10 @@ class Search extends Controller
 		$all = array_merge($response_body->vardgivarwebben->documents, $response_body->styrdadokument->documents);
 
 		return array(
-			"all_documents" => $all,
+			"all_documents" => $response_body->documents->documents,
+			"vgw" => $response_body->vardgivarwebben->documents,
 			"stats" => array(
-				"all_hits" => $response_body->stats->totalHits,
+				"all_hits" => $response_body->documents->numberOfHits,
 				"vgw_hits" => $response_body->vardgivarwebben->numberOfHits,
 				"std_hits" => $response_body->styrdadokument->numberOfHits
 			)

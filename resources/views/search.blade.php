@@ -18,19 +18,19 @@
 				</form>
 			</div>
 			<ul class="tabs js--tabs">
-				<a href="#" data-category="all" class="tab tab--active">
+				<a href="#" data-collection="all" class="tab tab--active">
 					<li class="tab__item">
 						<span>Alla resultat</span>
 						<span class="tab__counter">{{ $results["stats"]["all_hits"] }}</span>
 					</li>
 				</a>
-				<a href="#" data-category="std" class="tab">
+				<a href="#" data-collection="styrdadokument" class="tab">
 					<li class="tab__item">
 						<span>Styrda dokument</span>
 						<span class="tab__counter">{{ $results["stats"]["std_hits"] }}</span>
 					</li>
 				</a>
-				<a href="#" data-category="vgw" class="tab">
+				<a href="#" data-collection="vardgivarwebben" class="tab">
 					<li class="tab__item">
 						<span>Sidor</span>
 						<span class="tab__counter">{{ $results["stats"]["vgw_hits"] }}</span>
@@ -59,10 +59,10 @@
 					@if ($results["stats"]["all_hits"] > 0)
 						<div class="js--search-results">
 							@foreach($results["all_documents"] as $result)
-								@if($result->category === "vgw")
+								@if($result->collection === "vardgivarwebben")
 									@include('partials.content-search-vgw')
 								@endif
-								@if($result->category === "std")
+								@if($result->collection === "styrdadokument")
 									@include('partials.content-search-std')
 								@endif
 							@endforeach
