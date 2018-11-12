@@ -15,11 +15,13 @@ class Autocomplete {
 	bind() {
 		this.$input.on('input', event => {
 
-			this.$list.empty()
-
-			if (event.target.value.length <= 2) {
+			this.clearList()
+			
+			if (event.target.value.length <= 1) {
 				return false
 			}
+
+			this.showList()
 
 			fetch(this.searchApiUrl + event.target.value + '*')
 				.then(response => {
@@ -30,15 +32,26 @@ class Autocomplete {
 						this.$list.append(this.createItem(json.vardgivarwebben.documents[i]))
 					}
 
-					// json.vardgivarwebben.documents.map(item => {
-					// 	console.log(this.createItem(item))
-					// })
+					json.vardgivarwebben.documents.map(item => {
+						console.log(this.createItem(item))
+					})
 				})
 		})
 	}
 
+	clearList() {
+		this.$list.attr('aria-hidden', 'true')
+		this.$list.addClass('hidden')
+		this.$list.empty()
+	}
+
+	showList() {
+		this.$list.attr('aria-hidden', 'false')
+		this.$list.removeClass('hidden')
+	}
+
 	createItem(item) {
-		return `<li><a href="${item._id}">${item.name}</a></li>`
+		return `<li class="block"><a class="block py-1 px-2" href="${item._id}">${item.name}</a></li>`
 	}
 }
 
