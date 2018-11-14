@@ -21,20 +21,21 @@ class Autocomplete {
 				return false
 			}
 
-			this.showList()
-
 			fetch(this.searchApiUrl + event.target.value + '*')
 				.then(response => {
 					return response.json()
 				})
 				.then(json => {
+					if (json.length <= 0) {
+						console.log('hide!!!')
+						return false
+					}
+
+					this.showList()
+
 					for (let i = 0; i < json.vardgivarwebben.documents.length; i++) {
 						this.$list.append(this.createItem(json.vardgivarwebben.documents[i]))
 					}
-
-					json.vardgivarwebben.documents.map(item => {
-						console.log(this.createItem(item))
-					})
 				})
 		})
 	}
