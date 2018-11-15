@@ -46,7 +46,7 @@ trait NavSite
 	                $post->children = $children;
 	            }
 	            $branch[$post->ID] = $post;
-	            unset($posts[$post->ID]);
+	            // unset($posts[$post->ID]);
 	        }
 	    }
 
