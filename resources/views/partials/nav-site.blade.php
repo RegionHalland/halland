@@ -1,6 +1,6 @@
 <nav class="" aria-label="Huvudmeny">
 	{{-- Top bar --}}
-	<div class="w-full border-b border-grey-lighter bg-white relative z-50">
+	<div class="w-full border-b border-grey-lighter relative z-50">
 		<div class="container mx-auto py-3 px-4">
 			<div class="flex flex-wrap items-center justify-between -mx-4">
 
@@ -12,7 +12,7 @@
 
 				{{-- Right Container --}}
 				<div class="flex flex-wrap px-4">
-					
+
 					{{-- Utilities --}}
 					<div class="hidden md:flex flex-wrap items-center">
 
@@ -63,13 +63,13 @@
 		</div>
 	</div>
 	{{-- Top bar END --}}
-	
+
 	{{-- Mobile Menu Drawer --}}
 	<nav class="js-site-nav hidden md:hidden w-full pin-t pin-l bg-white z-40">
 		@include('partials.nav-mobile')
 	</nav>
 	{{-- Mobile Menu Drawer END --}}
-
+ 
 	{{-- Bottom bar --}}
 	@if(isset($top_level_pages) && !empty($top_level_pages))
 	<div class="hidden md:block container mx-auto px-4 overflow-auto scrolling-touch">
@@ -78,7 +78,8 @@
 				<li class="flex-no-shrink px-4">
 
 					@if($top_level_page->active === true)
-						<a class="no-underline hover:underline focus:underline text-black font-bold py-4 inline-block relative" href="{{ the_permalink($top_level_page->ID) }}">{{ $top_level_page->post_title }}
+						<a class="no-underline hover:underline focus:underline text-black font-bold py-4 inline-block relative" href="{{ the_permalink($top_level_page->ID) }}">
+						{{ $top_level_page->post_title }}
 							 <div class="absolute pin-b pin-l w-full h-1 rounded-t bg-blue-dark"></div>
 						</a>
 					@else

@@ -5,7 +5,7 @@
 <div class="container mx-auto px-4 pt-8 md:pt-16 pb-12">
 	<div class="w-full mx-auto">
 		<div class="flex flex-wrap items-stretch -mx-4 {{ isset($nav_sidebar) && !empty($nav_sidebar) ? 'justify-start' : 'justify-between' }}">
-		
+
 		{{-- Sidebar --}}
 
 		@if(isset($nav_sidebar) && !empty($nav_sidebar))
@@ -30,7 +30,7 @@
 				{{-- Content --}}
 				<article class="article">{!! the_content() !!}</article>
 				{{-- Content END --}}
-				
+
 				{{-- Sidebar Bottom --}}
 				@if (is_active_sidebar('sidebar-article-bottom'))
 				<aside class="w-full mt-8">

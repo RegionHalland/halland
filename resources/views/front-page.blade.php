@@ -6,14 +6,17 @@
 
 
 <main id="main">
+
 	<div class="bg-blue-dark">
 		<div class="container mx-auto px-4 pt-16 pb-12">
 			<div class="w-full mx-auto flex justify-between flex-wrap">
 				<div class="w-full md:w-6/12">
+
 					@while(have_posts()) @php(the_post())
 						<h1 class="text-3xl md:text-4xl text-white mb-4">{{ the_title() }}</h1>
 						<div class="text-blue-light text-lg leading-tight md:text-xl mb-6">{!! the_content() !!}</div>
 					@endwhile
+
 					<form action="{{ home_url() }}" role="search">
 						<div class="bg-white rounded overflow-hidden relative">
 							<label for="search" class="visually-hidden">Sök: </label>
@@ -25,9 +28,12 @@
 							</button>
 						</div>
 					</form>
+
 				</div>
+
 				<div class="w-full md:w-4/12 mt-12 md:mt-0">
 				@php($popular_links = get_field('popular_links'))
+
 				@if(isset($popular_links) && !empty($popular_links))
 					<header class="text-lg font-bold text-white block mb-2">Snabblänkar</header>
 					<ol aria-labelledby="Snabblänkar" class="list-reset bg-white relative rounded overflow-hidden">
@@ -43,7 +49,9 @@
 					</ol>
 				@endif
 				</div>
+
 			</div>
+
 		</div>
 	</div>
 
@@ -62,7 +70,7 @@
 								<h2 class="mb-2 text-xl md:text-2xl">{{ $top_level_page->post_title }}</h2>
 							</a>
 							<p class="leading-tight text-lg text-grey-darkest">
-								@if(get_field('excerpt', $top_level_page->ID)) 
+								@if(get_field('excerpt', $top_level_page->ID))
 									{{ the_field('excerpt', $top_level_page->ID) }}
 								@else
 									{{ \App\trim_excerpt($top_level_page->post_content) }}
@@ -78,20 +86,22 @@
 
 	<div class="bg-white pt-16 pb-8">
 		<div class="container mx-auto px-4">
+
 			<div class="w-full mx-auto">
-				<header class="relative pb-4 block mb-8">
-					<span class="border-b-2 border-blue-dark text-2xl font-bold text-black pb-2 z-20 relative leading-none">Nyheter</span>
-					<hr class="absolute pin-b pin-l w-full h-0 border-b-2 mb-1 border-blue-light z-10">
-				</header>
-				<div class="flex flex-wrap -mx-4">
-					<div class="w-full w-full lg:w-6/12 px-4 mb-8">
-						@include('partials.news-list')
-					</div>
-					<div class="w-full lg:w-6/12 px-4 mb-8">
-						@include('partials.blurb-list')
-					</div>
-				</div>
+						<header class="relative pb-4 block mb-8">
+							<span class="border-b-2 border-blue-dark text-2xl font-bold text-black pb-2 z-20 relative leading-none">Nyheter </span>
+							<hr class="absolute pin-b pin-l w-full h-0 border-b-2 mb-1 border-blue-light z-10">
+						</header>
+						<div class="flex flex-wrap -mx-4">
+							<div class="w-full w-full lg:w-6/12 px-4 mb-8">
+								@include('partials.news-list')
+							</div>
+							<div class="w-full lg:w-6/12 px-4 mb-8">
+								@include('partials.blurb-list')
+							</div>
+						</div>
 			</div>
+
 		</div>
 	</div>
 </main>
