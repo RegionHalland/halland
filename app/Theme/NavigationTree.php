@@ -3,87 +3,55 @@
 namespace App\Theme;
 
 class NavigationTree
-{
-    public function __construct($args = array(), $parent = false)
-    { 
-        global $post;
-
-        $ancestors = get_post_ancestors($post->ID);
-
-        if (count($ancestors) <= 1) {
-            return false;
-        }
-
-        $parentID = $ancestors[count($ancestors) - 2];
-
-        $pages = get_pages([
-            'child_of' => $parentID,
-        ]);
-
-        var_dump($this->sortPages($pages, 0));
-        return $this->sortPages($pages, 0);
-    }
-
-    public function sortPages($pages)
-    {   
-        $new = array();
-        
-        foreach ($pages as $page){
-            $new[$page->post_parent][] = $page;
-        }
-        
-        $tree = $this->createTree($new, $new[0]); // changed
-    }
-
-    public function createTree(&$pages, $parents) {
-        $tree = array();
-
-        foreach ($parents as $key => $parent) {
-            
-            if (isset($pages[$parent->ID])) {
-                $parent->children = $pages[$parent->ID];
-            }
-            $tree[] = $parent;
-        } 
-
-        return $tree;
-    }
-
-    // public function createTree(&$list, $pages) {
-    //     $tree = array();
-    //     var_dump($pages);
-    //     foreach ($pages as $key => $page) {
-    //         if (!isset($list[$page->ID]) || gettype($list[$page->ID]) !== 'array') {
-    //             return false;
-    //         }
-
-    //         if (isset($pages[$page->post_parent])) {
-    //             $page['children'] = $this->createTree($list, $list[$page->ID]);
-    //         }
-
-    //         $tree[] = $page;
-    //     } 
-    //     return $tree;
-    // }
+{   
     /**
-     * Gets top level pages
-     * @return void
+     * Returns the tree
+     * @param array $posts    Array of posts.
+     * @param int   $parentId ID of the highest ancestor to build the tree from.
+     * @return array
      */
-//     public function sortPages($pages, $parentId)
-//     {   
-//         $branch = array();
+    public function getNavigationTree(array &$posts, $parentId = 0)
+    {
+        global $post;
+        
+        if (!is_a($post, 'WP_Post')) {
+            return;
+        }
 
-//         foreach ($pages as $page) {
-//             if ($page->post_parent === $parentId) {
-//                 $children = $this->sortPages( $pages, $page->ID );
-//                 if ($pages) {
-//                     $pages['wpse_children'] = $children;
-//                 }
-//                 $branch[$page->ID] = $page;
-//                 unset( $page );
-//             }
-//         }   
+        $frontpage = (int)get_option('page_on_front');
 
-//         return $branch;
-//     }
+        return self::build($posts, $parentId, $post->ID, $frontpage);
+    }
+
+    /**
+     * Builds a tree from a flat array of pages
+     * https://stackoverflow.com/a/28429487
+     * @param array $posts     Array of posts.
+     * @param int   $parentId  ID of the highest ancestor to build the tree from.
+     * @param int   $currentId ID of the current post.
+     * @param int   $frontpage ID of the sites frontpage.
+     * @return array
+     */
+    private function build(array &$posts, $parentId = 0, $currentID = 0, $frontpage = 0) 
+    {
+        $branch = array();
+
+        foreach ($posts as &$post) {
+            // Set page active
+            if ($currentID === $post->ID && !isset($post->active)) {
+                $post->active = true;
+            }
+
+            if ($post->post_parent == $parentId) {
+                $children = self::build($posts, $post->ID, $currentID);
+                if ($children) {
+                    $post->children = $children;
+                }
+                $branch[$post->ID] = $post;
+                unset($post);
+            }
+        }
+
+        return $branch;
+    }
 }
