@@ -13,9 +13,5 @@
 		</div>
 	</div>
   @endwhile
-<<<<<<< HEAD
-xxxx 
-=======
-xxxx
->>>>>>> c65a4c8649320f0801c9b46ea8292d99c30e15d1
+
 @endsection
