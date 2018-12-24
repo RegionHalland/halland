@@ -2,6 +2,7 @@
 
 @section('content')
 <main id="main">
+
 	<div class="pt-16 md:pt-24 bg-blue-dark mb-12">
 		<div class="container mx-auto px-4">
 			<div class="w-full mx-auto mb-16">
@@ -17,6 +18,7 @@
 					</div>
 				</form>
 			</div>
+
 			<ul class="tabs js--tabs">
 				<a href="#" data-collection="all" class="tab tab--active">
 					<li class="tab__item">
@@ -37,6 +39,7 @@
 					</li>
 				</a>
 			</ul>
+			
 		</div>
 	</div>
 
@@ -44,6 +47,7 @@
 	<div class="container mx-auto px-4">
 		<div class="w-full mx-auto">
 			<div class="flex flex-wrap -mx-4">
+
 				<div class="w-full md:w-8/12 px-4">
 					<header class="relative pb-4 block">
 						<h1 class="border-b-2 border-blue-dark inline-block text-2xl font-bold text-black pb-2 z-20 relative leading-none">Dina sökresultat</h1>
@@ -73,8 +77,10 @@
 				<div class="w-full md:w-4/12 px-4 hidden md:block">
 
 				</div>
+
 			</div>
 		</div>
 	</div>
+
 </main>
 @endsection
