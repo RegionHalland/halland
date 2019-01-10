@@ -27,7 +27,7 @@
 	@endif
 	<div class="block mb-2">
 		<span class="text-base">
-			Senast ändrad: <time itemprop="dateModified" datetime="{{ get_the_date('Y-m-d', get_the_id()) }}">{{ get_the_date('Y-m-d', get_the_id()) }}</time>
+			Senast ändrad: <time itemprop="dateModified" datetime="{{ the_modified_date('Y-m-d') }}">{{ the_modified_date('Y-m-d') }}</time>
 		</span>
 	</div>
 </div>
