@@ -13,8 +13,8 @@ class Filters
 
 		// TinyMCE Plugins
 		add_filter( 'mce_buttons', array($this, 'add_table_button') );
-		add_filter( 'mce_external_plugins', array($this, 'add_table_plugin') );
-		
+		#add_filter( 'mce_external_plugins', array($this, 'add_table_plugin') );
+
 		// Content
 		add_filter( 'the_content', array($this, 'auto_wrap_tables') );
 		add_filter( 'the_content', array($this, 'add_id_to_headings') );
@@ -24,7 +24,7 @@ class Filters
 	}
 
 	public function remove_archive_prefix($title)
-	{	
+	{
 		// We remove ”archive: ” prefix from title
 		$new_title = explode(':', $title);
 
@@ -43,7 +43,7 @@ class Filters
 	 * @return void
 	 */
 	public function update_excerpt_more()
-	{			
+	{
 		return '';
 	}
 
@@ -74,9 +74,9 @@ class Filters
     function auto_wrap_tables( $content )
     {
         $content = HtmlDomParser::str_get_html($content);
-        
+
         if ($content) {
-            foreach ($content->find('table') as $element) 
+            foreach ($content->find('table') as $element)
                 $element->outertext = '<div class="table-container">' . $element . '</div>';
         }
 
@@ -94,7 +94,7 @@ class Filters
         }
 
         $content = HtmlDomParser::str_get_html($content);
-        
+
         foreach ($content->find('h2, h3, h4') as $element) {
             $slug = sanitize_title($element->innertext);
             $element->id = $slug;
