@@ -1,0 +1,60 @@
+[{
+    "key": "group_5bc5f5f211eac",
+    "title": "Startsida",
+    "fields": [
+        {
+            "key": "field_5bc5f6adca7f0",
+            "label": "Popul\u00e4ra l\u00e4nkar",
+            "name": "popular_links",
+            "type": "repeater",
+            "instructions": "Klicka p\u00e5 \"L\u00e4gg till rad\" f\u00f6r att l\u00e4gga till en l\u00e4nk. Maximalt 5 stycken.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 5,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5bc5f8367ecfd",
+                    "label": "L\u00e4nk",
+                    "name": "link",
+                    "type": "link",
+                    "instructions": "L\u00e4gg till popul\u00e4ra l\u00e4nkar p\u00e5.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "Anv\u00e4nds f\u00f6r att skapa inneh\u00e5ll specifikt f\u00f6r startsidan."
+}]
+

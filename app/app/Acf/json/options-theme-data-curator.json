@@ -1,0 +1,219 @@
+[{
+    "key": "group_5ac48d9ea70de",
+    "title": "Inneh\u00e5ll",
+    "fields": [
+        {
+            "key": "field_5acb2d2a0d8dc",
+            "label": "Inneh\u00e5llsansvarig",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5bd0664ec5a90",
+            "label": "Visa inneh\u00e5llsansvarig",
+            "name": "show_data_curator",
+            "type": "true_false",
+            "instructions": "Bocka i om du vill visa inneh\u00e5llsansvarig p\u00e5 sidan.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Visa inneh\u00e5llsansvarig p\u00e5 sidan",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5acb2f3f7decc",
+            "label": "Manuell Inneh\u00e5llsansvarig",
+            "name": "manual_data_curator",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Fyll i inneh\u00e5llsansvarig manuellt",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5ac48df44d019",
+            "label": "Inneh\u00e5llsansvarig",
+            "name": "data_curator",
+            "type": "select",
+            "instructions": "V\u00e4lj en inneh\u00e5llsansvarig i listan.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5acb2f3f7decc",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "Admin Adminsson",
+                "172": " ",
+                "179": " ",
+                "177": " ",
+                "181": " ",
+                "2": "Johanna Olin",
+                "183": "Johanna Olin",
+                "176": " ",
+                "174": " ",
+                "175": " ",
+                "180": " ",
+                "178": " ",
+                "182": " ",
+                "184": "Mattias Skoog",
+                "173": " "
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5acb2f957decd",
+            "label": "Inneh\u00e5llsansvarig",
+            "name": "innehallsansvarig",
+            "type": "text",
+            "instructions": "Fyll i namn p\u00e5 den inneh\u00e5llsansvarige.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5acb2f3f7decc",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5acb2dc3c017a",
+            "label": "E-post",
+            "name": "data_curator_email",
+            "type": "email",
+            "instructions": "Fyll i en e-postadress till den inneh\u00e5llsansvarige.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5acb2f3f7decc",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5acb371ba5ed2",
+            "label": "Inneh\u00e5llsbeskrivning",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5acb3696a5ed1",
+            "label": "Utdrag",
+            "name": "excerpt",
+            "type": "textarea",
+            "instructions": "Beskriv kortfattat sidans inneh\u00e5ll. Max 80 tecken.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "T.ex. \"Hitta information om v\u00e5rden i Halmstad\"",
+            "maxlength": 80,
+            "rows": 2,
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": ""
+}]
+
